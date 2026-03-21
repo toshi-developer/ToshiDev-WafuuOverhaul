@@ -1,0 +1,206 @@
+<configs>
+    <append xpath="/buffs">
+
+        <!-- ======================================================== -->
+        <!-- ToshiDev Wafuu Overhaul — バフ定義                         -->
+        <!-- items.xml の effect_group から参照される                     -->
+        <!-- ======================================================== -->
+
+
+        <!-- ==================== 寒冷耐性 ==================== -->
+
+        <buff name="buffWafuuColdResist30" duration="30" stack="replace"
+              name_key="buffWafuuColdResist30" description_key="buffWafuuColdResist30_desc"
+              icon="ui_game_symbol_cold" icon_color="136,204,255">
+            <effect_group>
+                <passive_effect name="HypothermalResist" operation="base_add" value="15"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffWafuuColdResist60" duration="60" stack="replace"
+              name_key="buffWafuuColdResist60" description_key="buffWafuuColdResist60_desc"
+              icon="ui_game_symbol_cold" icon_color="136,204,255">
+            <effect_group>
+                <passive_effect name="HypothermalResist" operation="base_add" value="15"/>
+            </effect_group>
+        </buff>
+
+
+        <!-- ==================== 暑熱耐性 ==================== -->
+
+        <buff name="buffWafuuHeatResist60" duration="60" stack="replace"
+              name_key="buffWafuuHeatResist60" description_key="buffWafuuHeatResist60_desc"
+              icon="ui_game_symbol_hot" icon_color="255,136,68">
+            <effect_group>
+                <passive_effect name="HyperthermalResist" operation="base_add" value="15"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffWafuuHeatResist120" duration="120" stack="replace"
+              name_key="buffWafuuHeatResist120" description_key="buffWafuuHeatResist120_desc"
+              icon="ui_game_symbol_hot" icon_color="255,136,68">
+            <effect_group>
+                <passive_effect name="HyperthermalResist" operation="base_add" value="15"/>
+            </effect_group>
+        </buff>
+
+
+        <!-- ==================== 攻撃力アップ ==================== -->
+
+        <buff name="buffWafuuAttackUp3_30" duration="30" stack="replace"
+              name_key="buffWafuuAttackUp3_30" description_key="buffWafuuAttackUp3_30_desc"
+              icon="ui_game_symbol_sword" icon_color="255,160,160">
+            <effect_group>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".03"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffWafuuAttackUp5_30" duration="30" stack="replace"
+              name_key="buffWafuuAttackUp5_30" description_key="buffWafuuAttackUp5_30_desc"
+              icon="ui_game_symbol_sword" icon_color="255,100,100">
+            <effect_group>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".05"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffWafuuAttackUp5_60" duration="60" stack="replace"
+              name_key="buffWafuuAttackUp5_60" description_key="buffWafuuAttackUp5_60_desc"
+              icon="ui_game_symbol_sword" icon_color="255,100,100">
+            <effect_group>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".05"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffWafuuAttackUp10_120" duration="120" stack="replace"
+              name_key="buffWafuuAttackUp10_120" description_key="buffWafuuAttackUp10_120_desc"
+              icon="ui_game_symbol_sword" icon_color="255,68,68">
+            <effect_group>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".10"/>
+            </effect_group>
+        </buff>
+
+
+        <!-- ==================== HP 継続回復 (HoT) ==================== -->
+
+        <buff name="buffWafuuHoT45" duration="45" stack="replace"
+              name_key="buffWafuuHoT45" description_key="buffWafuuHoT45_desc"
+              icon="ui_game_symbol_natural_healing" icon_color="68,255,68">
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".health" operation="add" value="1"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffWafuuHoT60" duration="60" stack="replace"
+              name_key="buffWafuuHoT60" description_key="buffWafuuHoT60_desc"
+              icon="ui_game_symbol_natural_healing" icon_color="68,255,68">
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".health" operation="add" value="1"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffWafuuHoT90" duration="90" stack="replace"
+              name_key="buffWafuuHoT90" description_key="buffWafuuHoT90_desc"
+              icon="ui_game_symbol_natural_healing" icon_color="68,255,68">
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".health" operation="add" value="1"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffWafuuHoT2_60" duration="60" stack="replace"
+              name_key="buffWafuuHoT2_60" description_key="buffWafuuHoT2_60_desc"
+              icon="ui_game_symbol_natural_healing" icon_color="0,255,0">
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".health" operation="add" value="2"/>
+            </effect_group>
+        </buff>
+
+
+        <!-- ==================== 移動速度アップ ==================== -->
+
+        <buff name="buffWafuuSpeedUp5_30" duration="30" stack="replace"
+              name_key="buffWafuuSpeedUp5_30" description_key="buffWafuuSpeedUp5_30_desc"
+              icon="ui_game_symbol_run" icon_color="68,255,255">
+            <effect_group>
+                <passive_effect name="RunSpeed" operation="perc_add" value=".05"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffWafuuSpeedUp5_45" duration="45" stack="replace"
+              name_key="buffWafuuSpeedUp5_45" description_key="buffWafuuSpeedUp5_45_desc"
+              icon="ui_game_symbol_run" icon_color="68,255,255">
+            <effect_group>
+                <passive_effect name="RunSpeed" operation="perc_add" value=".05"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffWafuuSpeedUp10_90" duration="90" stack="replace"
+              name_key="buffWafuuSpeedUp10_90" description_key="buffWafuuSpeedUp10_90_desc"
+              icon="ui_game_symbol_run" icon_color="0,230,230">
+            <effect_group>
+                <passive_effect name="RunSpeed" operation="perc_add" value=".10"/>
+            </effect_group>
+        </buff>
+
+
+        <!-- ==================== クラフト速度アップ ==================== -->
+
+        <buff name="buffWafuuCraftSpeed60" duration="60" stack="replace"
+              name_key="buffWafuuCraftSpeed60" description_key="buffWafuuCraftSpeed60_desc"
+              icon="ui_game_symbol_hammer" icon_color="255,255,68">
+            <effect_group>
+                <passive_effect name="CraftingTime" operation="perc_add" value="-.10"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffWafuuCraftSpeed90" duration="90" stack="replace"
+              name_key="buffWafuuCraftSpeed90" description_key="buffWafuuCraftSpeed90_desc"
+              icon="ui_game_symbol_hammer" icon_color="255,255,68">
+            <effect_group>
+                <passive_effect name="CraftingTime" operation="perc_add" value="-.10"/>
+            </effect_group>
+        </buff>
+
+
+        <!-- ==================== 病気耐性 ==================== -->
+
+        <buff name="buffWafuuDiseaseResist30" duration="30" stack="replace"
+              name_key="buffWafuuDiseaseResist30" description_key="buffWafuuDiseaseResist30_desc"
+              icon="ui_game_symbol_medical" icon_color="255,255,255">
+            <effect_group>
+                <passive_effect name="DiseaseResist" operation="base_add" value="30"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffWafuuDiseaseResist180" duration="180" stack="replace"
+              name_key="buffWafuuDiseaseResist180" description_key="buffWafuuDiseaseResist180_desc"
+              icon="ui_game_symbol_medical" icon_color="255,255,255">
+            <effect_group>
+                <passive_effect name="DiseaseResist" operation="base_add" value="30"/>
+            </effect_group>
+        </buff>
+
+
+        <!-- ==================== 酩酊 ==================== -->
+
+        <!-- 日本酒: 攻撃力+10%, 防御-5%, 120秒 -->
+        <buff name="buffWafuuDrunkLight" duration="120" stack="replace"
+              name_key="buffWafuuDrunkLight" description_key="buffWafuuDrunkLight_desc"
+              icon="ui_game_symbol_skull" icon_color="204,68,255">
+            <effect_group>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".10"/>
+                <passive_effect name="PhysicalDamageResist" operation="perc_add" value="-.05"/>
+            </effect_group>
+        </buff>
+
+        <!-- 焼酎: 攻撃力+15%, 防御-10%, 120秒 -->
+        <buff name="buffWafuuDrunkHeavy" duration="120" stack="replace"
+              name_key="buffWafuuDrunkHeavy" description_key="buffWafuuDrunkHeavy_desc"
+              icon="ui_game_symbol_skull" icon_color="180,40,255">
+            <effect_group>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".15"/>
+                <passive_effect name="PhysicalDamageResist" operation="perc_add" value="-.10"/>
+            </effect_group>
+        </buff>
+
+    </append>
+</configs>

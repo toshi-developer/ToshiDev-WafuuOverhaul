@@ -1,0 +1,69 @@
+<configs>
+
+    <!-- ======================================================== -->
+    <!-- ToshiDev Wafuu Overhaul — スキル・パーク定義                 -->
+    <!-- 和食スキル「和食の匠」で調理ステーションと上位レシピを解放    -->
+    <!-- ======================================================== -->
+
+
+    <!-- ==================== パーク定義 ==================== -->
+
+    <append xpath="/progression/perks">
+
+        <!--
+            和食の匠 (Wafuu Cooking Master)
+            親属性: Fortitude（バニラの Master Chef と同系統）
+            5 段階:
+              Lv1 — 囲炉裏クラフト解放 + クラフト速度 5% 向上
+              Lv2 — 和食の回復効果 10% 向上
+              Lv3 — 厨房セットクラフト解放 + クラフト速度 10% 向上
+              Lv4 — 和食の回復効果 20% 向上
+              Lv5 — 全和食の回復効果 30% 向上 + マスタータイトル
+        -->
+        <perk name="perkWafuuCooking"
+              parent="attFortitude"
+              name_key="perkWafuuCooking"
+              description_key="perkWafuuCooking_desc"
+              icon="ui_game_symbol_fork"
+              max_level="5">
+
+            <requirement name="ProgressionLevel" perk="attFortitude" operation="GTE" value="1"
+                         description_key="reqFortitude1"/>
+            <requirement name="ProgressionLevel" perk="attFortitude" operation="GTE" value="3"
+                         compare_type="PerLevel" level="3,3,5,5,7"/>
+
+            <!-- Lv1: 囲炉裏レシピ解放 + クラフト速度微増 -->
+            <effect_group level="1,5">
+                <passive_effect name="RecipeTagUnlock" operation="base_set" value="1"
+                                tags="perkWafuuCooking"/>
+            </effect_group>
+
+            <effect_group level="1,5" tiered="false">
+                <passive_effect name="CraftingTime" operation="perc_add" value="-.05,.-.05,-.10,-.10,-.15"
+                                tags="wafuuKamado,wafuuIrori,wafuuKitchen"/>
+            </effect_group>
+
+            <!-- Lv3: 厨房レシピ解放 -->
+            <effect_group level="3,5">
+                <passive_effect name="RecipeTagUnlock" operation="base_set" value="1"
+                                tags="perkWafuuCookingAdv"/>
+            </effect_group>
+
+            <!-- Lv2+: 和食の回復効果向上（食事による HP 回復ボーナス） -->
+            <effect_group level="2,5" tiered="false">
+                <passive_effect name="HealthGain" operation="perc_add"
+                                value=".10,.10,.20,.30"/>
+            </effect_group>
+
+        </perk>
+
+    </append>
+
+
+    <!-- ==================== ローカライズ参照 ==================== -->
+    <!-- Localization.txt に以下を追加する必要あり:
+         perkWafuuCooking, perkWafuuCooking_desc,
+         perkWafuuCookingLvl1_desc 〜 perkWafuuCookingLvl5_desc
+    -->
+
+</configs>

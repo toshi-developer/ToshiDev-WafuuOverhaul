@@ -1,0 +1,198 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,japanese
+seasoningMaster,items,Item,,,Seasoning,調味料
+foodMirin,items,Item,,,Mirin,みりん
+foodMirin_desc,items,Item,,,"Sweet rice wine used for cooking. Essential for Japanese cuisine.","料理に使う甘い米酒。和食に欠かせない調味料。"
+foodSake,items,Item,,,Cooking Sake,料理酒
+foodSake_desc,items,Item,,,"Japanese rice wine for cooking. Removes odor and adds umami.","料理用の日本酒。臭み消しと旨味付けに。"
+foodSoySauce,items,Item,,,Soy Sauce,醤油
+foodSoySauce_desc,items,Item,,,"Fermented soybean sauce. The backbone of Japanese cooking.","大豆を発酵させた万能調味料。和食の基本。"
+foodSalt,items,Item,,,Salt,塩
+foodSalt_desc,items,Item,,,"Basic seasoning. Also used for preservation and purification.","基本の調味料。保存や清めにも使える。"
+foodSaltBundle,items,Item,,,Salt Bundle,塩（まとめ）
+foodSaltBundle_desc,items,Item,,,"A large bag of salt. Open to get 100 salt.","塩の大袋。開封すると塩100個を入手。"
+foodSuger,items,Item,,,Sugar,砂糖
+foodSuger_desc,items,Item,,,"Sweetener for cooking and making sweets.","料理や甘味作りに使う甘味料。"
+foodSugerBundle,items,Item,,,Sugar Bundle,砂糖（まとめ）
+foodSugerBundle_desc,items,Item,,,"A large bag of sugar. Open to get 100 sugar.","砂糖の大袋。開封すると砂糖100個を入手。"
+foodOil,items,Item,,,Cooking Oil,食用油
+foodOil_desc,items,Item,,,"Oil for frying and stir-frying. Essential for tempura and karaage.","揚げ物・炒め物に使う油。天ぷらや唐揚げに必須。"
+foodVinegar,items,Item,,,Rice Vinegar,酢
+foodVinegar_desc,items,Item,,,"Mild vinegar made from rice. Used for sushi and pickles.","米から作った穏やかな酢。寿司や酢の物に。"
+foodOnion,items,Item,,,Onion,玉ねぎ
+foodOnion_desc,items,Item,,,"A versatile vegetable used in many dishes.","様々な料理に使える万能野菜。"
+foodGreenOnion,items,Item,,,Green Onion,ねぎ
+foodGreenOnion_desc,items,Item,,,"Adds flavor and color to soups and grilled dishes.","汁物や焼き物の薬味に。"
+foodRice,items,Item,,,Uncooked Rice,生米
+foodRice_desc,items,Item,,,"Raw rice grains. Cook to make steamed rice.","生の米。炊いて白飯にする。"
+foodMiso,items,Item,,,Miso Paste,味噌
+foodMiso_desc,items,Item,,,"Fermented soybean paste. The soul of miso soup.","大豆を発酵させた味噌。味噌汁の魂。"
+foodDashi,items,Item,,,Dashi Stock,だし
+foodDashi_desc,items,Item,,,"Japanese soup stock made from fish. Base of all soups.","魚から取った出汁。汁物の基本。"
+foodFlour,items,Item,,,Wheat Flour,小麦粉
+foodFlour_desc,items,Item,,,"Ground wheat. Used for tempura batter, udon, and more.","小麦を挽いた粉。天ぷらの衣やうどんに。"
+foodPanko,items,Item,,,Panko Breadcrumbs,パン粉
+foodPanko_desc,items,Item,,,"Crispy breadcrumbs for deep frying. Makes perfect katsu.","揚げ物用のサクサクパン粉。カツに最適。"
+cropSoybean,items,Item,,,Soybean,大豆
+cropSoybean_desc,items,Item,,,"Versatile legume. Used to make tofu, miso, and soy sauce.","万能な豆。豆腐・味噌・醤油の原料。"
+cropDaikon,items,Item,,,Daikon Radish,大根
+cropDaikon_desc,items,Item,,,"Large white radish. Great in stews and pickled.","大きな白い根菜。煮物や漬物に最適。"
+cropHakusai,items,Item,,,Napa Cabbage,白菜
+cropHakusai_desc,items,Item,,,"Leafy vegetable for hot pots and pickles.","鍋物や漬物に使う葉物野菜。"
+cropShiitake,items,Item,,,Shiitake Mushroom,しいたけ
+cropShiitake_desc,items,Item,,,"Aromatic mushroom with rich umami flavor.","豊かな旨味を持つ香り高いキノコ。"
+cropWasabi,items,Item,,,Wasabi,わさび
+cropWasabi_desc,items,Item,,,"Pungent green condiment. Rare and valuable.","辛味のある緑の薬味。希少で高価値。"
+foodKoji,items,Item,,,Koji,麹
+foodKoji_desc,items,Item,,,"Fermentation starter made from rice. Key to miso, sake, and amazake.","米から作る発酵種。味噌・酒・甘酒の素。"
+foodAnko,items,Item,,,Red Bean Paste,あんこ
+foodAnko_desc,items,Item,,,"Sweet bean paste for traditional Japanese sweets.","和菓子に使う甘い豆のペースト。"
+foodTofu,items,Item,,,Tofu,豆腐
+foodTofu_desc,items,Item,,,"Soft soybean curd. Nutritious and versatile.","柔らかい大豆の加工品。栄養豊富で万能。"
+foodTeaLeaf,items,Item,,,Tea Leaves,茶葉
+foodTeaLeaf_desc,items,Item,,,"Dried green tea leaves. Brew for a calming drink.","乾燥した緑茶の葉。淹れると落ち着く飲み物に。"
+foodSteamedRice,items,Item,,,Steamed Rice,白飯
+foodSteamedRice_desc,items,Item,,,"Freshly cooked rice. The foundation of Japanese meals.","炊きたてのご飯。和食の基本。"
+foodOnigiriUme,items,Item,,,Onigiri (Ume),おにぎり（梅）
+foodOnigiriUme_desc,items,Item,,,"Rice ball with pickled plum. Portable and resistant to spoilage.","梅干し入りのおにぎり。携帯性◎、腐りにくい。"
+foodOnigiriSake,items,Item,,,Onigiri (Salmon),おにぎり（鮭）
+foodOnigiriSake_desc,items,Item,,,"Rice ball with grilled salmon. A classic filling meal.","焼き鮭入りのおにぎり。定番のしっかりした食事。"
+foodOnigiriKonbu,items,Item,,,Onigiri (Kelp),おにぎり（昆布）
+foodOnigiriKonbu_desc,items,Item,,,"Rice ball with simmered kelp. Mildly hydrating.","昆布の佃煮入りおにぎり。ほんのり水分補給。"
+foodMochi,items,Item,,,Mochi,餅
+foodMochi_desc,items,Item,,,"Pounded rice cake. Chewy and energy-packed.","つきたての餅。もちもちでエネルギー満点。"
+foodMisoSoup,items,Item,,,Miso Soup,味噌汁
+foodMisoSoup_desc,items,Item,,,"Warm miso soup with tofu and green onion. Warms the soul.","豆腐とねぎの温かい味噌汁。心まで温まる。"
+foodTonjiru,items,Item,,,Tonjiru (Pork Miso Soup),豚汁
+foodTonjiru_desc,items,Item,,,"Hearty miso soup with pork and vegetables. Keeps you warm.","豚肉と野菜のボリューム味噌汁。体が温まる。"
+foodSumashijiru,items,Item,,,Clear Soup,すまし汁
+foodSumashijiru_desc,items,Item,,,"Light clear soup with dashi and tofu. Refreshing.","だしと豆腐の澄んだお吸い物。さっぱり。"
+foodKenchinjiru,items,Item,,,Kenchin Soup,けんちん汁
+foodKenchinjiru_desc,items,Item,,,"Vegetable soup with daikon and shiitake. Filling and warm.","大根としいたけの野菜汁。満足感があり温まる。"
+foodGrilledSalmon,items,Item,,,Grilled Salmon,焼き鮭
+foodGrilledSalmon_desc,items,Item,,,"Salt-grilled salmon fillet. Simple but satisfying.","塩焼きの鮭。シンプルだが満足感あり。"
+foodYakitori,items,Item,,,Yakitori,焼き鳥
+foodYakitori_desc,items,Item,,,"Grilled chicken skewers. Boosts fighting spirit.","鶏肉の串焼き。闘志が湧いてくる。"
+foodGrilledSanma,items,Item,,,Grilled Sanma,秋刀魚の塩焼き
+foodGrilledSanma_desc,items,Item,,,"Salt-grilled Pacific saury. A taste of autumn.","秋刀魚の塩焼き。秋の味覚。"
+foodTeriyaki,items,Item,,,Teriyaki Chicken,照り焼きチキン
+foodTeriyaki_desc,items,Item,,,"Glossy teriyaki glazed chicken. Sweet and savory.","艶やかな照り焼きチキン。甘辛くて美味。"
+foodNikujaga,items,Item,,,Nikujaga (Meat & Potatoes),肉じゃが
+foodNikujaga_desc,items,Item,,,"Simmered meat and potatoes in sweet soy broth. Comforting.","甘い醤油だしで煮込んだ肉じゃが。ほっとする味。"
+foodOden,items,Item,,,Oden,おでん
+foodOden_desc,items,Item,,,"Assorted ingredients simmered in dashi broth. Warms you up.","だしで煮込んだおでん。体の芯から温まる。"
+foodChikuzenni,items,Item,,,Chikuzenni (Simmered Chicken),筑前煮
+foodChikuzenni_desc,items,Item,,,"Braised chicken and root vegetables. Rich umami flavor.","鶏肉と根菜の煮物。旨味たっぷり。"
+foodNikabocha,items,Item,,,Simmered Kabocha,かぼちゃの煮物
+foodNikabocha_desc,items,Item,,,"Sweet simmered pumpkin. Gentle and nourishing.","甘く煮たかぼちゃ。優しくて滋養豊か。"
+foodTempura,items,Item,,,Tempura Platter,天ぷら盛り合わせ
+foodTempura_desc,items,Item,,,"Crispy deep-fried vegetables and fish. A stamina feast.","サクサクの野菜と魚の天ぷら。スタミナの御馳走。"
+foodKaraage,items,Item,,,Karaage (Fried Chicken),唐揚げ
+foodKaraage_desc,items,Item,,,"Japanese-style fried chicken. Juicy and energizing.","和風フライドチキン。ジューシーで元気が出る。"
+foodTonkatsu,items,Item,,,Tonkatsu (Pork Cutlet),トンカツ
+foodTonkatsu_desc,items,Item,,,"Deep-fried breaded pork cutlet. Pure energy.","衣をつけて揚げた豚カツ。パワー全開。"
+foodCroquette,items,Item,,,Croquette,コロッケ
+foodCroquette_desc,items,Item,,,"Crispy potato and meat croquette. Comfort food.","サクサクのポテトと肉のコロッケ。懐かしの味。"
+foodKatsudon,items,Item,,,Katsudon,カツ丼
+foodKatsudon_desc,items,Item,,,"Pork cutlet bowl with egg. The champion's meal.","卵でとじたカツ丼。勝負飯。"
+foodOyakodon,items,Item,,,Oyakodon,親子丼
+foodOyakodon_desc,items,Item,,,"Chicken and egg rice bowl. Wholesome and healing.","鶏肉と卵の丼。体に優しく癒される。"
+foodGyudon,items,Item,,,Gyudon (Beef Bowl),牛丼
+foodGyudon_desc,items,Item,,,"Simmered beef over rice. Quick and powerful.","牛肉をご飯にのせた丼。手早くパワフル。"
+foodTendon,items,Item,,,Tendon (Tempura Bowl),天丼
+foodTendon_desc,items,Item,,,"Tempura over rice with sweet sauce. Light on your feet.","甘だれの天ぷら丼。身軽になれる。"
+foodKaisendon,items,Item,,,Kaisen-don (Seafood Bowl),海鮮丼
+foodKaisendon_desc,items,Item,,,"Fresh sashimi over rice. Sharpens the mind.","新鮮な刺身の丼。頭が冴える。"
+foodUdon,items,Item,,,Udon Noodles,うどん
+foodUdon_desc,items,Item,,,"Thick wheat noodles in hot broth. Warming and filling.","温かいだしの太い麺。体が温まりお腹も満足。"
+foodSoba,items,Item,,,Soba Noodles,そば
+foodSoba_desc,items,Item,,,"Buckwheat noodles in dashi broth. Light and swift.","だしのそば。軽やかで素早くなれる。"
+foodRamen,items,Item,,,Ramen,ラーメン
+foodRamen_desc,items,Item,,,"Rich pork broth ramen with egg. The ultimate comfort.","濃厚豚骨ラーメン。究極の一杯。"
+foodSomen,items,Item,,,Somen Noodles,そうめん
+foodSomen_desc,items,Item,,,"Cold thin noodles. Refreshing in the heat.","冷たい細麺。暑さを吹き飛ばす。"
+foodUmeboshi,items,Item,,,Pickled Plum,梅干し
+foodUmeboshi_desc,items,Item,,,"Sour pickled plum. Prevents illness and never spoils.","酸っぱい梅干し。病気予防に。腐らない。"
+foodTakuan,items,Item,,,Takuan (Pickled Daikon),たくあん
+foodTakuan_desc,items,Item,,,"Yellow pickled radish. Crunchy and preserved.","黄色い漬物大根。パリパリで保存が効く。"
+foodHakusaiTsukemono,items,Item,,,Pickled Napa Cabbage,白菜の漬物
+foodHakusaiTsukemono_desc,items,Item,,,"Spicy pickled cabbage. Gives a slight edge in combat.","ピリ辛の白菜漬け。戦闘意欲がほんの少し上がる。"
+foodHimono,items,Item,,,Dried Fish,干物
+foodHimono_desc,items,Item,,,"Sun-dried salted fish. Preserved and nutritious.","天日干しの塩魚。保存が効き栄養豊富。"
+foodTsukudani,items,Item,,,Tsukudani (Simmered Preserves),佃煮
+foodTsukudani_desc,items,Item,,,"Fish simmered in soy and sugar. Stacks high, never spoils.","醤油と砂糖で煮た佃煮。大量に持てて腐らない。"
+drinkGreenTea,items,Item,,,Green Tea,緑茶
+drinkGreenTea_desc,items,Item,,,"Freshly brewed green tea. Calms the mind and sharpens focus.","淹れたての緑茶。心が落ち着き集中力が上がる。"
+drinkMugicha,items,Item,,,Barley Tea,麦茶
+drinkMugicha_desc,items,Item,,,"Roasted barley tea. Refreshing and cools you down.","香ばしい麦茶。さっぱりして涼しくなる。"
+drinkAmazake,items,Item,,,Amazake (Sweet Rice Drink),甘酒
+drinkAmazake_desc,items,Item,,,"Sweet fermented rice drink. Nourishing and warming.","甘い米の発酵飲料。滋養があり体が温まる。"
+drinkNihonshu,items,Item,,,Nihonshu (Sake),日本酒
+drinkNihonshu_desc,items,Item,,,"Japanese rice wine. Emboldens the drinker but dulls defense.","日本酒。飲めば攻撃的になるが防御は甘くなる。"
+drinkShochu,items,Item,,,Shochu,焼酎
+drinkShochu_desc,items,Item,,,"Strong distilled spirit. Great power at the cost of awareness.","強い蒸留酒。大きな力を得るが注意力が落ちる。"
+foodDaifuku,items,Item,,,Daifuku,大福
+foodDaifuku_desc,items,Item,,,"Mochi stuffed with sweet bean paste. A rare treat.","あんこ入りの餅。貴重なご褒美。"
+foodMitarashiDango,items,Item,,,Mitarashi Dango,みたらし団子
+foodMitarashiDango_desc,items,Item,,,"Sweet soy-glazed rice dumplings on a stick.","甘辛い醤油だれの団子。"
+foodYokan,items,Item,,,Yokan (Sweet Bean Jelly),ようかん
+foodYokan_desc,items,Item,,,"Firm jelly made from bean paste. Never spoils.","あんこの羊羹。腐らない。"
+foodSenbei,items,Item,,,Senbei (Rice Cracker),せんべい
+foodSenbei_desc,items,Item,,,"Crunchy soy-flavored rice cracker. Easy to carry.","サクサクの醤油せんべい。持ち運びに便利。"
+wafuuKamado,blocks,Block,,,Kamado (Japanese Stove),かまど
+wafuuKamado_desc,blocks,Block,,,"Traditional Japanese clay stove. Cook rice, soups, and stews.","伝統的な土のかまど。ご飯・汁物・煮物を調理。"
+wafuuIrori,blocks,Block,,,Irori (Sunken Hearth),囲炉裏
+wafuuIrori_desc,blocks,Block,,,"Sunken floor hearth for grilling and hot pot cooking.","床に埋め込んだ炉。焼き物や鍋物を調理。"
+wafuuKitchen,blocks,Block,,,Wafuu Kitchen Set,厨房セット
+wafuuKitchen_desc,blocks,Block,,,"Full Japanese kitchen setup. Required for advanced recipes.","本格的な和風厨房。上位レシピの調理に必要。"
+buffWafuuColdResist30,buffs,Buff,,,Cold Resistance,寒冷耐性
+buffWafuuColdResist30_desc,buffs,Buff,,,"Warming food protects against cold for 30 seconds.","温かい食事が寒さから守る（30秒）"
+buffWafuuColdResist60,buffs,Buff,,,Cold Resistance,寒冷耐性
+buffWafuuColdResist60_desc,buffs,Buff,,,"Warming food protects against cold for 60 seconds.","温かい食事が寒さから守る（60秒）"
+buffWafuuHeatResist60,buffs,Buff,,,Heat Resistance,暑熱耐性
+buffWafuuHeatResist60_desc,buffs,Buff,,,"Cool refreshment protects against heat for 60 seconds.","涼やかな食事が暑さから守る（60秒）"
+buffWafuuHeatResist120,buffs,Buff,,,Heat Resistance,暑熱耐性
+buffWafuuHeatResist120_desc,buffs,Buff,,,"Cool refreshment protects against heat for 120 seconds.","涼やかな飲み物が暑さから守る（120秒）"
+buffWafuuAttackUp3_30,buffs,Buff,,,Fighting Spirit (Minor),闘気（小）
+buffWafuuAttackUp3_30_desc,buffs,Buff,,,"Slightly boosts attack power for 30 seconds. +3% damage.","攻撃力がわずかに上昇（30秒）。ダメージ+3%"
+buffWafuuAttackUp5_30,buffs,Buff,,,Fighting Spirit,闘気
+buffWafuuAttackUp5_30_desc,buffs,Buff,,,"Boosts attack power for 30 seconds. +5% damage.","攻撃力が上昇（30秒）。ダメージ+5%"
+buffWafuuAttackUp5_60,buffs,Buff,,,Fighting Spirit,闘気
+buffWafuuAttackUp5_60_desc,buffs,Buff,,,"Boosts attack power for 60 seconds. +5% damage.","攻撃力が上昇（60秒）。ダメージ+5%"
+buffWafuuAttackUp10_120,buffs,Buff,,,Warrior's Resolve,武士の覚悟
+buffWafuuAttackUp10_120_desc,buffs,Buff,,,"Greatly boosts attack power for 120 seconds. +10% damage.","攻撃力が大きく上昇（120秒）。ダメージ+10%"
+buffWafuuHoT45,buffs,Buff,,,Nourishment,滋養
+buffWafuuHoT45_desc,buffs,Buff,,,"Slowly restores health for 45 seconds. +1 HP/s.","HPがゆっくり回復（45秒）。毎秒+1 HP"
+buffWafuuHoT60,buffs,Buff,,,Nourishment,滋養
+buffWafuuHoT60_desc,buffs,Buff,,,"Slowly restores health for 60 seconds. +1 HP/s.","HPがゆっくり回復（60秒）。毎秒+1 HP"
+buffWafuuHoT90,buffs,Buff,,,Deep Nourishment,深い滋養
+buffWafuuHoT90_desc,buffs,Buff,,,"Slowly restores health for 90 seconds. +1 HP/s.","HPがゆっくり回復（90秒）。毎秒+1 HP"
+buffWafuuHoT2_60,buffs,Buff,,,Healing Feast,癒しの御馳走
+buffWafuuHoT2_60_desc,buffs,Buff,,,"Restores health for 60 seconds. +2 HP/s.","HPが回復（60秒）。毎秒+2 HP"
+buffWafuuSpeedUp5_30,buffs,Buff,,,Swift Feet,韋駄天
+buffWafuuSpeedUp5_30_desc,buffs,Buff,,,"Increases movement speed for 30 seconds. +5% speed.","移動速度が上昇（30秒）。速度+5%"
+buffWafuuSpeedUp5_45,buffs,Buff,,,Swift Feet,韋駄天
+buffWafuuSpeedUp5_45_desc,buffs,Buff,,,"Increases movement speed for 45 seconds. +5% speed.","移動速度が上昇（45秒）。速度+5%"
+buffWafuuSpeedUp10_90,buffs,Buff,,,Wind Runner,疾風
+buffWafuuSpeedUp10_90_desc,buffs,Buff,,,"Greatly increases movement speed for 90 seconds. +10% speed.","移動速度が大きく上昇（90秒）。速度+10%"
+buffWafuuCraftSpeed60,buffs,Buff,,,Focus,集中
+buffWafuuCraftSpeed60_desc,buffs,Buff,,,"Sharpens focus and speeds up crafting for 60 seconds. -10% craft time.","集中力が増しクラフトが速くなる（60秒）。製作時間-10%"
+buffWafuuCraftSpeed90,buffs,Buff,,,Deep Focus,深い集中
+buffWafuuCraftSpeed90_desc,buffs,Buff,,,"Sharpens focus and speeds up crafting for 90 seconds. -10% craft time.","集中力が増しクラフトが速くなる（90秒）。製作時間-10%"
+buffWafuuDiseaseResist30,buffs,Buff,,,Immune Boost,免疫強化
+buffWafuuDiseaseResist30_desc,buffs,Buff,,,"Boosts disease resistance for 30 seconds.","病気への耐性が上昇（30秒）"
+buffWafuuDiseaseResist180,buffs,Buff,,,Immune Boost,免疫強化
+buffWafuuDiseaseResist180_desc,buffs,Buff,,,"Boosts disease resistance for 180 seconds.","病気への耐性が上昇（180秒）"
+buffWafuuDrunkLight,buffs,Buff,,,Tipsy,ほろ酔い
+buffWafuuDrunkLight_desc,buffs,Buff,,,"Sake emboldens you. +10% attack, -5% defense for 120 seconds.","日本酒で気が大きくなる。攻撃+10%、防御-5%（120秒）"
+buffWafuuDrunkHeavy,buffs,Buff,,,Drunk,泥酔
+buffWafuuDrunkHeavy_desc,buffs,Buff,,,"Strong spirits give great power but dull your senses. +15% attack, -10% defense for 120 seconds.","強い酒で力が漲るが感覚が鈍る。攻撃+15%、防御-10%（120秒）"
+perkWafuuCooking,progression,Perk,,,Wafuu Cooking Master,和食の匠
+perkWafuuCooking_desc,progression,Perk,,,"Master the art of Japanese cuisine. Unlock advanced cooking stations and boost the effects of wafuu dishes.","和食の奥義を極める。上位の調理設備を解放し、和食の効果を高める。"
+perkWafuuCookingLvl1_desc,progression,Perk,,,"Unlock Irori (sunken hearth) crafting. Slightly faster cooking at all wafuu stations.","囲炉裏のクラフトを解放。和風ステーションでの調理速度がわずかに上昇。"
+perkWafuuCookingLvl2_desc,progression,Perk,,,"Wafuu dishes restore 10% more health.","和食の HP 回復効果が 10% 向上。"
+perkWafuuCookingLvl3_desc,progression,Perk,,,"Unlock Wafuu Kitchen crafting. Faster cooking at all wafuu stations.","厨房セットのクラフトを解放。和風ステーションでの調理速度が上昇。"
+perkWafuuCookingLvl4_desc,progression,Perk,,,"Wafuu dishes restore 20% more health.","和食の HP 回復効果が 20% 向上。"
+perkWafuuCookingLvl5_desc,progression,Perk,,,"A true master of wafuu cuisine. 30% health boost from all wafuu dishes. 15% faster cooking.","真の和食の匠。全ての和食の HP 回復が 30% 向上。調理速度 15% 上昇。"
+wafuuKamadoTip,journal,JournalTip,,,"Place a Kamado to cook rice, soups, stews, and prepare basic Japanese ingredients.","かまどを設置して、白飯・汁物・煮物・基本素材を調理しよう。"
+wafuuIroriTip,journal,JournalTip,,,"Place an Irori to grill fish, skewers, and make dried preserves over an open flame.","囲炉裏を設置して、焼き魚・串焼き・干物を作ろう。"
+wafuuKitchenTip,journal,JournalTip,,,"Place a Wafuu Kitchen to prepare advanced dishes: tempura, donburi, ramen, and more.","厨房セットを設置して、天ぷら・丼もの・ラーメンなどの上位料理を作ろう。"

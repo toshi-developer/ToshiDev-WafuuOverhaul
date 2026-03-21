@@ -1,0 +1,458 @@
+<configs>
+    <append xpath="/recipes">
+
+        <!-- ======================================================== -->
+        <!-- ToshiDev Wafuu Overhaul — Phase 1: クラフトレシピ           -->
+        <!-- ======================================================== -->
+        <!-- craft_area: wafuuKamado=かまど, wafuuIrori=囲炉裏,         -->
+        <!--             wafuuKitchen=厨房, campfire=キャンプファイア     -->
+        <!-- ======================================================== -->
+
+
+        <!-- ==================== 素材クラフト ==================== -->
+
+        <!-- 麹: 米を発酵させる -->
+        <recipe name="foodKoji" count="5" craft_area="wafuuKamado" craft_time="8">
+            <ingredient name="foodRice" count="3"/>
+        </recipe>
+
+        <!-- 味噌: 大豆+塩+麹 -->
+        <recipe name="foodMiso" count="5" craft_area="wafuuKamado" craft_time="8">
+            <ingredient name="cropSoybean" count="3"/>
+            <ingredient name="foodSalt" count="1"/>
+            <ingredient name="foodKoji" count="1"/>
+        </recipe>
+
+        <!-- だし: 魚+水 -->
+        <recipe name="foodDashi" count="5" craft_area="wafuuKamado" craft_time="5">
+            <ingredient name="foodRawFish" count="1"/>
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+        </recipe>
+
+        <!-- 小麦粉: 穀物を挽く -->
+        <recipe name="foodFlour" count="5" craft_area="wafuuKamado" craft_time="5">
+            <ingredient name="foodCropCorn" count="2"/>
+        </recipe>
+
+        <!-- パン粉: 小麦粉から -->
+        <recipe name="foodPanko" count="5" craft_area="wafuuKamado" craft_time="5">
+            <ingredient name="foodFlour" count="2"/>
+        </recipe>
+
+        <!-- あんこ: 大豆（小豆代用）+砂糖 -->
+        <recipe name="foodAnko" count="5" craft_area="wafuuKamado" craft_time="8">
+            <ingredient name="cropSoybean" count="3"/>
+            <ingredient name="foodSuger" count="2"/>
+        </recipe>
+
+        <!-- 豆腐: 大豆+水 -->
+        <recipe name="foodTofu" count="3" craft_area="wafuuKamado" craft_time="5">
+            <ingredient name="cropSoybean" count="3"/>
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+        </recipe>
+
+        <!-- 醤油: 大豆+塩+麹 -->
+        <recipe name="foodSoySauce" count="5" craft_area="wafuuKamado" craft_time="8">
+            <ingredient name="cropSoybean" count="2"/>
+            <ingredient name="foodSalt" count="1"/>
+            <ingredient name="foodKoji" count="1"/>
+        </recipe>
+
+        <!-- 料理酒: 米+麹 -->
+        <recipe name="foodSake" count="5" craft_area="wafuuKamado" craft_time="8">
+            <ingredient name="foodRice" count="3"/>
+            <ingredient name="foodKoji" count="1"/>
+        </recipe>
+
+        <!-- みりん: 米+麹+料理酒 -->
+        <recipe name="foodMirin" count="5" craft_area="wafuuKamado" craft_time="8">
+            <ingredient name="foodRice" count="2"/>
+            <ingredient name="foodKoji" count="1"/>
+            <ingredient name="foodSake" count="1"/>
+        </recipe>
+
+        <!-- 酢: 米+水 -->
+        <recipe name="foodVinegar" count="5" craft_area="wafuuKamado" craft_time="5">
+            <ingredient name="foodRice" count="2"/>
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+        </recipe>
+
+        <!-- 食用油: 穀物を搾る -->
+        <recipe name="foodOil" count="5" craft_area="wafuuKamado" craft_time="5">
+            <ingredient name="foodCropCorn" count="3"/>
+        </recipe>
+
+
+        <!-- ==================== 主食 (T1) — かまど ==================== -->
+
+        <!-- 白飯: 米+水 -->
+        <recipe name="foodSteamedRice" count="2" craft_area="wafuuKamado" craft_time="8">
+            <ingredient name="foodRice" count="2"/>
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+        </recipe>
+
+        <!-- 白飯（キャンプファイア互換） -->
+        <recipe name="foodSteamedRice" count="2" craft_area="campfire" craft_time="10">
+            <ingredient name="foodRice" count="2"/>
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+        </recipe>
+
+        <!-- おにぎり（梅）: 白飯+梅干し+塩 -->
+        <recipe name="foodOnigiriUme" count="2" craft_area="wafuuKamado" craft_time="6">
+            <ingredient name="foodSteamedRice" count="1"/>
+            <ingredient name="foodUmeboshi" count="1"/>
+            <ingredient name="foodSalt" count="1"/>
+        </recipe>
+
+        <!-- おにぎり（鮭）: 白飯+焼き鮭+塩 -->
+        <recipe name="foodOnigiriSake" count="2" craft_area="wafuuKamado" craft_time="6">
+            <ingredient name="foodSteamedRice" count="1"/>
+            <ingredient name="foodGrilledSalmon" count="1"/>
+            <ingredient name="foodSalt" count="1"/>
+        </recipe>
+
+        <!-- おにぎり（昆布）: 白飯+魚+醤油 -->
+        <recipe name="foodOnigiriKonbu" count="2" craft_area="wafuuKamado" craft_time="6">
+            <ingredient name="foodSteamedRice" count="1"/>
+            <ingredient name="foodRawFish" count="1"/>
+            <ingredient name="foodSoySauce" count="1"/>
+        </recipe>
+
+        <!-- 餅: 米x3+水 -->
+        <recipe name="foodMochi" count="2" craft_area="wafuuKamado" craft_time="10">
+            <ingredient name="foodRice" count="3"/>
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+        </recipe>
+
+
+        <!-- ==================== 汁物 (T1-T2) — かまど ==================== -->
+
+        <!-- 味噌汁: 味噌+だし+豆腐+ねぎ -->
+        <recipe name="foodMisoSoup" count="1" craft_area="wafuuKamado" craft_time="10">
+            <ingredient name="foodMiso" count="1"/>
+            <ingredient name="foodDashi" count="1"/>
+            <ingredient name="foodTofu" count="1"/>
+            <ingredient name="foodGreenOnion" count="1"/>
+        </recipe>
+
+        <!-- 豚汁: 味噌+だし+肉+大根+ねぎ -->
+        <recipe name="foodTonjiru" count="1" craft_area="wafuuKamado" craft_time="15">
+            <ingredient name="foodMiso" count="1"/>
+            <ingredient name="foodDashi" count="1"/>
+            <ingredient name="foodRawMeat" count="1"/>
+            <ingredient name="cropDaikon" count="1"/>
+            <ingredient name="foodGreenOnion" count="1"/>
+        </recipe>
+
+        <!-- すまし汁: だし+醤油+豆腐 -->
+        <recipe name="foodSumashijiru" count="1" craft_area="wafuuKamado" craft_time="8">
+            <ingredient name="foodDashi" count="1"/>
+            <ingredient name="foodSoySauce" count="1"/>
+            <ingredient name="foodTofu" count="1"/>
+        </recipe>
+
+        <!-- けんちん汁: だし+醤油+大根+しいたけ+油 -->
+        <recipe name="foodKenchinjiru" count="1" craft_area="wafuuKamado" craft_time="15">
+            <ingredient name="foodDashi" count="1"/>
+            <ingredient name="foodSoySauce" count="1"/>
+            <ingredient name="cropDaikon" count="1"/>
+            <ingredient name="cropShiitake" count="1"/>
+            <ingredient name="foodOil" count="1"/>
+        </recipe>
+
+
+        <!-- ==================== 焼き物 (T1-T2) — 囲炉裏 ==================== -->
+
+        <!-- 焼き鮭: 魚x2+塩 -->
+        <recipe name="foodGrilledSalmon" count="1" craft_area="wafuuIrori" craft_time="10">
+            <ingredient name="foodRawFish" count="2"/>
+            <ingredient name="foodSalt" count="1"/>
+        </recipe>
+
+        <!-- 焼き鮭（キャンプファイア互換） -->
+        <recipe name="foodGrilledSalmon" count="1" craft_area="campfire" craft_time="12">
+            <ingredient name="foodRawFish" count="2"/>
+            <ingredient name="foodSalt" count="1"/>
+        </recipe>
+
+        <!-- 焼き鳥: 肉x2+醤油 — 串3本 -->
+        <recipe name="foodYakitori" count="3" craft_area="wafuuIrori" craft_time="10">
+            <ingredient name="foodRawMeat" count="2"/>
+            <ingredient name="foodSoySauce" count="1"/>
+        </recipe>
+
+        <!-- 秋刀魚の塩焼き: 魚+塩+酢 -->
+        <recipe name="foodGrilledSanma" count="1" craft_area="wafuuIrori" craft_time="10">
+            <ingredient name="foodRawFish" count="1"/>
+            <ingredient name="foodSalt" count="1"/>
+            <ingredient name="foodVinegar" count="1"/>
+        </recipe>
+
+        <!-- 照り焼きチキン: 肉x2+醤油+みりん+砂糖 -->
+        <recipe name="foodTeriyaki" count="1" craft_area="wafuuIrori" craft_time="15">
+            <ingredient name="foodRawMeat" count="2"/>
+            <ingredient name="foodSoySauce" count="1"/>
+            <ingredient name="foodMirin" count="1"/>
+            <ingredient name="foodSuger" count="1"/>
+        </recipe>
+
+
+        <!-- ==================== 煮物 (T2) — かまど ==================== -->
+
+        <!-- 肉じゃが: 肉+じゃがいも+玉ねぎ+醤油+みりん -->
+        <recipe name="foodNikujaga" count="1" craft_area="wafuuKamado" craft_time="18">
+            <ingredient name="foodRawMeat" count="1"/>
+            <ingredient name="foodCropPotato" count="1"/>
+            <ingredient name="foodOnion" count="1"/>
+            <ingredient name="foodSoySauce" count="1"/>
+            <ingredient name="foodMirin" count="1"/>
+        </recipe>
+
+        <!-- おでん: 大根+卵+だし+醤油 -->
+        <recipe name="foodOden" count="1" craft_area="wafuuKamado" craft_time="20">
+            <ingredient name="cropDaikon" count="1"/>
+            <ingredient name="foodEgg" count="1"/>
+            <ingredient name="foodDashi" count="1"/>
+            <ingredient name="foodSoySauce" count="1"/>
+        </recipe>
+
+        <!-- 筑前煮: 肉+大根+しいたけ+醤油+みりん -->
+        <recipe name="foodChikuzenni" count="1" craft_area="wafuuKamado" craft_time="18">
+            <ingredient name="foodRawMeat" count="1"/>
+            <ingredient name="cropDaikon" count="1"/>
+            <ingredient name="cropShiitake" count="1"/>
+            <ingredient name="foodSoySauce" count="1"/>
+            <ingredient name="foodMirin" count="1"/>
+        </recipe>
+
+        <!-- かぼちゃの煮物: かぼちゃ+醤油+みりん+砂糖 -->
+        <recipe name="foodNikabocha" count="1" craft_area="wafuuKamado" craft_time="15">
+            <ingredient name="foodCropPumpkin" count="1"/>
+            <ingredient name="foodSoySauce" count="1"/>
+            <ingredient name="foodMirin" count="1"/>
+            <ingredient name="foodSuger" count="1"/>
+        </recipe>
+
+
+        <!-- ==================== 揚げ物 (T2-T3) — 厨房 ==================== -->
+
+        <!-- 天ぷら盛り合わせ: 野菜+魚+小麦粉+油 -->
+        <recipe name="foodTempura" count="1" craft_area="wafuuKitchen" craft_time="20">
+            <ingredient name="foodCropPotato" count="1"/>
+            <ingredient name="foodRawFish" count="1"/>
+            <ingredient name="foodFlour" count="1"/>
+            <ingredient name="foodOil" count="1"/>
+        </recipe>
+
+        <!-- 唐揚げ: 肉x2+醤油+小麦粉+油 -->
+        <recipe name="foodKaraage" count="1" craft_area="wafuuKitchen" craft_time="18">
+            <ingredient name="foodRawMeat" count="2"/>
+            <ingredient name="foodSoySauce" count="1"/>
+            <ingredient name="foodFlour" count="1"/>
+            <ingredient name="foodOil" count="1"/>
+        </recipe>
+
+        <!-- トンカツ: 肉x2+パン粉+小麦粉+卵+油 -->
+        <recipe name="foodTonkatsu" count="1" craft_area="wafuuKitchen" craft_time="22">
+            <ingredient name="foodRawMeat" count="2"/>
+            <ingredient name="foodPanko" count="1"/>
+            <ingredient name="foodFlour" count="1"/>
+            <ingredient name="foodEgg" count="1"/>
+            <ingredient name="foodOil" count="1"/>
+        </recipe>
+
+        <!-- コロッケ: じゃがいもx2+肉+パン粉+油 -->
+        <recipe name="foodCroquette" count="1" craft_area="wafuuKitchen" craft_time="18">
+            <ingredient name="foodCropPotato" count="2"/>
+            <ingredient name="foodRawMeat" count="1"/>
+            <ingredient name="foodPanko" count="1"/>
+            <ingredient name="foodOil" count="1"/>
+        </recipe>
+
+
+        <!-- ==================== 丼もの (T3) — 厨房 ==================== -->
+
+        <!-- カツ丼: トンカツ+白飯+卵+玉ねぎ+醤油+みりん -->
+        <recipe name="foodKatsudon" count="1" craft_area="wafuuKitchen" craft_time="30">
+            <ingredient name="foodTonkatsu" count="1"/>
+            <ingredient name="foodSteamedRice" count="1"/>
+            <ingredient name="foodEgg" count="1"/>
+            <ingredient name="foodOnion" count="1"/>
+            <ingredient name="foodSoySauce" count="1"/>
+            <ingredient name="foodMirin" count="1"/>
+        </recipe>
+
+        <!-- 親子丼: 肉x2+白飯+卵+玉ねぎ+醤油 -->
+        <recipe name="foodOyakodon" count="1" craft_area="wafuuKitchen" craft_time="25">
+            <ingredient name="foodRawMeat" count="2"/>
+            <ingredient name="foodSteamedRice" count="1"/>
+            <ingredient name="foodEgg" count="1"/>
+            <ingredient name="foodOnion" count="1"/>
+            <ingredient name="foodSoySauce" count="1"/>
+        </recipe>
+
+        <!-- 牛丼: 肉x3+白飯+玉ねぎ+醤油+みりん -->
+        <recipe name="foodGyudon" count="1" craft_area="wafuuKitchen" craft_time="25">
+            <ingredient name="foodRawMeat" count="3"/>
+            <ingredient name="foodSteamedRice" count="1"/>
+            <ingredient name="foodOnion" count="1"/>
+            <ingredient name="foodSoySauce" count="1"/>
+            <ingredient name="foodMirin" count="1"/>
+        </recipe>
+
+        <!-- 天丼: 天ぷら+白飯+だし+醤油+みりん -->
+        <recipe name="foodTendon" count="1" craft_area="wafuuKitchen" craft_time="25">
+            <ingredient name="foodTempura" count="1"/>
+            <ingredient name="foodSteamedRice" count="1"/>
+            <ingredient name="foodDashi" count="1"/>
+            <ingredient name="foodSoySauce" count="1"/>
+            <ingredient name="foodMirin" count="1"/>
+        </recipe>
+
+        <!-- 海鮮丼: 魚x3+白飯+醤油+わさび -->
+        <recipe name="foodKaisendon" count="1" craft_area="wafuuKitchen" craft_time="25">
+            <ingredient name="foodRawFish" count="3"/>
+            <ingredient name="foodSteamedRice" count="1"/>
+            <ingredient name="foodSoySauce" count="1"/>
+            <ingredient name="cropWasabi" count="1"/>
+        </recipe>
+
+
+        <!-- ==================== 麺類 (T2-T3) — 厨房 ==================== -->
+
+        <!-- うどん: 小麦粉x2+塩+だし+醤油 -->
+        <recipe name="foodUdon" count="1" craft_area="wafuuKitchen" craft_time="18">
+            <ingredient name="foodFlour" count="2"/>
+            <ingredient name="foodSalt" count="1"/>
+            <ingredient name="foodDashi" count="1"/>
+            <ingredient name="foodSoySauce" count="1"/>
+        </recipe>
+
+        <!-- そば: 小麦粉x2+だし+醤油+ねぎ -->
+        <recipe name="foodSoba" count="1" craft_area="wafuuKitchen" craft_time="18">
+            <ingredient name="foodFlour" count="2"/>
+            <ingredient name="foodDashi" count="1"/>
+            <ingredient name="foodSoySauce" count="1"/>
+            <ingredient name="foodGreenOnion" count="1"/>
+        </recipe>
+
+        <!-- ラーメン: 小麦粉x2+肉+醤油+ねぎ+卵 -->
+        <recipe name="foodRamen" count="1" craft_area="wafuuKitchen" craft_time="25">
+            <ingredient name="foodFlour" count="2"/>
+            <ingredient name="foodRawMeat" count="1"/>
+            <ingredient name="foodSoySauce" count="1"/>
+            <ingredient name="foodGreenOnion" count="1"/>
+            <ingredient name="foodEgg" count="1"/>
+        </recipe>
+
+        <!-- そうめん: 小麦粉x2+だし+醤油 -->
+        <recipe name="foodSomen" count="1" craft_area="wafuuKitchen" craft_time="12">
+            <ingredient name="foodFlour" count="2"/>
+            <ingredient name="foodDashi" count="1"/>
+            <ingredient name="foodSoySauce" count="1"/>
+        </recipe>
+
+
+        <!-- ==================== 保存食 ==================== -->
+
+        <!-- 梅干し: ベリーx2+塩x2 — かまど -->
+        <recipe name="foodUmeboshi" count="3" craft_area="wafuuKamado" craft_time="12">
+            <ingredient name="foodCropBlueberries" count="2"/>
+            <ingredient name="foodSalt" count="2"/>
+        </recipe>
+
+        <!-- たくあん: 大根+塩x2+米（米ぬか代用）— かまど -->
+        <recipe name="foodTakuan" count="3" craft_area="wafuuKamado" craft_time="12">
+            <ingredient name="cropDaikon" count="1"/>
+            <ingredient name="foodSalt" count="2"/>
+            <ingredient name="foodRice" count="1"/>
+        </recipe>
+
+        <!-- 白菜の漬物: 白菜+塩x2+酢 — かまど -->
+        <recipe name="foodHakusaiTsukemono" count="3" craft_area="wafuuKamado" craft_time="12">
+            <ingredient name="cropHakusai" count="1"/>
+            <ingredient name="foodSalt" count="2"/>
+            <ingredient name="foodVinegar" count="1"/>
+        </recipe>
+
+        <!-- 干物: 魚+塩x2 — 囲炉裏 -->
+        <recipe name="foodHimono" count="2" craft_area="wafuuIrori" craft_time="15">
+            <ingredient name="foodRawFish" count="1"/>
+            <ingredient name="foodSalt" count="2"/>
+        </recipe>
+
+        <!-- 佃煮: 魚+醤油x2+砂糖+みりん — かまど -->
+        <recipe name="foodTsukudani" count="5" craft_area="wafuuKamado" craft_time="15">
+            <ingredient name="foodRawFish" count="1"/>
+            <ingredient name="foodSoySauce" count="2"/>
+            <ingredient name="foodSuger" count="1"/>
+            <ingredient name="foodMirin" count="1"/>
+        </recipe>
+
+
+        <!-- ==================== 飲料 — かまど ==================== -->
+
+        <!-- 緑茶: 茶葉+湯 -->
+        <recipe name="drinkGreenTea" count="2" craft_area="wafuuKamado" craft_time="5">
+            <ingredient name="foodTeaLeaf" count="1"/>
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+        </recipe>
+
+        <!-- 麦茶: 穀物+水 -->
+        <recipe name="drinkMugicha" count="2" craft_area="wafuuKamado" craft_time="5">
+            <ingredient name="foodCropCorn" count="1"/>
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+        </recipe>
+
+        <!-- 甘酒: 米x2+麹+水 -->
+        <recipe name="drinkAmazake" count="2" craft_area="wafuuKamado" craft_time="8">
+            <ingredient name="foodRice" count="2"/>
+            <ingredient name="foodKoji" count="1"/>
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+        </recipe>
+
+        <!-- 日本酒: 米x3+麹+水 -->
+        <recipe name="drinkNihonshu" count="2" craft_area="wafuuKamado" craft_time="10">
+            <ingredient name="foodRice" count="3"/>
+            <ingredient name="foodKoji" count="1"/>
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+        </recipe>
+
+        <!-- 焼酎: 芋x2+麹+水 -->
+        <recipe name="drinkShochu" count="2" craft_area="wafuuKamado" craft_time="10">
+            <ingredient name="foodCropPotato" count="2"/>
+            <ingredient name="foodKoji" count="1"/>
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+        </recipe>
+
+
+        <!-- ==================== 甘味 ==================== -->
+
+        <!-- 大福: 餅+あんこ — かまど -->
+        <recipe name="foodDaifuku" count="2" craft_area="wafuuKamado" craft_time="8">
+            <ingredient name="foodMochi" count="1"/>
+            <ingredient name="foodAnko" count="1"/>
+        </recipe>
+
+        <!-- みたらし団子: 米x2+醤油+砂糖 — かまど -->
+        <recipe name="foodMitarashiDango" count="3" craft_area="wafuuKamado" craft_time="8">
+            <ingredient name="foodRice" count="2"/>
+            <ingredient name="foodSoySauce" count="1"/>
+            <ingredient name="foodSuger" count="1"/>
+        </recipe>
+
+        <!-- ようかん: あんこx2+砂糖+水 — かまど -->
+        <recipe name="foodYokan" count="2" craft_area="wafuuKamado" craft_time="10">
+            <ingredient name="foodAnko" count="2"/>
+            <ingredient name="foodSuger" count="1"/>
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+        </recipe>
+
+        <!-- せんべい: 米+醤油 — 囲炉裏 -->
+        <recipe name="foodSenbei" count="5" craft_area="wafuuIrori" craft_time="6">
+            <ingredient name="foodRice" count="1"/>
+            <ingredient name="foodSoySauce" count="1"/>
+        </recipe>
+
+    </append>
+</configs>

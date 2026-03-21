@@ -1,0 +1,207 @@
+<configs>
+    <append xpath="/blocks">
+
+        <!-- ======================================================== -->
+        <!-- ToshiDev Wafuu Overhaul — 調理ステーション定義              -->
+        <!-- recipes.xml の craft_area と対応                           -->
+        <!-- ======================================================== -->
+
+
+        <!-- ==================== かまど (Kamado) ==================== -->
+        <!-- 白飯・汁物・煮物・お茶・素材加工 — 序盤から利用可能 -->
+
+        <block name="wafuuKamado">
+            <property name="CreativeMode" value="Player"/>
+            <property name="Class" value="Workstation"/>
+            <property name="CustomIcon" value="wafuuKamado"/>
+            <property name="DescriptionKey" value="wafuuKamado_desc"/>
+            <property name="Material" value="Mstone"/>
+            <property name="Shape" value="ModelEntity"/>
+            <property name="Model" value="Entities/Crafting/campfirePrefab"/>
+            <property name="IsTerrainDecoration" value="true"/>
+            <property name="Place" value="TowardsPlacerInverted"/>
+            <property name="MaxDamage" value="350"/>
+            <property name="Weight" value="25"/>
+            <property name="Group" value="Food/Cooking"/>
+            <property name="SortOrder1" value="0070"/>
+            <property name="SortOrder2" value="0010"/>
+            <property name="EconomicValue" value="200"/>
+            <property name="FilterTags" value="fdecor,fother"/>
+            <property name="OnlySimpleRotations" value="true"/>
+
+            <!-- ワークステーション設定 -->
+            <property name="Workstation" value="true"/>
+            <property name="WorkstationIcon" value="ui_game_symbol_campfire"/>
+            <property name="CraftingAreaRecipes" value="wafuuKamado"/>
+            <property name="WorkstationJournalTip" value="wafuuKamadoTip"/>
+
+            <!-- ツールとモジュールスロット -->
+            <property name="HasStorage" value="true"/>
+            <property name="LootList" value="0"/>
+            <property name="AllowedItems" value="*"/>
+            <property name="InputSlots" value="5"/>
+            <property name="OutputSlots" value="6"/>
+            <property name="FuelSlots" value="1"/>
+            <property name="FuelItems" value="resourceWood,resourceCropCornSeed"/>
+            <property name="ToolSlots" value="0"/>
+
+            <!-- 設置・破壊 -->
+            <property name="PickupTarget" value="wafuuKamado"/>
+            <property name="SoundPickup" value="stone_grab"/>
+            <property name="SoundPlace" value="stone_place"/>
+            <property name="SoundDestroy" value="stone_destroy"/>
+            <property name="CanPickup" value="true"/>
+
+            <!-- 火のエフェクト -->
+            <property name="ActiveRadiusEffects" value="buffCampfireWarmth(-1)"/>
+            <property name="WorkstationRequiresFuel" value="true"/>
+            <property name="WorkstationRequiresHeat" value="true"/>
+            <property name="HeatMapStrength" value="3"/>
+            <property name="HeatMapWorldTimeDelay" value="24"/>
+        </block>
+
+        <!-- かまどのクラフトレシピ（設置用） -->
+        <block name="wafuuKamadoHelper">
+            <property name="Extends" value="wafuuKamado"/>
+            <property name="CreativeMode" value="None"/>
+        </block>
+
+
+        <!-- ==================== 囲炉裏 (Irori) ==================== -->
+        <!-- 焼き物・鍋物・干物 — クラフトスキル Lv2 で解放 -->
+
+        <block name="wafuuIrori">
+            <property name="CreativeMode" value="Player"/>
+            <property name="Class" value="Workstation"/>
+            <property name="CustomIcon" value="wafuuIrori"/>
+            <property name="DescriptionKey" value="wafuuIrori_desc"/>
+            <property name="Material" value="Mstone"/>
+            <property name="Shape" value="ModelEntity"/>
+            <property name="Model" value="Entities/Crafting/campfirePrefab"/>
+            <property name="IsTerrainDecoration" value="true"/>
+            <property name="Place" value="TowardsPlacerInverted"/>
+            <property name="MaxDamage" value="400"/>
+            <property name="Weight" value="30"/>
+            <property name="Group" value="Food/Cooking"/>
+            <property name="SortOrder1" value="0070"/>
+            <property name="SortOrder2" value="0020"/>
+            <property name="EconomicValue" value="350"/>
+            <property name="FilterTags" value="fdecor,fother"/>
+            <property name="OnlySimpleRotations" value="true"/>
+
+            <!-- ワークステーション設定 -->
+            <property name="Workstation" value="true"/>
+            <property name="WorkstationIcon" value="ui_game_symbol_campfire"/>
+            <property name="CraftingAreaRecipes" value="wafuuIrori"/>
+            <property name="WorkstationJournalTip" value="wafuuIroriTip"/>
+
+            <!-- スロット -->
+            <property name="HasStorage" value="true"/>
+            <property name="LootList" value="0"/>
+            <property name="AllowedItems" value="*"/>
+            <property name="InputSlots" value="5"/>
+            <property name="OutputSlots" value="6"/>
+            <property name="FuelSlots" value="1"/>
+            <property name="FuelItems" value="resourceWood,resourceCropCornSeed,resourceCoal"/>
+            <property name="ToolSlots" value="0"/>
+
+            <!-- 設置・破壊 -->
+            <property name="PickupTarget" value="wafuuIrori"/>
+            <property name="SoundPickup" value="stone_grab"/>
+            <property name="SoundPlace" value="stone_place"/>
+            <property name="SoundDestroy" value="stone_destroy"/>
+            <property name="CanPickup" value="true"/>
+
+            <!-- 火のエフェクト -->
+            <property name="ActiveRadiusEffects" value="buffCampfireWarmth(2)"/>
+            <property name="WorkstationRequiresFuel" value="true"/>
+            <property name="WorkstationRequiresHeat" value="true"/>
+            <property name="HeatMapStrength" value="4"/>
+            <property name="HeatMapWorldTimeDelay" value="24"/>
+        </block>
+
+
+        <!-- ==================== 厨房セット (Wafuu Kitchen) ==================== -->
+        <!-- 揚げ物・丼もの・麺類 — クラフトスキル Lv4 で解放 -->
+
+        <block name="wafuuKitchen">
+            <property name="CreativeMode" value="Player"/>
+            <property name="Class" value="Workstation"/>
+            <property name="CustomIcon" value="wafuuKitchen"/>
+            <property name="DescriptionKey" value="wafuuKitchen_desc"/>
+            <property name="Material" value="Mwood"/>
+            <property name="Shape" value="ModelEntity"/>
+            <property name="Model" value="Entities/Crafting/kitchenPrefab"/>
+            <property name="IsTerrainDecoration" value="true"/>
+            <property name="Place" value="TowardsPlacerInverted"/>
+            <property name="MaxDamage" value="500"/>
+            <property name="Weight" value="40"/>
+            <property name="Group" value="Food/Cooking"/>
+            <property name="SortOrder1" value="0070"/>
+            <property name="SortOrder2" value="0030"/>
+            <property name="EconomicValue" value="600"/>
+            <property name="FilterTags" value="fdecor,fother"/>
+            <property name="OnlySimpleRotations" value="true"/>
+
+            <!-- ワークステーション設定 -->
+            <property name="Workstation" value="true"/>
+            <property name="WorkstationIcon" value="ui_game_symbol_hammer"/>
+            <property name="CraftingAreaRecipes" value="wafuuKitchen"/>
+            <property name="WorkstationJournalTip" value="wafuuKitchenTip"/>
+
+            <!-- スロット（上位ステーション: 入力・出力多め） -->
+            <property name="HasStorage" value="true"/>
+            <property name="LootList" value="0"/>
+            <property name="AllowedItems" value="*"/>
+            <property name="InputSlots" value="6"/>
+            <property name="OutputSlots" value="6"/>
+            <property name="FuelSlots" value="1"/>
+            <property name="FuelItems" value="resourceWood,resourceCropCornSeed,resourceCoal"/>
+            <property name="ToolSlots" value="0"/>
+
+            <!-- 設置・破壊 -->
+            <property name="PickupTarget" value="wafuuKitchen"/>
+            <property name="SoundPickup" value="metal_movement"/>
+            <property name="SoundPlace" value="metal_place"/>
+            <property name="SoundDestroy" value="metal_destroy"/>
+            <property name="CanPickup" value="true"/>
+
+            <!-- 火は不要（電気/ガスコンロ想定） -->
+            <property name="WorkstationRequiresFuel" value="true"/>
+            <property name="WorkstationRequiresHeat" value="false"/>
+            <property name="HeatMapStrength" value="2"/>
+            <property name="HeatMapWorldTimeDelay" value="24"/>
+        </block>
+
+    </append>
+
+
+    <!-- ======================================================== -->
+    <!-- 調理ステーションのクラフトレシピ（プレイヤーが設置物を作る用） -->
+    <!-- ======================================================== -->
+
+    <append xpath="/recipes">
+
+        <!-- かまど: 石x20+粘土x10+木材x5 -->
+        <recipe name="wafuuKamado" count="1" craft_time="30">
+            <ingredient name="resourceCobblestones" count="20"/>
+            <ingredient name="resourceClite" count="10"/>
+            <ingredient name="resourceWood" count="5"/>
+        </recipe>
+
+        <!-- 囲炉裏: 石x30+鉄x5+木材x10 — perkWafuuCooking Lv1 で解放 -->
+        <recipe name="wafuuIrori" count="1" craft_time="45" tags="perkWafuuCooking">
+            <ingredient name="resourceCobblestones" count="30"/>
+            <ingredient name="resourceForgedIron" count="5"/>
+            <ingredient name="resourceWood" count="10"/>
+        </recipe>
+
+        <!-- 厨房セット: 鍛鉄x15+木材x20+機械部品x3 — perkWafuuCooking Lv3 で解放 -->
+        <recipe name="wafuuKitchen" count="1" craft_time="60" tags="perkWafuuCookingAdv">
+            <ingredient name="resourceForgedIron" count="15"/>
+            <ingredient name="resourceWood" count="20"/>
+            <ingredient name="resourceMechanicalParts" count="3"/>
+        </recipe>
+
+    </append>
+</configs>

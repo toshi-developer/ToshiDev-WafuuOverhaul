@@ -1,0 +1,18 @@
+# Claude Code
+.claude/
+CLAUDE.md
+
+# Dev tools
+tools/
+docs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

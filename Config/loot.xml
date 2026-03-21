@@ -1,0 +1,130 @@
+<configs>
+
+    <!-- ======================================================== -->
+    <!-- ToshiDev Wafuu Overhaul — ルートテーブル                    -->
+    <!-- 和風素材・調味料・食料をバニラのルートコンテナに追加          -->
+    <!-- ======================================================== -->
+
+
+    <!-- ==================== カスタムルートグループ定義 ==================== -->
+
+    <append xpath="/lootcontainers">
+
+        <!-- 調味料グループ: キッチン・店舗で出現 -->
+        <lootgroup name="wafuuSeasoningGroup" count="1,2">
+            <item name="foodSoySauce"   count="1,3" prob="0.15"/>
+            <item name="foodSalt"       count="1,5" prob="0.15"/>
+            <item name="foodSuger"      count="1,5" prob="0.12"/>
+            <item name="foodMirin"      count="1,3" prob="0.10"/>
+            <item name="foodSake"       count="1,3" prob="0.10"/>
+            <item name="foodOil"        count="1,3" prob="0.10"/>
+            <item name="foodVinegar"    count="1,3" prob="0.08"/>
+            <item name="foodMiso"       count="1,2" prob="0.08"/>
+            <item name="foodDashi"      count="1,2" prob="0.06"/>
+            <item name="foodFlour"      count="1,3" prob="0.08"/>
+            <item name="foodPanko"      count="1,2" prob="0.05"/>
+            <item name="foodKoji"       count="1,2" prob="0.04"/>
+            <item name="foodSaltBundle" count="1"   prob="0.02"/>
+            <item name="foodSugerBundle" count="1"  prob="0.02"/>
+        </lootgroup>
+
+        <!-- 野菜・作物グループ: キッチン・農場で出現 -->
+        <lootgroup name="wafuuCropGroup" count="1,2">
+            <item name="foodRice"       count="1,5" prob="0.15"/>
+            <item name="foodOnion"      count="1,3" prob="0.12"/>
+            <item name="foodGreenOnion" count="1,3" prob="0.12"/>
+            <item name="cropSoybean"    count="1,4" prob="0.10"/>
+            <item name="cropDaikon"     count="1,3" prob="0.10"/>
+            <item name="cropHakusai"    count="1,3" prob="0.08"/>
+            <item name="cropShiitake"   count="1,3" prob="0.08"/>
+            <item name="foodTeaLeaf"    count="1,3" prob="0.08"/>
+            <item name="foodTofu"       count="1,2" prob="0.06"/>
+            <item name="cropWasabi"     count="1"   prob="0.02"/>
+        </lootgroup>
+
+        <!-- 保存食グループ: どこでも低確率で出現 -->
+        <lootgroup name="wafuuPreservedGroup" count="1">
+            <item name="foodUmeboshi"           count="1,3" prob="0.12"/>
+            <item name="foodTakuan"             count="1,3" prob="0.10"/>
+            <item name="foodHakusaiTsukemono"   count="1,3" prob="0.08"/>
+            <item name="foodHimono"             count="1,2" prob="0.10"/>
+            <item name="foodTsukudani"          count="2,8" prob="0.08"/>
+            <item name="foodSenbei"             count="3,10" prob="0.10"/>
+        </lootgroup>
+
+        <!-- 調理済み食料グループ: レア、店舗・レストランで出現 -->
+        <lootgroup name="wafuuCookedFoodGroup" count="1">
+            <item name="foodOnigiriUme"   count="1,2" prob="0.08"/>
+            <item name="foodOnigiriSake"  count="1,2" prob="0.06"/>
+            <item name="foodOnigiriKonbu" count="1,2" prob="0.06"/>
+            <item name="foodMochi"        count="1,2" prob="0.05"/>
+            <item name="foodYakitori"     count="1,3" prob="0.06"/>
+            <item name="foodGrilledSalmon" count="1"  prob="0.05"/>
+            <item name="foodDaifuku"      count="1,2" prob="0.04"/>
+            <item name="foodYokan"        count="1,2" prob="0.04"/>
+        </lootgroup>
+
+        <!-- 飲料グループ: 自販機・店舗で出現 -->
+        <lootgroup name="wafuuDrinkGroup" count="1">
+            <item name="drinkGreenTea"  count="1,2" prob="0.15"/>
+            <item name="drinkMugicha"   count="1,2" prob="0.12"/>
+            <item name="drinkAmazake"   count="1"   prob="0.06"/>
+            <item name="drinkNihonshu"  count="1"   prob="0.05"/>
+            <item name="drinkShochu"    count="1"   prob="0.03"/>
+        </lootgroup>
+
+    </append>
+
+
+    <!-- ==================== バニラルートコンテナへの注入 ==================== -->
+    <!-- ※ xpath が合わない場合はサイレントに無視される（バージョン差分対応） -->
+
+    <!-- キッチン系: 調味料 + 作物 -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupKitchenFood']">
+        <item group="wafuuSeasoningGroup" count="1" prob="0.12"/>
+        <item group="wafuuCropGroup"      count="1" prob="0.08"/>
+        <item group="wafuuPreservedGroup" count="1" prob="0.06"/>
+    </append>
+
+    <!-- 冷蔵庫: 作物 + 調理済み食料 -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupFridgeFood']">
+        <item group="wafuuCropGroup"       count="1" prob="0.10"/>
+        <item group="wafuuCookedFoodGroup" count="1" prob="0.05"/>
+    </append>
+
+    <!-- 食料品店（Shamway）: 全カテゴリ -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupShamwayFood']">
+        <item group="wafuuSeasoningGroup"  count="1" prob="0.15"/>
+        <item group="wafuuCropGroup"       count="1" prob="0.10"/>
+        <item group="wafuuPreservedGroup"  count="1" prob="0.10"/>
+        <item group="wafuuCookedFoodGroup" count="1" prob="0.06"/>
+        <item group="wafuuDrinkGroup"      count="1" prob="0.08"/>
+    </append>
+
+    <!-- 一般食料ルート: 保存食と作物 -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupFoodGeneral']">
+        <item group="wafuuPreservedGroup" count="1" prob="0.08"/>
+        <item group="wafuuCropGroup"      count="1" prob="0.06"/>
+    </append>
+
+    <!-- 自販機: 飲料と保存食 -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupVendingFood']">
+        <item group="wafuuDrinkGroup"     count="1" prob="0.12"/>
+        <item group="wafuuPreservedGroup" count="1" prob="0.05"/>
+    </append>
+
+    <!-- ゴミ箱・雑貨: 低確率で保存食 -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupTrashFood']">
+        <item group="wafuuPreservedGroup" count="1" prob="0.04"/>
+    </append>
+
+    <!-- トレーダー在庫: 全カテゴリ（高確率） -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupTraderFood']">
+        <item group="wafuuSeasoningGroup"  count="1" prob="0.20"/>
+        <item group="wafuuCropGroup"       count="1" prob="0.15"/>
+        <item group="wafuuPreservedGroup"  count="1" prob="0.12"/>
+        <item group="wafuuCookedFoodGroup" count="1" prob="0.08"/>
+        <item group="wafuuDrinkGroup"      count="1" prob="0.10"/>
+    </append>
+
+</configs>

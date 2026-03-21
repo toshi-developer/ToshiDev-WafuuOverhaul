@@ -1,0 +1,790 @@
+<configs>
+    <append xpath="/items">
+
+        <!-- ======================================================== -->
+        <!-- ToshiDev Wafuu Overhaul — Phase 1: アイテム定義            -->
+        <!-- ======================================================== -->
+
+        <!-- ==================== テンプレート ==================== -->
+
+        <!-- 素材・調味料テンプレート（非消費・クラフト材料用） -->
+        <item name="seasoningMaster">
+            <property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodWaterRaw"/>
+            <property name="Meshfile" value="@:Other/Items/Food/parcelGenericPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="125"/>
+            <property name="EconomicValue" value="10"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="cornmeal_grab"/>
+            <property name="SoundPlace" value="cornmeal_place"/>
+            <property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+        </item>
+
+        <!-- 消費食料テンプレート -->
+        <item name="wafuuFoodMaster">
+            <property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodWater"/>
+            <property name="Meshfile" value="@:Other/Items/Food/parcelGenericPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="10"/>
+            <property name="EconomicValue" value="50"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="food_grab"/>
+            <property name="SoundPlace" value="food_place"/>
+            <property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="1.0"/>
+                <property name="Use_time" value="1.5"/>
+                <property name="Sound_start" value="player_eating"/>
+            </property>
+        </item>
+
+        <!-- 消費飲料テンプレート -->
+        <item name="wafuuDrinkMaster">
+            <property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodWater"/>
+            <property name="Meshfile" value="@:Other/Items/Food/drinkJarPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="10"/>
+            <property name="EconomicValue" value="30"/>
+            <property name="CraftingIngredientTime" value="5"/>
+            <property name="SoundPickup" value="liquid_grab"/>
+            <property name="SoundPlace" value="liquid_place"/>
+            <property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="1.0"/>
+                <property name="Use_time" value="1.0"/>
+                <property name="Sound_start" value="player_drinking"/>
+            </property>
+        </item>
+
+
+        <!-- ==================== 調味料・基本素材（既存） ==================== -->
+
+        <item name="foodMirin">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="15"/>
+            <property name="DescriptionKey" value="foodMirin_desc"/>
+            <property name="CustomIcon" value="foodMirin"/>
+        </item>
+        <item name="foodSake">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="15"/>
+            <property name="DescriptionKey" value="foodSake_desc"/>
+            <property name="CustomIcon" value="foodSake"/>
+        </item>
+        <item name="foodSoySauce">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="15"/>
+            <property name="DescriptionKey" value="foodSoySauce_desc"/>
+            <property name="CustomIcon" value="foodSoySauce"/>
+        </item>
+        <item name="foodSalt">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="15"/>
+            <property name="DescriptionKey" value="foodSalt_desc"/>
+            <property name="CustomIcon" value="foodSalt"/>
+        </item>
+        <item name="foodSaltBundle">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="ItemTypeIcon" value="bundle"/>
+            <property name="EconomicValue" value="100"/>
+            <property name="DescriptionKey" value="foodSaltBundle_desc"/>
+            <property name="CustomIcon" value="foodSaltBundle"/>
+            <property class="Action0">
+                <property name="Class" value="OpenBundle"/>
+                <property name="Delay" value="0"/>
+                <property name="Sound_start" value="close_garbage"/>
+                <property name="Create_item" value="foodSalt"/>
+                <property name="Create_item_count" value="100"/>
+            </property>
+        </item>
+        <item name="foodSuger">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="15"/>
+            <property name="DescriptionKey" value="foodSuger_desc"/>
+            <property name="CustomIcon" value="foodSuger"/>
+        </item>
+        <item name="foodSugerBundle">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="ItemTypeIcon" value="bundle"/>
+            <property name="EconomicValue" value="100"/>
+            <property name="DescriptionKey" value="foodSugerBundle_desc"/>
+            <property name="CustomIcon" value="foodSugerBundle"/>
+            <property class="Action0">
+                <property name="Class" value="OpenBundle"/>
+                <property name="Delay" value="0"/>
+                <property name="Sound_start" value="close_garbage"/>
+                <property name="Create_item" value="foodSuger"/>
+                <property name="Create_item_count" value="100"/>
+            </property>
+        </item>
+        <item name="foodOil">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="15"/>
+            <property name="DescriptionKey" value="foodOil_desc"/>
+            <property name="CustomIcon" value="foodOil"/>
+        </item>
+        <item name="foodVinegar">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="15"/>
+            <property name="DescriptionKey" value="foodVinegar_desc"/>
+            <property name="CustomIcon" value="foodVinegar"/>
+        </item>
+        <item name="foodOnion">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="15"/>
+            <property name="DescriptionKey" value="foodOnion_desc"/>
+            <property name="CustomIcon" value="foodOnion"/>
+        </item>
+        <item name="foodGreenOnion">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="15"/>
+            <property name="DescriptionKey" value="foodGreenOnion_desc"/>
+            <property name="CustomIcon" value="foodGreenOnion"/>
+        </item>
+        <item name="foodRice">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="15"/>
+            <property name="DescriptionKey" value="foodRice_desc"/>
+            <property name="CustomIcon" value="foodRice"/>
+        </item>
+
+
+        <!-- ==================== 調味料・基本素材（新規） ==================== -->
+
+        <item name="foodMiso">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="20"/>
+            <property name="DescriptionKey" value="foodMiso_desc"/>
+            <property name="CustomIcon" value="foodMiso"/>
+        </item>
+        <item name="foodDashi">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="20"/>
+            <property name="DescriptionKey" value="foodDashi_desc"/>
+            <property name="CustomIcon" value="foodDashi"/>
+        </item>
+        <item name="foodFlour">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="15"/>
+            <property name="DescriptionKey" value="foodFlour_desc"/>
+            <property name="CustomIcon" value="foodFlour"/>
+        </item>
+        <item name="foodPanko">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="15"/>
+            <property name="DescriptionKey" value="foodPanko_desc"/>
+            <property name="CustomIcon" value="foodPanko"/>
+        </item>
+        <item name="foodKoji">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="20"/>
+            <property name="DescriptionKey" value="foodKoji_desc"/>
+            <property name="CustomIcon" value="foodKoji"/>
+        </item>
+        <item name="foodAnko">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="20"/>
+            <property name="DescriptionKey" value="foodAnko_desc"/>
+            <property name="CustomIcon" value="foodAnko"/>
+        </item>
+        <item name="foodTofu">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="Stacknumber" value="50"/>
+            <property name="EconomicValue" value="20"/>
+            <property name="DescriptionKey" value="foodTofu_desc"/>
+            <property name="CustomIcon" value="foodTofu"/>
+        </item>
+        <item name="foodTeaLeaf">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="15"/>
+            <property name="DescriptionKey" value="foodTeaLeaf_desc"/>
+            <property name="CustomIcon" value="foodTeaLeaf"/>
+        </item>
+
+
+        <!-- ==================== 農作物（新規） ==================== -->
+
+        <item name="cropSoybean">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="15"/>
+            <property name="DescriptionKey" value="cropSoybean_desc"/>
+            <property name="CustomIcon" value="cropSoybean"/>
+        </item>
+        <item name="cropDaikon">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="15"/>
+            <property name="DescriptionKey" value="cropDaikon_desc"/>
+            <property name="CustomIcon" value="cropDaikon"/>
+        </item>
+        <item name="cropHakusai">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="15"/>
+            <property name="DescriptionKey" value="cropHakusai_desc"/>
+            <property name="CustomIcon" value="cropHakusai"/>
+        </item>
+        <item name="cropShiitake">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="EconomicValue" value="15"/>
+            <property name="DescriptionKey" value="cropShiitake_desc"/>
+            <property name="CustomIcon" value="cropShiitake"/>
+        </item>
+        <item name="cropWasabi">
+            <property name="Extends" value="seasoningMaster"/>
+            <property name="Stacknumber" value="50"/>
+            <property name="EconomicValue" value="50"/>
+            <property name="DescriptionKey" value="cropWasabi_desc"/>
+            <property name="CustomIcon" value="cropWasabi"/>
+        </item>
+
+
+        <!-- ==================== 主食 (T1) ==================== -->
+
+        <item name="foodSteamedRice">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="50"/>
+            <property name="DescriptionKey" value="foodSteamedRice_desc"/>
+            <property name="CustomIcon" value="foodSteamedRice"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="5"/>
+            </effect_group>
+        </item>
+        <item name="foodOnigiriUme">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="60"/>
+            <property name="DescriptionKey" value="foodOnigiriUme_desc"/>
+            <property name="CustomIcon" value="foodOnigiriUme"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="22"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="8"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuDiseaseResist30"/>
+            </effect_group>
+        </item>
+        <item name="foodOnigiriSake">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="60"/>
+            <property name="DescriptionKey" value="foodOnigiriSake_desc"/>
+            <property name="CustomIcon" value="foodOnigiriSake"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="25"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="10"/>
+            </effect_group>
+        </item>
+        <item name="foodOnigiriKonbu">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="60"/>
+            <property name="DescriptionKey" value="foodOnigiriKonbu_desc"/>
+            <property name="CustomIcon" value="foodOnigiriKonbu"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="5"/>
+            </effect_group>
+        </item>
+        <item name="foodMochi">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="70"/>
+            <property name="DescriptionKey" value="foodMochi_desc"/>
+            <property name="CustomIcon" value="foodMochi"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$staminaAmountAdd" operation="add" value="20"/>
+            </effect_group>
+        </item>
+
+
+        <!-- ==================== 汁物 (T1-T2) ==================== -->
+
+        <item name="foodMisoSoup">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="80"/>
+            <property name="DescriptionKey" value="foodMisoSoup_desc"/>
+            <property name="CustomIcon" value="foodMisoSoup"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuColdResist30"/>
+            </effect_group>
+        </item>
+        <item name="foodTonjiru">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="120"/>
+            <property name="DescriptionKey" value="foodTonjiru_desc"/>
+            <property name="CustomIcon" value="foodTonjiru"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="25"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="25"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuColdResist60"/>
+            </effect_group>
+        </item>
+        <item name="foodSumashijiru">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="60"/>
+            <property name="DescriptionKey" value="foodSumashijiru_desc"/>
+            <property name="CustomIcon" value="foodSumashijiru"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="25"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="10"/>
+            </effect_group>
+        </item>
+        <item name="foodKenchinjiru">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="100"/>
+            <property name="DescriptionKey" value="foodKenchinjiru_desc"/>
+            <property name="CustomIcon" value="foodKenchinjiru"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$staminaAmountAdd" operation="add" value="10"/>
+            </effect_group>
+        </item>
+
+
+        <!-- ==================== 焼き物 (T1-T2) ==================== -->
+
+        <item name="foodGrilledSalmon">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="80"/>
+            <property name="DescriptionKey" value="foodGrilledSalmon_desc"/>
+            <property name="CustomIcon" value="foodGrilledSalmon"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="30"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="10"/>
+            </effect_group>
+        </item>
+        <item name="foodYakitori">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="80"/>
+            <property name="DescriptionKey" value="foodYakitori_desc"/>
+            <property name="CustomIcon" value="foodYakitori"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="25"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuAttackUp5_30"/>
+            </effect_group>
+        </item>
+        <item name="foodGrilledSanma">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="80"/>
+            <property name="DescriptionKey" value="foodGrilledSanma_desc"/>
+            <property name="CustomIcon" value="foodGrilledSanma"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="30"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$staminaAmountAdd" operation="add" value="10"/>
+            </effect_group>
+        </item>
+        <item name="foodTeriyaki">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="120"/>
+            <property name="DescriptionKey" value="foodTeriyaki_desc"/>
+            <property name="CustomIcon" value="foodTeriyaki"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="35"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuAttackUp5_60"/>
+            </effect_group>
+        </item>
+
+
+        <!-- ==================== 煮物 (T2) ==================== -->
+
+        <item name="foodNikujaga">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="150"/>
+            <property name="DescriptionKey" value="foodNikujaga_desc"/>
+            <property name="CustomIcon" value="foodNikujaga"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="30"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuHoT60"/>
+            </effect_group>
+        </item>
+        <item name="foodOden">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="150"/>
+            <property name="DescriptionKey" value="foodOden_desc"/>
+            <property name="CustomIcon" value="foodOden"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="30"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuHoT90"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuColdResist60"/>
+            </effect_group>
+        </item>
+        <item name="foodChikuzenni">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="150"/>
+            <property name="DescriptionKey" value="foodChikuzenni_desc"/>
+            <property name="CustomIcon" value="foodChikuzenni"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="28"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$staminaAmountAdd" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuHoT60"/>
+            </effect_group>
+        </item>
+        <item name="foodNikabocha">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="100"/>
+            <property name="DescriptionKey" value="foodNikabocha_desc"/>
+            <property name="CustomIcon" value="foodNikabocha"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuHoT45"/>
+            </effect_group>
+        </item>
+
+
+        <!-- ==================== 揚げ物 (T2-T3) ==================== -->
+
+        <item name="foodTempura">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="200"/>
+            <property name="DescriptionKey" value="foodTempura_desc"/>
+            <property name="CustomIcon" value="foodTempura"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="35"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$staminaAmountAdd" operation="add" value="30"/>
+            </effect_group>
+        </item>
+        <item name="foodKaraage">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="180"/>
+            <property name="DescriptionKey" value="foodKaraage_desc"/>
+            <property name="CustomIcon" value="foodKaraage"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="35"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$staminaAmountAdd" operation="add" value="20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuAttackUp5_30"/>
+            </effect_group>
+        </item>
+        <item name="foodTonkatsu">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="200"/>
+            <property name="DescriptionKey" value="foodTonkatsu_desc"/>
+            <property name="CustomIcon" value="foodTonkatsu"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="40"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$staminaAmountAdd" operation="add" value="30"/>
+            </effect_group>
+        </item>
+        <item name="foodCroquette">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="180"/>
+            <property name="DescriptionKey" value="foodCroquette_desc"/>
+            <property name="CustomIcon" value="foodCroquette"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="35"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$staminaAmountAdd" operation="add" value="20"/>
+            </effect_group>
+        </item>
+
+
+        <!-- ==================== 丼もの (T3) ==================== -->
+
+        <item name="foodKatsudon">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="400"/>
+            <property name="DescriptionKey" value="foodKatsudon_desc"/>
+            <property name="CustomIcon" value="foodKatsudon"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="50"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuAttackUp10_120"/>
+            </effect_group>
+        </item>
+        <item name="foodOyakodon">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="350"/>
+            <property name="DescriptionKey" value="foodOyakodon_desc"/>
+            <property name="CustomIcon" value="foodOyakodon"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="45"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuHoT2_60"/>
+            </effect_group>
+        </item>
+        <item name="foodGyudon">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="350"/>
+            <property name="DescriptionKey" value="foodGyudon_desc"/>
+            <property name="CustomIcon" value="foodGyudon"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="45"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$staminaAmountAdd" operation="add" value="40"/>
+            </effect_group>
+        </item>
+        <item name="foodTendon">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="350"/>
+            <property name="DescriptionKey" value="foodTendon_desc"/>
+            <property name="CustomIcon" value="foodTendon"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="45"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuSpeedUp10_90"/>
+            </effect_group>
+        </item>
+        <item name="foodKaisendon">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="400"/>
+            <property name="DescriptionKey" value="foodKaisendon_desc"/>
+            <property name="CustomIcon" value="foodKaisendon"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="45"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuCraftSpeed90"/>
+            </effect_group>
+        </item>
+
+
+        <!-- ==================== 麺類 (T2-T3) ==================== -->
+
+        <item name="foodUdon">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="150"/>
+            <property name="DescriptionKey" value="foodUdon_desc"/>
+            <property name="CustomIcon" value="foodUdon"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="30"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuSpeedUp5_30"/>
+            </effect_group>
+        </item>
+        <item name="foodSoba">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="150"/>
+            <property name="DescriptionKey" value="foodSoba_desc"/>
+            <property name="CustomIcon" value="foodSoba"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="28"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuSpeedUp5_45"/>
+            </effect_group>
+        </item>
+        <item name="foodRamen">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="250"/>
+            <property name="DescriptionKey" value="foodRamen_desc"/>
+            <property name="CustomIcon" value="foodRamen"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="40"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuColdResist60"/>
+            </effect_group>
+        </item>
+        <item name="foodSomen">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="100"/>
+            <property name="DescriptionKey" value="foodSomen_desc"/>
+            <property name="CustomIcon" value="foodSomen"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuHeatResist60"/>
+            </effect_group>
+        </item>
+
+
+        <!-- ==================== 保存食 ==================== -->
+
+        <item name="foodUmeboshi">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="Stacknumber" value="50"/>
+            <property name="EconomicValue" value="30"/>
+            <property name="DescriptionKey" value="foodUmeboshi_desc"/>
+            <property name="CustomIcon" value="foodUmeboshi"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuDiseaseResist180"/>
+            </effect_group>
+        </item>
+        <item name="foodTakuan">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="Stacknumber" value="50"/>
+            <property name="EconomicValue" value="30"/>
+            <property name="DescriptionKey" value="foodTakuan_desc"/>
+            <property name="CustomIcon" value="foodTakuan"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="8"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="3"/>
+            </effect_group>
+        </item>
+        <item name="foodHakusaiTsukemono">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="Stacknumber" value="50"/>
+            <property name="EconomicValue" value="30"/>
+            <property name="DescriptionKey" value="foodHakusaiTsukemono_desc"/>
+            <property name="CustomIcon" value="foodHakusaiTsukemono"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="8"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="3"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuAttackUp3_30"/>
+            </effect_group>
+        </item>
+        <item name="foodHimono">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="Stacknumber" value="25"/>
+            <property name="EconomicValue" value="60"/>
+            <property name="DescriptionKey" value="foodHimono_desc"/>
+            <property name="CustomIcon" value="foodHimono"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="5"/>
+            </effect_group>
+        </item>
+        <item name="foodTsukudani">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="Stacknumber" value="250"/>
+            <property name="EconomicValue" value="40"/>
+            <property name="DescriptionKey" value="foodTsukudani_desc"/>
+            <property name="CustomIcon" value="foodTsukudani"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="3"/>
+            </effect_group>
+        </item>
+
+
+        <!-- ==================== 飲料 ==================== -->
+
+        <item name="drinkGreenTea">
+            <property name="Extends" value="wafuuDrinkMaster"/>
+            <property name="EconomicValue" value="40"/>
+            <property name="DescriptionKey" value="drinkGreenTea_desc"/>
+            <property name="CustomIcon" value="drinkGreenTea"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="25"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuCraftSpeed60"/>
+            </effect_group>
+        </item>
+        <item name="drinkMugicha">
+            <property name="Extends" value="wafuuDrinkMaster"/>
+            <property name="EconomicValue" value="30"/>
+            <property name="DescriptionKey" value="drinkMugicha_desc"/>
+            <property name="CustomIcon" value="drinkMugicha"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="30"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuHeatResist120"/>
+            </effect_group>
+        </item>
+        <item name="drinkAmazake">
+            <property name="Extends" value="wafuuDrinkMaster"/>
+            <property name="EconomicValue" value="60"/>
+            <property name="DescriptionKey" value="drinkAmazake_desc"/>
+            <property name="CustomIcon" value="drinkAmazake"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuColdResist60"/>
+            </effect_group>
+        </item>
+        <item name="drinkNihonshu">
+            <property name="Extends" value="wafuuDrinkMaster"/>
+            <property name="EconomicValue" value="80"/>
+            <property name="DescriptionKey" value="drinkNihonshu_desc"/>
+            <property name="CustomIcon" value="drinkNihonshu"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuDrunkLight"/>
+            </effect_group>
+        </item>
+        <item name="drinkShochu">
+            <property name="Extends" value="wafuuDrinkMaster"/>
+            <property name="EconomicValue" value="100"/>
+            <property name="DescriptionKey" value="drinkShochu_desc"/>
+            <property name="CustomIcon" value="drinkShochu"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuDrunkHeavy"/>
+            </effect_group>
+        </item>
+
+
+        <!-- ==================== 甘味 ==================== -->
+
+        <item name="foodDaifuku">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="80"/>
+            <property name="DescriptionKey" value="foodDaifuku_desc"/>
+            <property name="CustomIcon" value="foodDaifuku"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="10"/>
+            </effect_group>
+        </item>
+        <item name="foodMitarashiDango">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="EconomicValue" value="60"/>
+            <property name="DescriptionKey" value="foodMitarashiDango_desc"/>
+            <property name="CustomIcon" value="foodMitarashiDango"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="12"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$staminaAmountAdd" operation="add" value="10"/>
+            </effect_group>
+        </item>
+        <item name="foodYokan">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="Stacknumber" value="25"/>
+            <property name="EconomicValue" value="70"/>
+            <property name="DescriptionKey" value="foodYokan_desc"/>
+            <property name="CustomIcon" value="foodYokan"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="12"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="8"/>
+            </effect_group>
+        </item>
+        <item name="foodSenbei">
+            <property name="Extends" value="wafuuFoodMaster"/>
+            <property name="Stacknumber" value="250"/>
+            <property name="EconomicValue" value="30"/>
+            <property name="DescriptionKey" value="foodSenbei_desc"/>
+            <property name="CustomIcon" value="foodSenbei"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="8"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="3"/>
+            </effect_group>
+        </item>
+
+    </append>
+</configs>
