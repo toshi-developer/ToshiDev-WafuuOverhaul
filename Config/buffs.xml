@@ -167,7 +167,7 @@
               name_key="buffWafuuDiseaseResist30" description_key="buffWafuuDiseaseResist30_desc"
               icon="ui_game_symbol_medical" icon_color="255,255,255">
             <effect_group>
-                <passive_effect name="DiseaseResist" operation="base_add" value="30"/>
+                <passive_effect name="BuffResistance" operation="base_add" value=".15" tags="buffInfectionCatch,buffFatiguedTrigger,buffAbrasionCatch,buffLaceration"/>
             </effect_group>
         </buff>
 
@@ -175,7 +175,7 @@
               name_key="buffWafuuDiseaseResist180" description_key="buffWafuuDiseaseResist180_desc"
               icon="ui_game_symbol_medical" icon_color="255,255,255">
             <effect_group>
-                <passive_effect name="DiseaseResist" operation="base_add" value="30"/>
+                <passive_effect name="BuffResistance" operation="base_add" value=".15" tags="buffInfectionCatch,buffFatiguedTrigger,buffAbrasionCatch,buffLaceration"/>
             </effect_group>
         </buff>
 
@@ -199,6 +199,17 @@
             <effect_group>
                 <passive_effect name="EntityDamage" operation="perc_add" value=".15"/>
                 <passive_effect name="PhysicalDamageResist" operation="perc_add" value="-.10"/>
+            </effect_group>
+        </buff>
+
+
+        <!-- ==================== 煙幕 ==================== -->
+        <!-- 煙玉使用時の自己バフ（視覚的目印用。実際のアグロリセットは C# 要） -->
+        <buff name="buffWafuuSmoke10" duration="10" stack="replace"
+              name_key="buffWafuuSmoke10" description_key="buffWafuuSmoke10_desc"
+              icon="ui_game_symbol_stealth" icon_color="180,180,180">
+            <effect_group>
+                <passive_effect name="NoiseMultiplier" operation="perc_add" value="-.50"/>
             </effect_group>
         </buff>
 

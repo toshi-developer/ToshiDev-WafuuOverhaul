@@ -34,7 +34,7 @@
 
             <!-- Lv1: 囲炉裏レシピ解放 + クラフト速度微増 -->
             <effect_group level="1,5">
-                <passive_effect name="RecipeTagUnlock" operation="base_set" value="1"
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1"
                                 tags="perkWafuuCooking"/>
             </effect_group>
 
@@ -45,7 +45,7 @@
 
             <!-- Lv3: 厨房レシピ解放 -->
             <effect_group level="3,5">
-                <passive_effect name="RecipeTagUnlock" operation="base_set" value="1"
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1"
                                 tags="perkWafuuCookingAdv"/>
             </effect_group>
 
@@ -53,6 +53,254 @@
             <effect_group level="2,5" tiered="false">
                 <passive_effect name="HealthGain" operation="perc_add"
                                 value=".10,.10,.20,.30"/>
+            </effect_group>
+
+        </perk>
+
+        <!--
+            剣術 (Wafuu Swordsmanship)
+            親属性: Agility
+            5 段階:
+              Lv1 — 刀・鎖鎌レシピ解放 + 刃物ダメージ 5%
+              Lv2 — 刃物ダメージ 8%
+              Lv3 — 太刀・鬼斬丸レシピ解放 + 刃物ダメージ 12%
+              Lv4 — 刃物ダメージ 18%
+              Lv5 — 刃物ダメージ 25%
+        -->
+        <perk name="perkWafuuSwordsmanship"
+              parent="attAgility"
+              name_key="perkWafuuSwordsmanship"
+              description_key="perkWafuuSwordsmanship_desc"
+              icon="ui_game_symbol_knife"
+              max_level="5">
+
+            <requirement name="ProgressionLevel" perk="attAgility" operation="GTE" value="1"
+                         description_key="reqAgility1"/>
+            <requirement name="ProgressionLevel" perk="attAgility" operation="GTE" value="1"
+                         compare_type="PerLevel" level="1,3,5,7,9"/>
+
+            <!-- Lv1: 刀・鎖鎌レシピ解放 -->
+            <effect_group level="1,5">
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1"
+                                tags="perkWafuuSwordsmanship"/>
+            </effect_group>
+
+            <!-- Lv1-5: 刃物ダメージ向上 -->
+            <effect_group level="1,5" tiered="false">
+                <passive_effect name="EntityDamage" operation="perc_add"
+                                value=".05,.08,.12,.18,.25"
+                                tags="bladeSkill"/>
+            </effect_group>
+
+            <!-- Lv3: 太刀・鬼斬丸レシピ解放 -->
+            <effect_group level="3,5">
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1"
+                                tags="perkWafuuSwordsmanshipAdv"/>
+            </effect_group>
+
+            <!-- Lv1-5: 攻撃速度向上 -->
+            <effect_group level="1,5" tiered="false">
+                <passive_effect name="AttacksPerMinute" operation="perc_add"
+                                value=".02,.04,.06,.08,.10"
+                                tags="bladeSkill"/>
+            </effect_group>
+
+        </perk>
+
+        <!--
+            槍術 (Wafuu Spearmanship)
+            親属性: Strength
+            5 段階:
+              Lv1 — 薙刀レシピ解放 + 槍ダメージ 5%
+              Lv2 — 槍ダメージ 8%
+              Lv3 — 十文字槍レシピ解放 + 槍ダメージ 12%
+              Lv4 — 槍ダメージ 18%
+              Lv5 — 槍ダメージ 25%
+        -->
+        <perk name="perkWafuuSpearmanship"
+              parent="attStrength"
+              name_key="perkWafuuSpearmanship"
+              description_key="perkWafuuSpearmanship_desc"
+              icon="ui_game_symbol_spear"
+              max_level="5">
+
+            <requirement name="ProgressionLevel" perk="attStrength" operation="GTE" value="1"
+                         description_key="reqStrength1"/>
+            <requirement name="ProgressionLevel" perk="attStrength" operation="GTE" value="1"
+                         compare_type="PerLevel" level="1,3,5,7,9"/>
+
+            <!-- Lv1: 薙刀レシピ解放 -->
+            <effect_group level="1,5">
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1"
+                                tags="perkWafuuSpearmanship"/>
+            </effect_group>
+
+            <!-- Lv1-5: 槍ダメージ向上 -->
+            <effect_group level="1,5" tiered="false">
+                <passive_effect name="EntityDamage" operation="perc_add"
+                                value=".05,.08,.12,.18,.25"
+                                tags="spearSkill"/>
+            </effect_group>
+
+            <!-- Lv3: 十文字槍レシピ解放 -->
+            <effect_group level="3,5">
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1"
+                                tags="perkWafuuSpearmanshipAdv"/>
+            </effect_group>
+
+            <!-- Lv1-5: リーチ向上 -->
+            <effect_group level="1,5" tiered="false">
+                <passive_effect name="MaxRange" operation="base_add"
+                                value=".1,.2,.3,.4,.5"
+                                tags="spearSkill"/>
+            </effect_group>
+
+        </perk>
+
+        <!--
+            弓術 (Wafuu Archery)
+            親属性: Agility
+            5 段階:
+              Lv1 — 和弓・半弓レシピ解放 + 弓ダメージ 5%
+              Lv2 — 弓ダメージ 8%
+              Lv3 — 特殊矢レシピ解放 + 弓ダメージ 12%
+              Lv4 — 弓ダメージ 18%
+              Lv5 — 弓ダメージ 25%
+        -->
+        <perk name="perkWafuuArchery"
+              parent="attAgility"
+              name_key="perkWafuuArchery"
+              description_key="perkWafuuArchery_desc"
+              icon="ui_game_symbol_bow"
+              max_level="5">
+
+            <requirement name="ProgressionLevel" perk="attAgility" operation="GTE" value="1"
+                         description_key="reqAgility1"/>
+            <requirement name="ProgressionLevel" perk="attAgility" operation="GTE" value="1"
+                         compare_type="PerLevel" level="1,3,5,7,9"/>
+
+            <!-- Lv1: 和弓・半弓レシピ解放 -->
+            <effect_group level="1,5">
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1"
+                                tags="perkWafuuArchery"/>
+            </effect_group>
+
+            <!-- Lv1-5: 弓ダメージ向上 -->
+            <effect_group level="1,5" tiered="false">
+                <passive_effect name="EntityDamage" operation="perc_add"
+                                value=".05,.08,.12,.18,.25"
+                                tags="bowSkill"/>
+            </effect_group>
+
+            <!-- Lv3: 特殊矢レシピ解放 -->
+            <effect_group level="3,5">
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1"
+                                tags="perkWafuuArcheryAdv"/>
+            </effect_group>
+
+            <!-- Lv1-5: 引き速度向上 -->
+            <effect_group level="1,5" tiered="false">
+                <passive_effect name="AttacksPerMinute" operation="perc_add"
+                                value=".02,.04,.06,.08,.10"
+                                tags="bowSkill"/>
+            </effect_group>
+
+        </perk>
+
+        <!--
+            忍術 (Wafuu Ninjutsu)
+            親属性: Agility
+            5 段階:
+              Lv1 — 忍装束レシピ解放 + 騒音 -5%
+              Lv2 — 騒音 -8%
+              Lv3 — ステルス攻撃ダメージ +10% + 騒音 -12%
+              Lv4 — 騒音 -16%, ステルス攻撃 +15%
+              Lv5 — 騒音 -20%, ステルス攻撃 +20%
+        -->
+        <perk name="perkWafuuNinjutsu"
+              parent="attAgility"
+              name_key="perkWafuuNinjutsu"
+              description_key="perkWafuuNinjutsu_desc"
+              icon="ui_game_symbol_stealth"
+              max_level="5">
+
+            <requirement name="ProgressionLevel" perk="attAgility" operation="GTE" value="1"
+                         description_key="reqAgility1"/>
+            <requirement name="ProgressionLevel" perk="attAgility" operation="GTE" value="1"
+                         compare_type="PerLevel" level="1,3,5,7,9"/>
+
+            <!-- Lv1: 忍装束レシピ解放 -->
+            <effect_group level="1,5">
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1"
+                                tags="perkWafuuNinjutsu"/>
+            </effect_group>
+
+            <!-- Lv1-5: 騒音軽減 -->
+            <effect_group level="1,5" tiered="false">
+                <passive_effect name="NoiseMultiplier" operation="perc_add"
+                                value="-.05,-.08,-.12,-.16,-.20"/>
+            </effect_group>
+
+            <!-- Lv3-5: ステルス攻撃ダメージ向上 -->
+            <effect_group level="3,5" tiered="false">
+                <passive_effect name="EntityDamage" operation="perc_add"
+                                value=".10,.15,.20"
+                                tags="stealthAttack"/>
+            </effect_group>
+
+            <!-- Lv1-5: 移動速度向上 -->
+            <effect_group level="1,5" tiered="false">
+                <passive_effect name="RunSpeed" operation="perc_add"
+                                value=".01,.02,.03,.04,.05"/>
+            </effect_group>
+
+        </perk>
+
+        <!--
+            鍛冶 (Wafuu Smithing)
+            親属性: Fortitude
+            5 段階:
+              Lv1 — T1 武器・足軽鎧レシピ解放 + クラフトティア 1
+              Lv2 — クラフトティア 2
+              Lv3 — T3 武器・侍鎧・大将鎧レシピ解放 + クラフトティア 3
+              Lv4 — クラフトティア 4
+              Lv5 — クラフトティア 5
+        -->
+        <perk name="perkWafuuSmithing"
+              parent="attFortitude"
+              name_key="perkWafuuSmithing"
+              description_key="perkWafuuSmithing_desc"
+              icon="ui_game_symbol_anvil"
+              max_level="5">
+
+            <requirement name="ProgressionLevel" perk="attFortitude" operation="GTE" value="1"
+                         description_key="reqFortitude1"/>
+            <requirement name="ProgressionLevel" perk="attFortitude" operation="GTE" value="1"
+                         compare_type="PerLevel" level="1,3,5,7,9"/>
+
+            <!-- Lv1: T1 武器・足軽鎧レシピ解放 -->
+            <effect_group level="1,5">
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1"
+                                tags="perkWafuuSmithing"/>
+            </effect_group>
+
+            <!-- Lv1-5: クラフトティア向上 -->
+            <effect_group level="1,5" tiered="false">
+                <passive_effect name="CraftingTier" operation="base_add"
+                                value="1,2,3,4,5"
+                                tags="wafuuWeapon,wafuuArmor"/>
+            </effect_group>
+
+            <!-- Lv3: T3 武器・侍鎧・大将鎧レシピ解放 -->
+            <effect_group level="3,5">
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1"
+                                tags="perkWafuuSmithingAdv"/>
+            </effect_group>
+
+            <!-- Lv1-5: 修理量向上 -->
+            <effect_group level="1,5" tiered="false">
+                <passive_effect name="RepairAmount" operation="perc_add"
+                                value=".05,.10,.15,.20,.25"/>
             </effect_group>
 
         </perk>

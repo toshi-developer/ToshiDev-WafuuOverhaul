@@ -1,0 +1,174 @@
+<configs>
+    <append xpath="/entity_classes">
+
+        <!-- ======================================================== -->
+        <!-- ToshiDev Wafuu Overhaul — Phase 4: 和風ゾンビ定義          -->
+        <!-- バニラのゾンビモデルを継承し、和風テーマのステータスを上書き  -->
+        <!-- カスタム 3D モデル・テクスチャは C# + アセット作業が必要     -->
+        <!-- ======================================================== -->
+
+
+        <!-- ==================== 1. 腐武者 (Kusamusha) ==================== -->
+        <!--
+            朽ちた甲冑をまとった武士のゾンビ。高い物理防御。
+            ベース: zombieSoldier（戦闘向け体格）
+        -->
+        <entity_class name="zombieWafuuKusamusha" extends="zombieSoldier">
+            <property name="Tags" value="entity,zombie,walker,allbiome,wafuuZombie"/>
+            <property name="MoveSpeedAggro" value="0.25, 1.1"/>
+            <property name="HandItem" value="meleeHandZombieWorker"/>
+            <property name="ExperienceGain" value="900"/>
+
+            <effect_group name="Base Effects">
+                <passive_effect name="HealthMax" operation="base_set" value="350"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_set" value="60"/>
+            </effect_group>
+
+            <drop event="Destroy" name="resourceScrapIron" count="3,8" prob="0.8"/>
+            <drop event="Destroy" name="resourceLeather" count="1,3" prob="0.5"/>
+            <drop event="Destroy" name="meleeWpnWafuuKatana" count="1" prob="0.04"/>
+        </entity_class>
+
+
+        <!-- ==================== 2. 怨霊 (Onryo) ==================== -->
+        <!--
+            亡霊。物理耐性極高・素早い。夜間・寺社出現。
+            ベース: zombieSpider（這うモーション → 不気味さ）
+        -->
+        <entity_class name="zombieWafuuOnryo" extends="zombieSpider">
+            <property name="Tags" value="entity,zombie,spider,allbiome,wafuuZombie"/>
+            <property name="MoveSpeedAggro" value="0.35, 1.6"/>
+            <property name="ExperienceGain" value="800"/>
+
+            <effect_group name="Base Effects">
+                <passive_effect name="HealthMax" operation="base_set" value="120"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_set" value="80"/>
+            </effect_group>
+
+            <drop event="Destroy" name="resourceCloth" count="1,3" prob="0.6"/>
+        </entity_class>
+
+
+        <!-- ==================== 3. 餓鬼 (Gaki) ==================== -->
+        <!--
+            小型・高速・群れで出現。弱いが数で押す。
+            ベース: zombieFemaleFat（丸い体型 → 餓鬼感） ※ extends zombieTemplateMale 直系が理想だが model 制約で
+        -->
+        <entity_class name="zombieWafuuGaki" extends="zombieTemplateMale">
+            <property name="UserSpawnType" value="Menu"/>
+            <property name="Tags" value="entity,zombie,walker,allbiome,wafuuZombie"/>
+            <property name="Mesh" value="@:Entities/Zombies/Arlene/ZArlene.prefab"/>
+            <property name="SizeScale" value="0.75"/>
+            <property name="ModelType" value="Standard"/>
+            <property name="WalkType" value="7"/>
+            <property name="Mass" value="80"/>
+            <property name="RootMotion" value="true"/>
+            <property name="HasDeathAnim" value="true"/>
+            <property name="MoveSpeedAggro" value="0.4, 1.8"/>
+            <property name="HandItem" value="meleeHandZombie"/>
+            <property name="ExperienceGain" value="200"/>
+
+            <property name="SoundRandom" value="zombiefemaleroam"/>
+            <property name="SoundAlert" value="zombiefemalealert"/>
+            <property name="SoundAttack" value="zombiefemaleattack"/>
+            <property name="SoundHurt" value="zombiefemalepain"/>
+            <property name="SoundDeath" value="zombiefemaledeath"/>
+            <property name="SoundSense" value="zombiefemalesense"/>
+
+            <effect_group name="Base Effects">
+                <passive_effect name="HealthMax" operation="base_set" value="60"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_set" value="0"/>
+            </effect_group>
+
+            <drop event="Destroy" name="foodRottingFlesh" count="1,3" prob="0.5"/>
+        </entity_class>
+
+
+        <!-- ==================== 4. 鬼 (Oni) ==================== -->
+        <!--
+            大型ボス級。金棒・高HP・ノックバック。
+            ベース: zombieMoe（大型体格）
+        -->
+        <entity_class name="zombieWafuuOni" extends="zombieMoe">
+            <property name="Tags" value="entity,zombie,walker,allbiome,wafuuZombie"/>
+            <property name="SizeScale" value="1.3"/>
+            <property name="Mass" value="300"/>
+            <property name="PushFactor" value="40"/>
+            <property name="MoveSpeedAggro" value="0.28, 1.2"/>
+            <property name="HandItem" value="meleeHandZombieFarmer"/>
+            <property name="ExperienceGain" value="2000"/>
+
+            <effect_group name="Base Effects">
+                <passive_effect name="HealthMax" operation="base_set" value="800"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_set" value="40"/>
+            </effect_group>
+
+            <drop event="Destroy" name="resourceScrapIron" count="5,15" prob="0.9"/>
+            <drop event="Destroy" name="meleeWpnWafuuKanabo" count="1" prob="0.05"/>
+        </entity_class>
+
+
+        <!-- ==================== 5. 河童 (Kappa) ==================== -->
+        <!--
+            水辺の怪異。中程度のスペック。
+            ベース: zombieFatHawaiian（ずんぐり体型）
+        -->
+        <entity_class name="zombieWafuuKappa" extends="zombieFatHawaiian">
+            <property name="Tags" value="entity,zombie,walker,allbiome,wafuuZombie"/>
+            <property name="SizeScale" value="0.9"/>
+            <property name="MoveSpeedAggro" value="0.3, 1.3"/>
+            <property name="ExperienceGain" value="500"/>
+
+            <effect_group name="Base Effects">
+                <passive_effect name="HealthMax" operation="base_set" value="220"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/>
+            </effect_group>
+
+            <drop event="Destroy" name="foodRawFish" count="1,3" prob="0.6"/>
+            <drop event="Destroy" name="drinkCanEmpty" count="1,2" prob="0.3"/>
+        </entity_class>
+
+
+        <!-- ==================== 6. 化け狸 (Bake-Tanuki) ==================== -->
+        <!--
+            トリックスター。普通の外見だがレアドロップを持つ。
+            ベース: zombieJoe（普通の男性ゾンビ → 擬態感）
+        -->
+        <entity_class name="zombieWafuuBakeTanuki" extends="zombieJoe">
+            <property name="Tags" value="entity,zombie,walker,allbiome,wafuuZombie"/>
+            <property name="MoveSpeedAggro" value="0.35, 1.5"/>
+            <property name="ExperienceGain" value="400"/>
+
+            <effect_group name="Base Effects">
+                <passive_effect name="HealthMax" operation="base_set" value="180"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
+            </effect_group>
+
+            <drop event="Destroy" name="resourceScrapIron" count="2,5" prob="0.5"/>
+            <drop event="Destroy" name="foodSenbei" count="1,3" prob="0.3"/>
+            <drop event="Destroy" name="drinkNihonshu" count="1" prob="0.1"/>
+            <drop event="Destroy" name="meleeWpnWafuuDemonBlade" count="1" prob="0.01"/>
+        </entity_class>
+
+
+        <!-- ==================== 7. 般若 (Hannya) ==================== -->
+        <!--
+            バッファー型。叫び声（Screamer AI）で周囲ゾンビを召喚・強化。
+            ベース: zombieScreamer（叫びAI継承）
+        -->
+        <entity_class name="zombieWafuuHannya" extends="zombieScreamer">
+            <property name="Tags" value="entity,zombie,walker,allbiome,wafuuZombie"/>
+            <property name="MoveSpeedAggro" value="0.3, 1.4"/>
+            <property name="ExperienceGain" value="1200"/>
+
+            <effect_group name="Base Effects">
+                <passive_effect name="HealthMax" operation="base_set" value="250"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_set" value="30"/>
+            </effect_group>
+
+            <drop event="Destroy" name="resourceCloth" count="2,5" prob="0.5"/>
+            <drop event="Destroy" name="resourceBone" count="3,8" prob="0.4"/>
+        </entity_class>
+
+    </append>
+</configs>

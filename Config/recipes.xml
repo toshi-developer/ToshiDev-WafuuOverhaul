@@ -454,5 +454,486 @@
             <ingredient name="foodSoySauce" count="1"/>
         </recipe>
 
+
+
+        <!-- ======================================================== -->
+        <!-- Phase 2: 近接武器クラフトレシピ                             -->
+        <!-- ======================================================== -->
+
+        <!-- 木刀 T1: 木材で手軽に作れる -->
+        <recipe name="meleeWpnWafuuBokuto" count="1" craft_time="30"
+                craft_area="workbench">
+            <ingredient name="resourceWood" count="20"/>
+            <ingredient name="resourceCloth" count="5"/>
+        </recipe>
+
+        <!-- 竹槍 T1: 木材（竹代用）+石 -->
+        <recipe name="meleeWpnWafuuTakeyari" count="1" craft_time="25"
+                craft_area="workbench">
+            <ingredient name="resourceWood" count="15"/>
+            <ingredient name="resourceRockSmall" count="5"/>
+            <ingredient name="resourceCloth" count="3"/>
+        </recipe>
+
+        <!-- 打刀 T2: 鍛鉄+木材+皮革 -->
+        <recipe name="meleeWpnWafuuKatana" count="1" craft_time="60"
+                craft_area="workbench"
+                tags="perkWafuuSwordsmanship">
+            <ingredient name="resourceForgedIron" count="15"/>
+            <ingredient name="resourceWood" count="10"/>
+            <ingredient name="resourceLeather" count="5"/>
+        </recipe>
+
+        <!-- 薙刀 T2: 鍛鉄+木材 -->
+        <recipe name="meleeWpnWafuuNaginata" count="1" craft_time="55"
+                craft_area="workbench"
+                tags="perkWafuuSpearmanship">
+            <ingredient name="resourceForgedIron" count="12"/>
+            <ingredient name="resourceWood" count="15"/>
+            <ingredient name="resourceCloth" count="5"/>
+        </recipe>
+
+        <!-- 太刀 T3: 鍛鋼+木材+皮革 -->
+        <recipe name="meleeWpnWafuuTachi" count="1" craft_time="90"
+                craft_area="workbench"
+                tags="perkWafuuSwordsmanship">
+            <ingredient name="resourceForgedSteel" count="15"/>
+            <ingredient name="resourceWood" count="10"/>
+            <ingredient name="resourceLeather" count="8"/>
+        </recipe>
+
+        <!-- 十文字槍 T3: 鍛鋼+木材 -->
+        <recipe name="meleeWpnWafuuJumonjiYari" count="1" craft_time="85"
+                craft_area="workbench"
+                tags="perkWafuuSpearmanship">
+            <ingredient name="resourceForgedSteel" count="12"/>
+            <ingredient name="resourceWood" count="20"/>
+            <ingredient name="resourceLeather" count="5"/>
+        </recipe>
+
+        <!-- 金棒 T3: 鍛鋼（大量）+木材 -->
+        <recipe name="meleeWpnWafuuKanabo" count="1" craft_time="100"
+                craft_area="workbench"
+                tags="perkWafuuSmithing">
+            <ingredient name="resourceForgedSteel" count="25"/>
+            <ingredient name="resourceWood" count="10"/>
+        </recipe>
+
+        <!-- 鎖鎌 T3: 鍛鋼+鍛鉄+皮革 -->
+        <recipe name="meleeWpnWafuuKusarigama" count="1" craft_time="80"
+                craft_area="workbench"
+                tags="perkWafuuSwordsmanship">
+            <ingredient name="resourceForgedSteel" count="8"/>
+            <ingredient name="resourceForgedIron" count="10"/>
+            <ingredient name="resourceLeather" count="5"/>
+        </recipe>
+
+        <!-- 妖刀 T4: レアクラフト。鍛鋼+ダイヤモンド+酸 -->
+        <recipe name="meleeWpnWafuuDemonBlade" count="1" craft_time="180"
+                craft_area="workbench"
+                tags="perkWafuuSmithing">
+            <ingredient name="resourceForgedSteel" count="30"/>
+            <ingredient name="resourceBulletTip" count="10"/>
+            <ingredient name="resourceAcid" count="5"/>
+            <ingredient name="resourceLeather" count="10"/>
+        </recipe>
+
+
+        <!-- ==================== 遠距離武器 ==================== -->
+
+        <!-- 和弓 T1: 木材+布 -->
+        <recipe name="gunBowWafuuWakyuu" count="1" craft_time="40"
+                craft_area="workbench"
+                tags="perkWafuuArchery">
+            <ingredient name="resourceWood" count="15"/>
+            <ingredient name="resourceCloth" count="8"/>
+            <ingredient name="resourceLeather" count="3"/>
+        </recipe>
+
+        <!-- 半弓 T2: 木材+布+鍛鉄 -->
+        <recipe name="gunBowWafuuHankyuu" count="1" craft_time="50"
+                craft_area="workbench"
+                tags="perkWafuuArchery">
+            <ingredient name="resourceWood" count="10"/>
+            <ingredient name="resourceCloth" count="5"/>
+            <ingredient name="resourceForgedIron" count="3"/>
+            <ingredient name="resourceLeather" count="5"/>
+        </recipe>
+
+        <!-- 火縄銃 T3: 鍛鋼+木材+機械部品 -->
+        <recipe name="gunRifleWafuuTanegashima" count="1" craft_time="120"
+                craft_area="workbench"
+                tags="perkWafuuSmithing">
+            <ingredient name="resourceForgedSteel" count="15"/>
+            <ingredient name="resourceWood" count="10"/>
+            <ingredient name="resourceMechanicalParts" count="5"/>
+        </recipe>
+
+        <!-- ==================== 矢弾 ==================== -->
+
+        <!-- 竹矢: 木材+石 -->
+        <recipe name="ammoArrowWafuuTake" count="5" craft_time="3">
+            <ingredient name="resourceWood" count="1"/>
+            <ingredient name="resourceRockSmall" count="1"/>
+        </recipe>
+
+        <!-- 火矢: 竹矢+布+油 -->
+        <recipe name="ammoArrowWafuuHi" count="5" craft_time="5"
+                tags="perkWafuuArchery">
+            <ingredient name="ammoArrowWafuuTake" count="5"/>
+            <ingredient name="resourceCloth" count="1"/>
+            <ingredient name="foodOil" count="1"/>
+        </recipe>
+
+        <!-- 毒矢: 竹矢+腐肉 -->
+        <recipe name="ammoArrowWafuuDoku" count="5" craft_time="5"
+                tags="perkWafuuArchery">
+            <ingredient name="ammoArrowWafuuTake" count="5"/>
+            <ingredient name="foodRottingFlesh" count="2"/>
+        </recipe>
+
+        <!-- 破甲矢: 鉄矢+鍛鋼 -->
+        <recipe name="ammoArrowWafuuHakou" count="5" craft_time="8"
+                craft_area="workbench"
+                tags="perkWafuuArchery">
+            <ingredient name="ammoArrowWafuuTake" count="5"/>
+            <ingredient name="resourceForgedSteel" count="1"/>
+        </recipe>
+
+        <!-- ==================== 防具レシピ ==================== -->
+
+        <!-- 足軽装備 T1 -->
+        <recipe name="armorWafuuAshigaruHelmet" count="1" craft_time="25"
+                craft_area="workbench" tags="perkWafuuSmithing">
+            <ingredient name="resourceForgedIron" count="5"/>
+            <ingredient name="resourceLeather" count="3"/>
+            <ingredient name="resourceCloth" count="2"/>
+        </recipe>
+        <recipe name="armorWafuuAshigaruChest" count="1" craft_time="35"
+                craft_area="workbench" tags="perkWafuuSmithing">
+            <ingredient name="resourceForgedIron" count="8"/>
+            <ingredient name="resourceLeather" count="5"/>
+            <ingredient name="resourceCloth" count="3"/>
+        </recipe>
+        <recipe name="armorWafuuAshigaruGloves" count="1" craft_time="20"
+                craft_area="workbench" tags="perkWafuuSmithing">
+            <ingredient name="resourceForgedIron" count="3"/>
+            <ingredient name="resourceLeather" count="3"/>
+            <ingredient name="resourceCloth" count="2"/>
+        </recipe>
+        <recipe name="armorWafuuAshigaruLegs" count="1" craft_time="25"
+                craft_area="workbench" tags="perkWafuuSmithing">
+            <ingredient name="resourceForgedIron" count="4"/>
+            <ingredient name="resourceLeather" count="4"/>
+            <ingredient name="resourceCloth" count="2"/>
+        </recipe>
+
+        <!-- 侍甲冑 T2 -->
+        <recipe name="armorWafuuSamuraiHelmet" count="1" craft_time="40"
+                craft_area="workbench" tags="perkWafuuSmithing">
+            <ingredient name="resourceForgedIron" count="10"/>
+            <ingredient name="resourceLeather" count="5"/>
+            <ingredient name="resourceCloth" count="3"/>
+        </recipe>
+        <recipe name="armorWafuuSamuraiChest" count="1" craft_time="60"
+                craft_area="workbench" tags="perkWafuuSmithing">
+            <ingredient name="resourceForgedIron" count="15"/>
+            <ingredient name="resourceLeather" count="8"/>
+            <ingredient name="resourceCloth" count="5"/>
+        </recipe>
+        <recipe name="armorWafuuSamuraiGloves" count="1" craft_time="30"
+                craft_area="workbench" tags="perkWafuuSmithing">
+            <ingredient name="resourceForgedIron" count="6"/>
+            <ingredient name="resourceLeather" count="4"/>
+            <ingredient name="resourceCloth" count="2"/>
+        </recipe>
+        <recipe name="armorWafuuSamuraiLegs" count="1" craft_time="40"
+                craft_area="workbench" tags="perkWafuuSmithing">
+            <ingredient name="resourceForgedIron" count="8"/>
+            <ingredient name="resourceLeather" count="5"/>
+            <ingredient name="resourceCloth" count="3"/>
+        </recipe>
+
+        <!-- 忍装束 T2 -->
+        <recipe name="armorWafuuShinobiHelmet" count="1" craft_time="35"
+                craft_area="workbench" tags="perkWafuuNinjutsu">
+            <ingredient name="resourceLeather" count="8"/>
+            <ingredient name="resourceCloth" count="5"/>
+        </recipe>
+        <recipe name="armorWafuuShinobiChest" count="1" craft_time="50"
+                craft_area="workbench" tags="perkWafuuNinjutsu">
+            <ingredient name="resourceLeather" count="12"/>
+            <ingredient name="resourceCloth" count="8"/>
+        </recipe>
+        <recipe name="armorWafuuShinobiGloves" count="1" craft_time="25"
+                craft_area="workbench" tags="perkWafuuNinjutsu">
+            <ingredient name="resourceLeather" count="5"/>
+            <ingredient name="resourceCloth" count="3"/>
+        </recipe>
+        <recipe name="armorWafuuShinobiLegs" count="1" craft_time="35"
+                craft_area="workbench" tags="perkWafuuNinjutsu">
+            <ingredient name="resourceLeather" count="7"/>
+            <ingredient name="resourceCloth" count="4"/>
+        </recipe>
+
+        <!-- 大将甲冑 T3 -->
+        <recipe name="armorWafuuTaishoHelmet" count="1" craft_time="60"
+                craft_area="workbench" tags="perkWafuuSmithing">
+            <ingredient name="resourceForgedSteel" count="10"/>
+            <ingredient name="resourceLeather" count="5"/>
+            <ingredient name="resourceCloth" count="3"/>
+        </recipe>
+        <recipe name="armorWafuuTaishoChest" count="1" craft_time="90"
+                craft_area="workbench" tags="perkWafuuSmithing">
+            <ingredient name="resourceForgedSteel" count="18"/>
+            <ingredient name="resourceLeather" count="8"/>
+            <ingredient name="resourceCloth" count="5"/>
+        </recipe>
+        <recipe name="armorWafuuTaishoGloves" count="1" craft_time="45"
+                craft_area="workbench" tags="perkWafuuSmithing">
+            <ingredient name="resourceForgedSteel" count="6"/>
+            <ingredient name="resourceLeather" count="4"/>
+            <ingredient name="resourceCloth" count="2"/>
+        </recipe>
+        <recipe name="armorWafuuTaishoLegs" count="1" craft_time="60"
+                craft_area="workbench" tags="perkWafuuSmithing">
+            <ingredient name="resourceForgedSteel" count="8"/>
+            <ingredient name="resourceLeather" count="5"/>
+            <ingredient name="resourceCloth" count="3"/>
+        </recipe>
+
+        <!-- ==================== 調理ステーション ==================== -->
+
+        <!-- かまど: 石x20+粘土x10+木材x5 -->
+        <recipe name="wafuuKamado" count="1" craft_time="30">
+            <ingredient name="resourceCobblestones" count="20"/>
+            <ingredient name="resourceClayLump" count="10"/>
+            <ingredient name="resourceWood" count="5"/>
+        </recipe>
+
+        <!-- 囲炉裏: 石x30+鉄x5+木材x10 — perkWafuuCooking Lv1 で解放 -->
+        <recipe name="wafuuIrori" count="1" craft_time="45" tags="perkWafuuCooking">
+            <ingredient name="resourceCobblestones" count="30"/>
+            <ingredient name="resourceForgedIron" count="5"/>
+            <ingredient name="resourceWood" count="10"/>
+        </recipe>
+
+        <!-- 厨房セット: 鍛鉄x15+木材x20+機械部品x3 — perkWafuuCooking Lv3 で解放 -->
+        <recipe name="wafuuKitchen" count="1" craft_time="60" tags="perkWafuuCookingAdv">
+            <ingredient name="resourceForgedIron" count="15"/>
+            <ingredient name="resourceWood" count="20"/>
+            <ingredient name="resourceMechanicalParts" count="3"/>
+        </recipe>
+
+        <!-- ======================================================== -->
+        <!-- Phase 3: 建築ブロック・家具レシピ                           -->
+        <!-- ======================================================== -->
+
+        <!-- ==================== 壁材 ==================== -->
+
+        <recipe name="wafuuTsuchikabe:VariantHelper" count="10" craft_time="5">
+            <ingredient name="resourceClayLump" count="10"/>
+            <ingredient name="resourceWood" count="2"/>
+        </recipe>
+
+        <recipe name="wafuuShikkui:VariantHelper" count="10" craft_time="8">
+            <ingredient name="resourceConcreteMix" count="10"/>
+        </recipe>
+
+        <recipe name="wafuuItakabe:VariantHelper" count="10" craft_time="4">
+            <ingredient name="resourceWood" count="10"/>
+        </recipe>
+
+        <recipe name="wafuuIshigaki:VariantHelper" count="10" craft_time="10">
+            <ingredient name="resourceCobblestones" count="20"/>
+        </recipe>
+
+        <recipe name="wafuuNamakokabe:VariantHelper" count="10" craft_time="8">
+            <ingredient name="resourceCobblestones" count="10"/>
+            <ingredient name="resourceClayLump" count="10"/>
+        </recipe>
+
+        <!-- ==================== 床材 ==================== -->
+
+        <recipe name="wafuuTatami:VariantHelper" count="10" craft_time="4">
+            <ingredient name="resourceWood" count="5"/>
+            <ingredient name="resourceCloth" count="3"/>
+        </recipe>
+
+        <recipe name="wafuuItabari:VariantHelper" count="10" craft_time="4">
+            <ingredient name="resourceWood" count="8"/>
+        </recipe>
+
+        <recipe name="wafuuIshidatami:VariantHelper" count="10" craft_time="6">
+            <ingredient name="resourceCobblestones" count="15"/>
+        </recipe>
+
+        <!-- ==================== 屋根材 ==================== -->
+
+        <recipe name="wafuuKawaraBlack:VariantHelper" count="10" craft_time="6">
+            <ingredient name="resourceClayLump" count="10"/>
+        </recipe>
+
+        <recipe name="wafuuKawaraRed:VariantHelper" count="10" craft_time="6">
+            <ingredient name="resourceClayLump" count="10"/>
+        </recipe>
+
+        <!-- ==================== 建具 ==================== -->
+
+        <recipe name="wafuuShoji" count="1" craft_time="8">
+            <ingredient name="resourceWood" count="5"/>
+            <ingredient name="resourceCloth" count="3"/>
+        </recipe>
+
+        <recipe name="wafuuFusuma" count="1" craft_time="8">
+            <ingredient name="resourceWood" count="5"/>
+            <ingredient name="resourceCloth" count="3"/>
+        </recipe>
+
+        <recipe name="wafuuKoshido" count="1" craft_time="10">
+            <ingredient name="resourceWood" count="8"/>
+        </recipe>
+
+        <recipe name="wafuuHikido" count="1" craft_time="10">
+            <ingredient name="resourceWood" count="10"/>
+        </recipe>
+
+        <!-- ==================== 柱 ==================== -->
+
+        <recipe name="wafuuMarubashira:VariantHelper" count="5" craft_time="5">
+            <ingredient name="resourceWood" count="10"/>
+        </recipe>
+
+        <recipe name="wafuuKakubashira:VariantHelper" count="5" craft_time="5">
+            <ingredient name="resourceWood" count="10"/>
+        </recipe>
+
+        <recipe name="wafuuToriiPillar:VariantHelper" count="2" craft_time="15">
+            <ingredient name="resourceWood" count="15"/>
+            <ingredient name="resourceForgedIron" count="2"/>
+        </recipe>
+
+        <!-- ==================== 家具・装飾 ==================== -->
+
+        <recipe name="wafuuChabudai" count="1" craft_time="10">
+            <ingredient name="resourceWood" count="8"/>
+        </recipe>
+
+        <recipe name="wafuuZabuton" count="2" craft_time="5">
+            <ingredient name="resourceCloth" count="5"/>
+        </recipe>
+
+        <recipe name="wafuuFuton" count="1" craft_time="15">
+            <ingredient name="resourceCloth" count="10"/>
+            <ingredient name="resourceWood" count="3"/>
+        </recipe>
+
+        <recipe name="wafuuTansu" count="1" craft_time="20">
+            <ingredient name="resourceWood" count="15"/>
+            <ingredient name="resourceForgedIron" count="2"/>
+        </recipe>
+
+        <recipe name="wafuuByobu" count="1" craft_time="15">
+            <ingredient name="resourceWood" count="8"/>
+            <ingredient name="resourceCloth" count="5"/>
+        </recipe>
+
+        <!-- ==================== 照明 ==================== -->
+
+        <recipe name="wafuuAndon" count="1" craft_time="8">
+            <ingredient name="resourceWood" count="5"/>
+            <ingredient name="resourceCloth" count="2"/>
+        </recipe>
+
+        <recipe name="wafuuChochin" count="1" craft_time="8">
+            <ingredient name="resourceWood" count="3"/>
+            <ingredient name="resourceCloth" count="3"/>
+        </recipe>
+
+        <recipe name="wafuuIshidoro" count="1" craft_time="15">
+            <ingredient name="resourceCobblestones" count="15"/>
+        </recipe>
+
+        <!-- ==================== 装飾 ==================== -->
+
+        <recipe name="wafuuKakejiku" count="1" craft_time="10">
+            <ingredient name="resourceCloth" count="5"/>
+            <ingredient name="resourceWood" count="2"/>
+        </recipe>
+
+        <recipe name="wafuuKamidana" count="1" craft_time="15">
+            <ingredient name="resourceWood" count="10"/>
+        </recipe>
+
+        <recipe name="wafuuBonsai" count="1" craft_time="10">
+            <ingredient name="resourceWood" count="3"/>
+            <ingredient name="resourceClayLump" count="3"/>
+        </recipe>
+
+        <recipe name="wafuuTakegaki:VariantHelper" count="10" craft_time="5">
+            <ingredient name="resourceWood" count="8"/>
+        </recipe>
+
+        <!-- ==================== 防衛建築 ==================== -->
+
+        <recipe name="wafuuTakeyariBarricade" count="2" craft_time="8">
+            <ingredient name="resourceWood" count="10"/>
+        </recipe>
+
+        <recipe name="wafuuCastleGate" count="1" craft_time="30"
+                craft_area="workbench" tags="perkWafuuSmithing">
+            <ingredient name="resourceForgedIron" count="20"/>
+            <ingredient name="resourceWood" count="10"/>
+        </recipe>
+
+        <recipe name="wafuuYazama:VariantHelper" count="5" craft_time="15">
+            <ingredient name="resourceCobblestones" count="20"/>
+        </recipe>
+
+
+        <!-- ======================================================== -->
+        <!-- Phase 6: 投擲武器レシピ                                   -->
+        <!-- ======================================================== -->
+
+        <!-- 手裏剣: 鍛鉄x2 → 5個 (workbench, 忍術スキル) -->
+        <recipe name="thrownWafuuShuriken" count="5" craft_time="15"
+                craft_area="workbench"
+                tags="perkWafuuNinjutsu">
+            <ingredient name="resourceForgedIron" count="2"/>
+        </recipe>
+
+        <!-- くない: 鍛鉄x3 → 3個 (workbench, 忍術スキル) -->
+        <recipe name="thrownWafuuKunai" count="3" craft_time="20"
+                craft_area="workbench"
+                tags="perkWafuuNinjutsu">
+            <ingredient name="resourceForgedIron" count="3"/>
+        </recipe>
+
+        <!-- 煙玉: 火薬x3 + 布x2 → 2個 (workbench, 忍術スキル) -->
+        <recipe name="thrownWafuuSmokeBomb" count="2" craft_time="18"
+                craft_area="workbench"
+                tags="perkWafuuNinjutsu">
+            <ingredient name="resourceGunPowder" count="3"/>
+            <ingredient name="resourceCloth" count="2"/>
+        </recipe>
+
+
+        <!-- ======================================================== -->
+        <!-- Phase 6: 鍛冶素材レシピ                                   -->
+        <!-- ======================================================== -->
+
+        <!-- 玉鋼: 鍛鉄x5 → 1個 (forge) -->
+        <recipe name="resourceTamahagane" count="1" craft_time="60"
+                craft_area="forge">
+            <ingredient name="resourceForgedIron" count="5"/>
+        </recipe>
+
+        <!-- 刀身: 玉鋼x3 → 1個 (workbench, 上級鍛冶スキル) -->
+        <recipe name="resourceKatanaBlade" count="1" craft_time="90"
+                craft_area="workbench"
+                tags="perkWafuuSmithingAdv">
+            <ingredient name="resourceTamahagane" count="3"/>
+        </recipe>
+
     </append>
 </configs>

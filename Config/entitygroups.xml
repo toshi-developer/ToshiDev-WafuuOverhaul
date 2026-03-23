@@ -1,0 +1,158 @@
+<configs>
+
+    <!-- ======================================================== -->
+    <!-- ToshiDev Wafuu Overhaul — Phase 4: エンティティグループ定義 -->
+    <!-- 和風ゾンビをバニラのスポーングループに追加する             -->
+    <!-- ======================================================== -->
+
+
+    <!-- ==================== ZombiesAll: 全ゾンビプール ==================== -->
+    <!--
+        全バイオームで昼夜問わず出現しうる汎用プール。
+        出現重みは prob で調整。腐武者・餓鬼・化け狸を低確率で混在させる。
+        怨霊・鬼・般若は夜・特定バイオームグループに限定するため除外。
+    -->
+    <append xpath="/entitygroups/entitygroup[@name='ZombiesAll']">
+        <!-- 腐武者: 全エリアに低確率で出現（中程度の脅威） -->
+        <entity name="zombieWafuuKusamusha" prob="0.04"/>
+        <!-- 餓鬼: 全エリアに出現しやすい（弱いが群れる） -->
+        <entity name="zombieWafuuGaki"      prob="0.06"/>
+        <!-- 化け狸: 全エリアに低確率（レアドロップ目当てで探索価値あり） -->
+        <entity name="zombieWafuuBakeTanuki" prob="0.03"/>
+        <!-- 河童: 全エリアに極低確率（本来は水辺限定） -->
+        <entity name="zombieWafuuKappa"     prob="0.02"/>
+    </append>
+
+
+    <!-- ==================== ZombiesNight: 夜間スポーン強化 ==================== -->
+    <!--
+        夜間（~22:00 以降）に出現確率が上がる怖い敵を追加。
+        怨霊・般若・鬼を夜間専用として追加。
+    -->
+    <append xpath="/entitygroups/entitygroup[@name='ZombiesNight']">
+        <!-- 怨霊: 夜に現れる霊的存在（物理耐性高く、炎で倒すのが有効） -->
+        <entity name="zombieWafuuOnryo"     prob="0.05"/>
+        <!-- 般若: 夜に叫びながら他のゾンビを強化する（優先排除すべき） -->
+        <entity name="zombieWafuuHannya"    prob="0.04"/>
+        <!-- 腐武者: 夜はより多く出現 -->
+        <entity name="zombieWafuuKusamusha" prob="0.05"/>
+        <!-- 鬼: 稀に夜に出現するボス格（非常に危険） -->
+        <entity name="zombieWafuuOni"       prob="0.015"/>
+    </append>
+
+
+    <!-- ==================== ZombiesFeral: フェラルプール ==================== -->
+    <!--
+        フェラル化（目が光る強化個体）として出現するゾンビのプール。
+        腐武者・鬼・般若を高確率で追加。
+    -->
+    <append xpath="/entitygroups/entitygroup[@name='ZombiesFeral']">
+        <entity name="zombieWafuuKusamusha" prob="0.05"/>
+        <entity name="zombieWafuuOni"       prob="0.03"/>
+        <entity name="zombieWafuuHannya"    prob="0.04"/>
+        <entity name="zombieWafuuOnryo"     prob="0.03"/>
+    </append>
+
+
+    <!-- ==================== ZombiesForestDowntown: 森林バイオーム ==================== -->
+    <!--
+        Green Zone（森・平地・街中）に出現する敵。
+        化け狸・餓鬼は森林に馴染む和風妖怪。
+    -->
+    <append xpath="/entitygroups/entitygroup[@name='ZombiesForestDowntown']">
+        <entity name="zombieWafuuBakeTanuki" prob="0.06"/>
+        <entity name="zombieWafuuGaki"       prob="0.07"/>
+        <entity name="zombieWafuuKusamusha"  prob="0.04"/>
+    </append>
+
+
+    <!-- ==================== ZombiesBurntForest: 焦土バイオーム ==================== -->
+    <!--
+        Burnt Forest（焦土・廃墟地帯）は怨霊・鬼・腐武者が似合う。
+        怨霊は炎属性に弱いが、炎に包まれた土地に執着して彷徨うイメージ。
+    -->
+    <append xpath="/entitygroups/entitygroup[@name='ZombiesBurntForest']">
+        <entity name="zombieWafuuOnryo"      prob="0.06"/>
+        <entity name="zombieWafuuKusamusha"  prob="0.06"/>
+        <entity name="zombieWafuuOni"        prob="0.025"/>
+        <entity name="zombieWafuuHannya"     prob="0.04"/>
+    </append>
+
+
+    <!-- ==================== ZombiesWasteland: 荒地バイオーム ==================== -->
+    <!--
+        Wasteland（荒地）は鬼・腐武者などの強力な敵が多く出現。
+        般若も荒れた大地に呪いをまき散らすイメージ。
+    -->
+    <append xpath="/entitygroups/entitygroup[@name='ZombiesWasteland']">
+        <entity name="zombieWafuuOni"        prob="0.04"/>
+        <entity name="zombieWafuuKusamusha"  prob="0.06"/>
+        <entity name="zombieWafuuHannya"     prob="0.05"/>
+        <entity name="zombieWafuuOnryo"      prob="0.04"/>
+    </append>
+
+
+    <!-- ==================== ZombiesSnow: 雪原バイオーム ==================== -->
+    <!--
+        Snow（雪原）は怨霊・鬼が雪の中に潜むイメージ。
+        河童は雪解け水の川に棲むことがある。
+    -->
+    <append xpath="/entitygroups/entitygroup[@name='ZombiesSnow']">
+        <entity name="zombieWafuuOnryo"      prob="0.05"/>
+        <entity name="zombieWafuuOni"        prob="0.03"/>
+        <entity name="zombieWafuuKappa"      prob="0.04"/>
+        <entity name="zombieWafuuGaki"       prob="0.05"/>
+    </append>
+
+
+    <!-- ==================== ZombiesDesert: 砂漠バイオーム ==================== -->
+    <!--
+        Desert（砂漠）は腐武者・餓鬼が彷徨う。
+        怨霊は灼熱に弱いが砂漠の蜃気楼として稀に出現。
+    -->
+    <append xpath="/entitygroups/entitygroup[@name='ZombiesDesert']">
+        <entity name="zombieWafuuKusamusha"  prob="0.05"/>
+        <entity name="zombieWafuuGaki"       prob="0.06"/>
+        <entity name="zombieWafuuOnryo"      prob="0.025"/>
+        <entity name="zombieWafuuBakeTanuki" prob="0.04"/>
+    </append>
+
+
+    <!-- ==================== 和風ゾンビ専用グループ（新規定義） ==================== -->
+    <!--
+        和風スポーン POI や和風イベント用の専用グループ。
+        Phase 5 の和風 POI でこのグループを spawnzone に指定する。
+    -->
+
+    <!-- 序盤向け: 森や村落エリアのスポーン -->
+    <entitygroup name="ZombiesWafuuEarly">
+        <entity name="zombieWafuuGaki"       prob="0.40"/>
+        <entity name="zombieWafuuBakeTanuki" prob="0.25"/>
+        <entity name="zombieWafuuKappa"      prob="0.20"/>
+        <entity name="zombieWafuuKusamusha"  prob="0.15"/>
+    </entitygroup>
+
+    <!-- 中盤向け: 城跡・武家屋敷のスポーン -->
+    <entitygroup name="ZombiesWafuuMid">
+        <entity name="zombieWafuuKusamusha"  prob="0.35"/>
+        <entity name="zombieWafuuOnryo"      prob="0.25"/>
+        <entity name="zombieWafuuHannya"     prob="0.20"/>
+        <entity name="zombieWafuuGaki"       prob="0.20"/>
+    </entitygroup>
+
+    <!-- 終盤向け: 鬼の巣・廃社・血月イベント -->
+    <entitygroup name="ZombiesWafuuLate">
+        <entity name="zombieWafuuOni"        prob="0.30"/>
+        <entity name="zombieWafuuKusamusha"  prob="0.25"/>
+        <entity name="zombieWafuuHannya"     prob="0.25"/>
+        <entity name="zombieWafuuOnryo"      prob="0.20"/>
+    </entitygroup>
+
+    <!-- 水辺専用: 川・池・水田エリア -->
+    <entitygroup name="ZombiesWafuuWater">
+        <entity name="zombieWafuuKappa"      prob="0.60"/>
+        <entity name="zombieWafuuGaki"       prob="0.25"/>
+        <entity name="zombieWafuuOnryo"      prob="0.15"/>
+    </entitygroup>
+
+</configs>

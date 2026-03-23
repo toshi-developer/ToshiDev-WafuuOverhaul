@@ -3,128 +3,166 @@
     <!-- ======================================================== -->
     <!-- ToshiDev Wafuu Overhaul — ルートテーブル                    -->
     <!-- 和風素材・調味料・食料をバニラのルートコンテナに追加          -->
+    <!-- v2.5 対応: アイテムを直接注入（lootgroup 前方参照問題を回避）-->
     <!-- ======================================================== -->
 
 
-    <!-- ==================== カスタムルートグループ定義 ==================== -->
-
-    <append xpath="/lootcontainers">
-
-        <!-- 調味料グループ: キッチン・店舗で出現 -->
-        <lootgroup name="wafuuSeasoningGroup" count="1,2">
-            <item name="foodSoySauce"   count="1,3" prob="0.15"/>
-            <item name="foodSalt"       count="1,5" prob="0.15"/>
-            <item name="foodSuger"      count="1,5" prob="0.12"/>
-            <item name="foodMirin"      count="1,3" prob="0.10"/>
-            <item name="foodSake"       count="1,3" prob="0.10"/>
-            <item name="foodOil"        count="1,3" prob="0.10"/>
-            <item name="foodVinegar"    count="1,3" prob="0.08"/>
-            <item name="foodMiso"       count="1,2" prob="0.08"/>
-            <item name="foodDashi"      count="1,2" prob="0.06"/>
-            <item name="foodFlour"      count="1,3" prob="0.08"/>
-            <item name="foodPanko"      count="1,2" prob="0.05"/>
-            <item name="foodKoji"       count="1,2" prob="0.04"/>
-            <item name="foodSaltBundle" count="1"   prob="0.02"/>
-            <item name="foodSugerBundle" count="1"  prob="0.02"/>
-        </lootgroup>
-
-        <!-- 野菜・作物グループ: キッチン・農場で出現 -->
-        <lootgroup name="wafuuCropGroup" count="1,2">
-            <item name="foodRice"       count="1,5" prob="0.15"/>
-            <item name="foodOnion"      count="1,3" prob="0.12"/>
-            <item name="foodGreenOnion" count="1,3" prob="0.12"/>
-            <item name="cropSoybean"    count="1,4" prob="0.10"/>
-            <item name="cropDaikon"     count="1,3" prob="0.10"/>
-            <item name="cropHakusai"    count="1,3" prob="0.08"/>
-            <item name="cropShiitake"   count="1,3" prob="0.08"/>
-            <item name="foodTeaLeaf"    count="1,3" prob="0.08"/>
-            <item name="foodTofu"       count="1,2" prob="0.06"/>
-            <item name="cropWasabi"     count="1"   prob="0.02"/>
-        </lootgroup>
-
-        <!-- 保存食グループ: どこでも低確率で出現 -->
-        <lootgroup name="wafuuPreservedGroup" count="1">
-            <item name="foodUmeboshi"           count="1,3" prob="0.12"/>
-            <item name="foodTakuan"             count="1,3" prob="0.10"/>
-            <item name="foodHakusaiTsukemono"   count="1,3" prob="0.08"/>
-            <item name="foodHimono"             count="1,2" prob="0.10"/>
-            <item name="foodTsukudani"          count="2,8" prob="0.08"/>
-            <item name="foodSenbei"             count="3,10" prob="0.10"/>
-        </lootgroup>
-
-        <!-- 調理済み食料グループ: レア、店舗・レストランで出現 -->
-        <lootgroup name="wafuuCookedFoodGroup" count="1">
-            <item name="foodOnigiriUme"   count="1,2" prob="0.08"/>
-            <item name="foodOnigiriSake"  count="1,2" prob="0.06"/>
-            <item name="foodOnigiriKonbu" count="1,2" prob="0.06"/>
-            <item name="foodMochi"        count="1,2" prob="0.05"/>
-            <item name="foodYakitori"     count="1,3" prob="0.06"/>
-            <item name="foodGrilledSalmon" count="1"  prob="0.05"/>
-            <item name="foodDaifuku"      count="1,2" prob="0.04"/>
-            <item name="foodYokan"        count="1,2" prob="0.04"/>
-        </lootgroup>
-
-        <!-- 飲料グループ: 自販機・店舗で出現 -->
-        <lootgroup name="wafuuDrinkGroup" count="1">
-            <item name="drinkGreenTea"  count="1,2" prob="0.15"/>
-            <item name="drinkMugicha"   count="1,2" prob="0.12"/>
-            <item name="drinkAmazake"   count="1"   prob="0.06"/>
-            <item name="drinkNihonshu"  count="1"   prob="0.05"/>
-            <item name="drinkShochu"    count="1"   prob="0.03"/>
-        </lootgroup>
-
-    </append>
-
-
     <!-- ==================== バニラルートコンテナへの注入 ==================== -->
-    <!-- ※ xpath が合わない場合はサイレントに無視される（バージョン差分対応） -->
 
-    <!-- キッチン系: 調味料 + 作物 -->
-    <append xpath="/lootcontainers/lootgroup[@name='groupKitchenFood']">
-        <item group="wafuuSeasoningGroup" count="1" prob="0.12"/>
-        <item group="wafuuCropGroup"      count="1" prob="0.08"/>
-        <item group="wafuuPreservedGroup" count="1" prob="0.06"/>
+    <!-- 一般食料（Common）: 調味料・作物・保存食 -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupFoodCommon']">
+        <item name="foodSoySauce"   count="1,2" prob="0.04"/>
+        <item name="foodSalt"       count="1,3" prob="0.04"/>
+        <item name="foodMiso"       count="1,2" prob="0.03"/>
+        <item name="foodRice"       count="1,3" prob="0.04"/>
+        <item name="cropSoybean"    count="1,2" prob="0.03"/>
+        <item name="cropDaikon"     count="1,2" prob="0.03"/>
+        <item name="foodUmeboshi"   count="1,2" prob="0.03"/>
+        <item name="foodTakuan"     count="1,2" prob="0.03"/>
+        <item name="foodSenbei"     count="1,3" prob="0.03"/>
     </append>
 
-    <!-- 冷蔵庫: 作物 + 調理済み食料 -->
-    <append xpath="/lootcontainers/lootgroup[@name='groupFridgeFood']">
-        <item group="wafuuCropGroup"       count="1" prob="0.10"/>
-        <item group="wafuuCookedFoodGroup" count="1" prob="0.05"/>
+    <!-- 上位食料（Uncommon）: 作物・調理済み -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupFoodUncommon']">
+        <item name="cropHakusai"    count="1,2" prob="0.03"/>
+        <item name="cropShiitake"   count="1,2" prob="0.03"/>
+        <item name="foodTofu"       count="1,2" prob="0.03"/>
+        <item name="foodOnigiriUme" count="1,2" prob="0.02"/>
+        <item name="foodYakitori"   count="1,2" prob="0.02"/>
+        <item name="foodHimono"     count="1,2" prob="0.02"/>
     </append>
 
-    <!-- 食料品店（Shamway）: 全カテゴリ -->
-    <append xpath="/lootcontainers/lootgroup[@name='groupShamwayFood']">
-        <item group="wafuuSeasoningGroup"  count="1" prob="0.15"/>
-        <item group="wafuuCropGroup"       count="1" prob="0.10"/>
-        <item group="wafuuPreservedGroup"  count="1" prob="0.10"/>
-        <item group="wafuuCookedFoodGroup" count="1" prob="0.06"/>
-        <item group="wafuuDrinkGroup"      count="1" prob="0.08"/>
+    <!-- レア食料: 調理済み和食 -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupFoodRare']">
+        <item name="foodGrilledSalmon" count="1" prob="0.02"/>
+        <item name="foodOnigiriSake"   count="1" prob="0.02"/>
+        <item name="foodDaifuku"       count="1" prob="0.02"/>
+        <item name="foodMochi"         count="1" prob="0.02"/>
     </append>
 
-    <!-- 一般食料ルート: 保存食と作物 -->
-    <append xpath="/lootcontainers/lootgroup[@name='groupFoodGeneral']">
-        <item group="wafuuPreservedGroup" count="1" prob="0.08"/>
-        <item group="wafuuCropGroup"      count="1" prob="0.06"/>
+    <!-- Shamway 棚: 全カテゴリ -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupShamwayShelves01']">
+        <item name="foodSoySauce"   count="1,2" prob="0.05"/>
+        <item name="foodMiso"       count="1,2" prob="0.04"/>
+        <item name="foodDashi"      count="1,2" prob="0.03"/>
+        <item name="foodFlour"      count="1,2" prob="0.04"/>
+        <item name="foodRice"       count="1,3" prob="0.05"/>
+        <item name="cropSoybean"    count="1,2" prob="0.03"/>
+        <item name="foodUmeboshi"   count="1,2" prob="0.03"/>
+        <item name="foodTakuan"     count="1,2" prob="0.03"/>
+        <item name="foodSenbei"     count="2,5" prob="0.04"/>
+        <item name="drinkGreenTea"  count="1,2" prob="0.04"/>
+        <item name="drinkMugicha"   count="1,2" prob="0.03"/>
     </append>
 
-    <!-- 自販機: 飲料と保存食 -->
-    <append xpath="/lootcontainers/lootgroup[@name='groupVendingFood']">
-        <item group="wafuuDrinkGroup"     count="1" prob="0.12"/>
-        <item group="wafuuPreservedGroup" count="1" prob="0.05"/>
+    <!-- ゴミ箱: 低確率で保存食 -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupFoodTrashCommon']">
+        <item name="foodUmeboshi"   count="1" prob="0.02"/>
+        <item name="foodSenbei"     count="1,2" prob="0.02"/>
+        <item name="foodTsukudani"  count="1,2" prob="0.01"/>
     </append>
 
-    <!-- ゴミ箱・雑貨: 低確率で保存食 -->
-    <append xpath="/lootcontainers/lootgroup[@name='groupTrashFood']">
-        <item group="wafuuPreservedGroup" count="1" prob="0.04"/>
+    <!-- 飲料棚: 和風飲料 -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupDrinksCommon']">
+        <item name="drinkGreenTea"  count="1,2" prob="0.05"/>
+        <item name="drinkMugicha"   count="1,2" prob="0.04"/>
+        <item name="drinkAmazake"   count="1"   prob="0.02"/>
     </append>
 
-    <!-- トレーダー在庫: 全カテゴリ（高確率） -->
-    <append xpath="/lootcontainers/lootgroup[@name='groupTraderFood']">
-        <item group="wafuuSeasoningGroup"  count="1" prob="0.20"/>
-        <item group="wafuuCropGroup"       count="1" prob="0.15"/>
-        <item group="wafuuPreservedGroup"  count="1" prob="0.12"/>
-        <item group="wafuuCookedFoodGroup" count="1" prob="0.08"/>
-        <item group="wafuuDrinkGroup"      count="1" prob="0.10"/>
+    <!-- レア飲料: 酒 -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupDrinksRare']">
+        <item name="drinkNihonshu"  count="1" prob="0.02"/>
+        <item name="drinkShochu"    count="1" prob="0.01"/>
+    </append>
+
+
+    <!-- ==================== 武器ルート ==================== -->
+
+    <!-- 近接武器: T1 メレー -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_Melee']">
+        <item name="meleeWpnWafuuBokuto"   prob="0.03"/>
+        <item name="meleeWpnWafuuTakeyari"  prob="0.03"/>
+    </append>
+
+    <!-- 近接武器: T2 メレー -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_Melee']">
+        <item name="meleeWpnWafuuKatana"    prob="0.02"/>
+        <item name="meleeWpnWafuuNaginata"  prob="0.02"/>
+    </append>
+
+    <!-- 近接武器: T3 メレー -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_Melee']">
+        <item name="meleeWpnWafuuTachi"          prob="0.015"/>
+        <item name="meleeWpnWafuuJumonjiYari"    prob="0.015"/>
+        <item name="meleeWpnWafuuKanabo"         prob="0.015"/>
+        <item name="meleeWpnWafuuKusarigama"     prob="0.015"/>
+    </append>
+
+    <!-- 弓: T0-T1 -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_Archery']">
+        <item name="gunBowWafuuWakyuu"  prob="0.03"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_Archery']">
+        <item name="gunBowWafuuHankyuu"  prob="0.02"/>
+    </append>
+
+    <!-- 火縄銃: T2 ライフル -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_DeadEye']">
+        <item name="gunRifleWafuuTanegashima"  prob="0.015"/>
+    </append>
+
+    <!-- 矢: Arrow グループ -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupArrowSmall']">
+        <item name="ammoArrowWafuuTake" count="5,15" prob="0.04"/>
+    </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupArrowMedium']">
+        <item name="ammoArrowWafuuTake" count="10,25" prob="0.04"/>
+        <item name="ammoArrowWafuuHi"   count="3,8"   prob="0.02"/>
+        <item name="ammoArrowWafuuDoku" count="3,8"   prob="0.02"/>
+    </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupArrowLarge']">
+        <item name="ammoArrowWafuuTake"  count="15,40" prob="0.04"/>
+        <item name="ammoArrowWafuuHi"    count="5,15"  prob="0.03"/>
+        <item name="ammoArrowWafuuDoku"  count="5,15"  prob="0.03"/>
+        <item name="ammoArrowWafuuHakou" count="3,10"  prob="0.02"/>
+    </append>
+
+    <!-- 投擲武器: T1 投擲（手裏剣・くない） -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_Melee']">
+        <item name="thrownWafuuShuriken" count="3,8"  prob="0.03"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_Melee']">
+        <item name="thrownWafuuShuriken" count="5,15" prob="0.02"/>
+        <item name="thrownWafuuKunai"    count="2,6"  prob="0.02"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_Melee']">
+        <item name="thrownWafuuKunai"    count="3,10" prob="0.015"/>
+        <item name="thrownWafuuSmokeBomb" count="1,3" prob="0.010"/>
+    </append>
+
+
+    <!-- ==================== 防具ルート ==================== -->
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupAllArmor']">
+        <item name="armorWafuuAshigaruHelmet"  prob="0.01"/>
+        <item name="armorWafuuAshigaruChest"   prob="0.01"/>
+        <item name="armorWafuuAshigaruGloves"  prob="0.01"/>
+        <item name="armorWafuuAshigaruLegs"    prob="0.01"/>
+        <item name="armorWafuuSamuraiHelmet"   prob="0.008"/>
+        <item name="armorWafuuSamuraiChest"    prob="0.008"/>
+        <item name="armorWafuuSamuraiGloves"   prob="0.008"/>
+        <item name="armorWafuuSamuraiLegs"     prob="0.008"/>
+        <item name="armorWafuuShinobiHelmet"   prob="0.008"/>
+        <item name="armorWafuuShinobiChest"    prob="0.008"/>
+        <item name="armorWafuuShinobiGloves"   prob="0.008"/>
+        <item name="armorWafuuShinobiLegs"     prob="0.008"/>
+        <item name="armorWafuuTaishoHelmet"    prob="0.005"/>
+        <item name="armorWafuuTaishoChest"     prob="0.005"/>
+        <item name="armorWafuuTaishoGloves"    prob="0.005"/>
+        <item name="armorWafuuTaishoLegs"      prob="0.005"/>
     </append>
 
 </configs>

@@ -5,6 +5,26 @@
         <!-- ToshiDev Wafuu Overhaul — Phase 1: アイテム定義            -->
         <!-- ======================================================== -->
 
+        <!-- ==================== バニラ補完素材 ==================== -->
+
+        <!-- 生魚: バニラに存在しないため独自定義。釣りや水辺ルートで入手想定 -->
+        <item name="foodRawFish">
+            <property name="Tags" value="food,raw"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodWaterRaw"/>
+            <property name="Meshfile" value="@:Other/Items/Food/parcelGenericPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="50"/>
+            <property name="EconomicValue" value="15"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="rawmeat_grab"/>
+            <property name="SoundPlace" value="rawmeat_place"/>
+            <property name="CustomIcon" value="foodRawFish"/>
+            <property name="DescriptionKey" value="foodRawFish_desc"/>
+            <property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+        </item>
+
         <!-- ==================== テンプレート ==================== -->
 
         <!-- 素材・調味料テンプレート（非消費・クラフト材料用） -->
@@ -784,6 +804,922 @@
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="8"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".health" operation="add" value="3"/>
             </effect_group>
+        </item>
+
+
+
+        <!-- ======================================================== -->
+        <!-- Phase 2: 近接武器（9 種）                                  -->
+        <!-- ======================================================== -->
+
+        <!-- ==================== T1 近接武器 ==================== -->
+
+        <!-- 木刀: T1 刀剣。木製の練習刀。序盤の基本武器 -->
+        <!-- Extends: meleeWpnClubT0WoodenClub（棍棒系・木製） -->
+        <item name="meleeWpnWafuuBokuto">
+            <property name="Extends" value="meleeWpnClubT0WoodenClub"
+                       param1="CustomIcon,DescriptionKey,Group"/>
+            <property name="CustomIcon" value="meleeWpnWafuuBokuto"/>
+            <property name="DescriptionKey" value="meleeWpnWafuuBokuto_desc"/>
+            <property name="Tags" value="blunt,club,melee,grunting,light,longShaft,perkFlurryOfStrength,weapon,meleeWeapon,attStrength,perkPummelPete,canHaveCosmetic,clubSkill,wafuuWeapon"/>
+            <property name="Group" value="Ammo/Weapons,Melee Weapons"/>
+            <property name="EconomicValue" value="250"/>
+            <property name="TraderStageTemplate" value="baseTier0"/>
+            <effect_group name="meleeWpnWafuuBokuto">
+                <passive_effect name="EntityDamage" operation="base_set" value="13" tags="perkPummelPete"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkPummelPete"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkPummelPete"/>
+                <passive_effect name="BlockDamage" operation="base_set" value="15" tags="perkPummelPete"/>
+                <passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkPummelPete"/>
+                <passive_effect name="AttacksPerMinute" operation="base_set" value="70" tags="perkPummelPete,perkFlurryOfStrength"/>
+                <passive_effect name="StaminaLoss" operation="base_set" value="12" tags="primary"/>
+                <passive_effect name="MaxRange" operation="base_set" value="2.2" tags="perkPummelPete"/>
+                <passive_effect name="BlockRange" operation="base_set" value="3.3" tags="perkPummelPete"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6" tags="perkPummelPete"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
+                <passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,3" tier="1,2,3,4,5,6"/>
+            </effect_group>
+        </item>
+
+        <!-- 竹槍: T1 槍。リーチ長・低威力 -->
+        <!-- Extends: meleeWpnSpearT0StoneSpear（槍系） -->
+        <item name="meleeWpnWafuuTakeyari">
+            <property name="Extends" value="meleeWpnSpearT0StoneSpear"
+                       param1="CustomIcon,DescriptionKey,Group"/>
+            <property name="CustomIcon" value="meleeWpnWafuuTakeyari"/>
+            <property name="DescriptionKey" value="meleeWpnWafuuTakeyari_desc"/>
+            <property name="Tags" value="melee,grunting,medium,weapon,meleeWeapon,longShaft,attPerception,perkJavelinMaster,perkFlurryOfPerception,canHaveCosmetic,spearSkill,wafuuWeapon"/>
+            <property name="Group" value="Ammo/Weapons,Melee Weapons"/>
+            <property name="EconomicValue" value="200"/>
+            <property name="TraderStageTemplate" value="baseTier0"/>
+            <effect_group name="meleeWpnWafuuTakeyari">
+                <passive_effect name="EntityDamage" operation="base_set" value="12" tags="perkJavelinMaster"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkJavelinMaster"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkJavelinMaster"/>
+                <passive_effect name="BlockDamage" operation="base_set" value="6" tags="perkJavelinMaster"/>
+                <passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkJavelinMaster"/>
+                <passive_effect name="AttacksPerMinute" operation="base_set" value="50" tags="perkJavelinMaster,perkFlurryOfPerception"/>
+                <passive_effect name="StaminaLoss" operation="base_set" value="16" tags="primary"/>
+                <passive_effect name="MaxRange" operation="base_set" value="3.0" tags="perkJavelinMaster"/>
+                <passive_effect name="BlockRange" operation="base_set" value="4.0" tags="perkJavelinMaster"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="150,300" tier="1,6" tags="perkJavelinMaster"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkJavelinMaster"/>
+                <passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,3" tier="1,2,3,4,5,6"/>
+                <passive_effect name="TargetArmor" operation="perc_add" value="-.3" tags="perkJavelinMaster"/>
+            </effect_group>
+        </item>
+
+        <!-- ==================== T2 近接武器 ==================== -->
+
+        <!-- 打刀: T2 刀剣。高速斬撃・出血付与 -->
+        <!-- Extends: meleeWpnBladeT3Machete（刀剣系） -->
+        <item name="meleeWpnWafuuKatana">
+            <property name="Extends" value="meleeWpnBladeT3Machete"
+                       param1="CustomIcon,DescriptionKey"/>
+            <property name="CustomIcon" value="meleeWpnWafuuKatana"/>
+            <property name="DescriptionKey" value="meleeWpnWafuuKatana_desc"/>
+            <property name="Tags" value="machete,melee,grunting,light,longShaft,perkFlurryOfAgility,weapon,meleeWeapon,attAgility,perkDeepCuts,canHaveCosmetic,bladeSkill,wafuuWeapon"/>
+            <property name="EconomicValue" value="1200"/>
+            <property name="TraderStageTemplate" value="baseTier2"/>
+            <property name="UnlockedBy" value="perkWafuuSwordsmanship,craftingBlades"/>
+            <effect_group name="meleeWpnWafuuKatana">
+                <passive_effect name="EntityDamage" operation="base_set" value="28" tags="perkDeepCuts"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkDeepCuts"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/>
+                <passive_effect name="BlockDamage" operation="base_set" value="18" tags="perkDeepCuts"/>
+                <passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/>
+                <passive_effect name="AttacksPerMinute" operation="base_set" value="72" tags="perkDeepCuts,perkFlurryOfAgility"/>
+                <passive_effect name="StaminaLoss" operation="base_set" value="15" tags="primary"/>
+                <passive_effect name="MaxRange" operation="base_set" value="2.5" tags="perkDeepCuts"/>
+                <passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkDeepCuts"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="800,1600" tier="1,6" tags="perkDeepCuts"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
+                <passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+                <!-- 出血付与: 15%の確率 -->
+                <triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffCutBleeding" chance=".15"/>
+            </effect_group>
+        </item>
+
+        <!-- 薙刀: T2 長柄武器。広範囲・ノックバック -->
+        <!-- Extends: meleeWpnSpearT1IronSpear（槍系） -->
+        <item name="meleeWpnWafuuNaginata">
+            <property name="Extends" value="meleeWpnSpearT1IronSpear"
+                       param1="CustomIcon,DescriptionKey"/>
+            <property name="CustomIcon" value="meleeWpnWafuuNaginata"/>
+            <property name="DescriptionKey" value="meleeWpnWafuuNaginata_desc"/>
+            <property name="Tags" value="melee,grunting,medium,weapon,meleeWeapon,longShaft,attPerception,perkJavelinMaster,perkFlurryOfPerception,canHaveCosmetic,spearSkill,wafuuWeapon"/>
+            <property name="EconomicValue" value="900"/>
+            <property name="TraderStageTemplate" value="baseTier1"/>
+            <property name="UnlockedBy" value="perkWafuuSpearmanship,craftingSpears"/>
+            <effect_group name="meleeWpnWafuuNaginata">
+                <passive_effect name="EntityDamage" operation="base_set" value="22" tags="perkJavelinMaster"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkJavelinMaster"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkJavelinMaster"/>
+                <passive_effect name="BlockDamage" operation="base_set" value="12" tags="perkJavelinMaster"/>
+                <passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkJavelinMaster"/>
+                <passive_effect name="AttacksPerMinute" operation="base_set" value="55" tags="perkJavelinMaster,perkFlurryOfPerception"/>
+                <passive_effect name="StaminaLoss" operation="base_set" value="18" tags="primary"/>
+                <passive_effect name="MaxRange" operation="base_set" value="3.2" tags="perkJavelinMaster"/>
+                <passive_effect name="BlockRange" operation="base_set" value="4.5" tags="perkJavelinMaster"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="500,1000" tier="1,6" tags="perkJavelinMaster"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkJavelinMaster"/>
+                <passive_effect name="ModSlots" operation="base_set" value="2,2,3,3,4,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+                <passive_effect name="TargetArmor" operation="perc_add" value="-.4" tags="perkJavelinMaster"/>
+                <!-- 薙刀の長柄ボーナス: スタミナ消費軽減 -->
+                <passive_effect name="StaminaLoss" operation="perc_add" value="-.15"/>
+            </effect_group>
+        </item>
+
+        <!-- ==================== T3 近接武器 ==================== -->
+
+        <!-- 太刀: T3 大型刀剣。高威力・やや低速 -->
+        <!-- Extends: meleeWpnBladeT3Machete（刀剣系） -->
+        <item name="meleeWpnWafuuTachi">
+            <property name="Extends" value="meleeWpnBladeT3Machete"
+                       param1="CustomIcon,DescriptionKey"/>
+            <property name="CustomIcon" value="meleeWpnWafuuTachi"/>
+            <property name="DescriptionKey" value="meleeWpnWafuuTachi_desc"/>
+            <property name="Tags" value="machete,melee,grunting,light,longShaft,perkFlurryOfAgility,weapon,meleeWeapon,attAgility,perkDeepCuts,canHaveCosmetic,bladeSkill,wafuuWeapon"/>
+            <property name="EconomicValue" value="1800"/>
+            <property name="TraderStageTemplate" value="baseTier3"/>
+            <property name="UnlockedBy" value="perkWafuuSwordsmanship,craftingBlades"/>
+            <effect_group name="meleeWpnWafuuTachi">
+                <passive_effect name="EntityDamage" operation="base_set" value="38" tags="perkDeepCuts"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkDeepCuts"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/>
+                <passive_effect name="BlockDamage" operation="base_set" value="28" tags="perkDeepCuts"/>
+                <passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/>
+                <passive_effect name="AttacksPerMinute" operation="base_set" value="52" tags="perkDeepCuts,perkFlurryOfAgility"/>
+                <passive_effect name="StaminaLoss" operation="base_set" value="22" tags="primary"/>
+                <passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkDeepCuts"/>
+                <passive_effect name="BlockRange" operation="base_set" value="3.8" tags="perkDeepCuts"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="1200,2400" tier="1,6" tags="perkDeepCuts"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
+                <passive_effect name="ModSlots" operation="base_set" value="3,3,4,4,4,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+                <!-- 出血付与: 25%の確率 -->
+                <triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffCutBleeding" chance=".25"/>
+            </effect_group>
+        </item>
+
+        <!-- 十文字槍: T3 長柄武器。リーチ最長・貫通 -->
+        <!-- Extends: meleeWpnSpearT3SteelSpear（槍系上位） -->
+        <item name="meleeWpnWafuuJumonjiYari">
+            <property name="Extends" value="meleeWpnSpearT3SteelSpear"
+                       param1="CustomIcon,DescriptionKey"/>
+            <property name="CustomIcon" value="meleeWpnWafuuJumonjiYari"/>
+            <property name="DescriptionKey" value="meleeWpnWafuuJumonjiYari_desc"/>
+            <property name="Tags" value="melee,grunting,medium,weapon,meleeWeapon,longShaft,attPerception,perkJavelinMaster,perkFlurryOfPerception,canHaveCosmetic,spearSkill,wafuuWeapon"/>
+            <property name="EconomicValue" value="1800"/>
+            <property name="TraderStageTemplate" value="baseTier3"/>
+            <property name="UnlockedBy" value="perkWafuuSpearmanship,craftingSpears"/>
+            <effect_group name="meleeWpnWafuuJumonjiYari">
+                <passive_effect name="EntityDamage" operation="base_set" value="32" tags="perkJavelinMaster"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkJavelinMaster"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkJavelinMaster"/>
+                <passive_effect name="BlockDamage" operation="base_set" value="16" tags="perkJavelinMaster"/>
+                <passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkJavelinMaster"/>
+                <passive_effect name="AttacksPerMinute" operation="base_set" value="48" tags="perkJavelinMaster,perkFlurryOfPerception"/>
+                <passive_effect name="StaminaLoss" operation="base_set" value="22" tags="primary"/>
+                <passive_effect name="MaxRange" operation="base_set" value="3.6" tags="perkJavelinMaster"/>
+                <passive_effect name="BlockRange" operation="base_set" value="5.0" tags="perkJavelinMaster"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="800,1600" tier="1,6" tags="perkJavelinMaster"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkJavelinMaster"/>
+                <passive_effect name="ModSlots" operation="base_set" value="3,3,4,4,4,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+                <!-- 高い防御貫通 -->
+                <passive_effect name="TargetArmor" operation="perc_add" value="-.6" tags="perkJavelinMaster"/>
+            </effect_group>
+        </item>
+
+        <!-- 金棒: T3 重鈍器。最大威力・壁破壊ボーナス -->
+        <!-- Extends: meleeWpnClubT3SteelClub（棍棒系上位） -->
+        <item name="meleeWpnWafuuKanabo">
+            <property name="Extends" value="meleeWpnClubT3SteelClub"
+                       param1="CustomIcon,DescriptionKey"/>
+            <property name="CustomIcon" value="meleeWpnWafuuKanabo"/>
+            <property name="DescriptionKey" value="meleeWpnWafuuKanabo_desc"/>
+            <property name="Tags" value="blunt,club,melee,grunting,light,longShaft,perkFlurryOfStrength,weapon,meleeWeapon,attStrength,perkPummelPete,canHaveCosmetic,clubSkill,wafuuWeapon"/>
+            <property name="EconomicValue" value="2000"/>
+            <property name="TraderStageTemplate" value="baseTier3"/>
+            <property name="UnlockedBy" value="perkWafuuSmithing,craftingClubs"/>
+            <effect_group name="meleeWpnWafuuKanabo">
+                <passive_effect name="EntityDamage" operation="base_set" value="42" tags="perkPummelPete"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkPummelPete"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkPummelPete"/>
+                <passive_effect name="BlockDamage" operation="base_set" value="45" tags="perkPummelPete"/>
+                <passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkPummelPete"/>
+                <passive_effect name="AttacksPerMinute" operation="base_set" value="42" tags="perkPummelPete,perkFlurryOfStrength"/>
+                <passive_effect name="StaminaLoss" operation="base_set" value="28" tags="primary"/>
+                <passive_effect name="MaxRange" operation="base_set" value="2.4" tags="perkPummelPete"/>
+                <passive_effect name="BlockRange" operation="base_set" value="3.6" tags="perkPummelPete"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="1500,3000" tier="1,6" tags="perkPummelPete"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
+                <passive_effect name="ModSlots" operation="base_set" value="3,3,4,4,4,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="ModPowerBonus" operation="perc_add" value=".15" tags="EntityDamage,BlockDamage"/>
+                <!-- 金棒の重量ボーナス: ブロックダメージ増加 -->
+                <passive_effect name="BlockDamage" operation="perc_add" value=".30"/>
+            </effect_group>
+        </item>
+
+        <!-- 鎖鎌: T3 特殊武器。範囲攻撃・出血 -->
+        <!-- Extends: meleeWpnBladeT3Machete（刀剣系ベース） -->
+        <item name="meleeWpnWafuuKusarigama">
+            <property name="Extends" value="meleeWpnBladeT3Machete"
+                       param1="CustomIcon,DescriptionKey"/>
+            <property name="CustomIcon" value="meleeWpnWafuuKusarigama"/>
+            <property name="DescriptionKey" value="meleeWpnWafuuKusarigama_desc"/>
+            <property name="Tags" value="machete,melee,grunting,light,longShaft,perkFlurryOfAgility,weapon,meleeWeapon,attAgility,perkDeepCuts,canHaveCosmetic,bladeSkill,wafuuWeapon"/>
+            <property name="EconomicValue" value="1600"/>
+            <property name="TraderStageTemplate" value="baseTier3"/>
+            <property name="UnlockedBy" value="perkWafuuSwordsmanship,craftingBlades"/>
+            <effect_group name="meleeWpnWafuuKusarigama">
+                <passive_effect name="EntityDamage" operation="base_set" value="26" tags="perkDeepCuts"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkDeepCuts"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/>
+                <passive_effect name="BlockDamage" operation="base_set" value="14" tags="perkDeepCuts"/>
+                <passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/>
+                <passive_effect name="AttacksPerMinute" operation="base_set" value="75" tags="perkDeepCuts,perkFlurryOfAgility"/>
+                <passive_effect name="StaminaLoss" operation="base_set" value="14" tags="primary"/>
+                <passive_effect name="MaxRange" operation="base_set" value="2.8" tags="perkDeepCuts"/>
+                <passive_effect name="BlockRange" operation="base_set" value="4.0" tags="perkDeepCuts"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="600,1200" tier="1,6" tags="perkDeepCuts"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
+                <passive_effect name="ModSlots" operation="base_set" value="2,3,3,3,4,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+                <!-- 出血付与: 20%の確率 -->
+                <triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffCutBleeding" chance=".20"/>
+            </effect_group>
+        </item>
+
+        <!-- ==================== T4 近接武器（レア） ==================== -->
+
+        <!-- 妖刀: T4 最強刀剣。レアドロップ or 高難度クラフト -->
+        <!-- Extends: meleeWpnBladeT3Machete（刀剣系） -->
+        <item name="meleeWpnWafuuDemonBlade">
+            <property name="Extends" value="meleeWpnBladeT3Machete"
+                       param1="CustomIcon,DescriptionKey"/>
+            <property name="CustomIcon" value="meleeWpnWafuuDemonBlade"/>
+            <property name="DescriptionKey" value="meleeWpnWafuuDemonBlade_desc"/>
+            <property name="Tags" value="machete,melee,grunting,light,longShaft,perkFlurryOfAgility,weapon,meleeWeapon,attAgility,perkDeepCuts,canHaveCosmetic,bladeSkill,wafuuWeapon"/>
+            <property name="EconomicValue" value="3500"/>
+            <property name="TraderStageTemplate" value="baseTier3"/>
+            <property name="UnlockedBy" value="perkWafuuSmithing"/>
+            <effect_group name="meleeWpnWafuuDemonBlade">
+                <passive_effect name="EntityDamage" operation="base_set" value="48" tags="perkDeepCuts"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkDeepCuts"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/>
+                <passive_effect name="BlockDamage" operation="base_set" value="35" tags="perkDeepCuts"/>
+                <passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/>
+                <passive_effect name="AttacksPerMinute" operation="base_set" value="68" tags="perkDeepCuts,perkFlurryOfAgility"/>
+                <passive_effect name="StaminaLoss" operation="base_set" value="20" tags="primary"/>
+                <passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkDeepCuts"/>
+                <passive_effect name="BlockRange" operation="base_set" value="3.8" tags="perkDeepCuts"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="2000,4000" tier="1,6" tags="perkDeepCuts"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
+                <passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,4,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="ModPowerBonus" operation="perc_add" value=".15" tags="EntityDamage,BlockDamage"/>
+                <!-- 出血付与: 35%の確率 -->
+                <triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffCutBleeding" chance=".35"/>
+                <!-- 妖刀特殊: ヒット時に自身のHPを微量吸収 -->
+                <triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="self" cvar=".health" operation="add" value="2"/>
+            </effect_group>
+        </item>
+
+        <!-- ======================================================== -->
+        <!-- Phase 2: 遠距離武器                                        -->
+        <!-- ======================================================== -->
+
+        <!-- ==================== 弓 ==================== -->
+
+        <!-- 和弓 (Wakyuu): T1 長弓。高威力・低連射 -->
+        <!-- Extends: gunBowT1WoodenBow（木弓） -->
+        <item name="gunBowWafuuWakyuu">
+            <property name="Extends" value="gunBowT1WoodenBow"
+                       param1="CustomIcon,DescriptionKey"/>
+            <property name="CustomIcon" value="gunBowWafuuWakyuu"/>
+            <property name="DescriptionKey" value="gunBowWafuuWakyuu_desc"/>
+            <property name="Tags" value="weapon,ranged,bowDrawPenalty,archery,bow,attAgility,perkArchery,canHaveCosmetic,bowSkill,wafuuWeapon"/>
+            <property name="EconomicValue" value="600"/>
+            <property name="UnlockedBy" value="perkWafuuArchery"/>
+            <effect_group name="gunBowWafuuWakyuu">
+                <passive_effect name="EntityDamage" operation="base_set" value="18" tags="perkArchery"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkArchery"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkArchery"/>
+                <passive_effect name="BlockDamage" operation="base_set" value="5" tags="perkArchery"/>
+                <passive_effect name="AttacksPerMinute" operation="base_set" value="28" tags="perkArchery"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="300,600" tier="1,6" tags="perkArchery"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkArchery"/>
+                <passive_effect name="ModSlots" operation="base_set" value="1,2,2,3,3,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+                <passive_effect name="MaxRange" operation="base_set" value="30" tags="perkArchery"/>
+            </effect_group>
+        </item>
+
+        <!-- 半弓 (Hankyuu): T2 短弓。中威力・高連射 -->
+        <!-- Extends: gunBowT1WoodenBow（木弓） -->
+        <item name="gunBowWafuuHankyuu">
+            <property name="Extends" value="gunBowT1WoodenBow"
+                       param1="CustomIcon,DescriptionKey"/>
+            <property name="CustomIcon" value="gunBowWafuuHankyuu"/>
+            <property name="DescriptionKey" value="gunBowWafuuHankyuu_desc"/>
+            <property name="Tags" value="weapon,ranged,bowDrawPenalty,archery,bow,attAgility,perkArchery,canHaveCosmetic,bowSkill,wafuuWeapon"/>
+            <property name="EconomicValue" value="900"/>
+            <property name="UnlockedBy" value="perkWafuuArchery"/>
+            <effect_group name="gunBowWafuuHankyuu">
+                <passive_effect name="EntityDamage" operation="base_set" value="13" tags="perkArchery"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkArchery"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkArchery"/>
+                <passive_effect name="BlockDamage" operation="base_set" value="3" tags="perkArchery"/>
+                <passive_effect name="AttacksPerMinute" operation="base_set" value="48" tags="perkArchery"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="350,700" tier="1,6" tags="perkArchery"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkArchery"/>
+                <passive_effect name="ModSlots" operation="base_set" value="2,2,3,3,4,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+                <passive_effect name="MaxRange" operation="base_set" value="22" tags="perkArchery"/>
+            </effect_group>
+        </item>
+
+        <!-- 火縄銃 (Tanegashima): T3 単発超高威力・リロード遅い -->
+        <!-- Extends: gunRifleT0PipeRifle -->
+        <item name="gunRifleWafuuTanegashima">
+            <property name="Extends" value="gunRifleT0PipeRifle"
+                       param1="CustomIcon,DescriptionKey"/>
+            <property name="CustomIcon" value="gunRifleWafuuTanegashima"/>
+            <property name="DescriptionKey" value="gunRifleWafuuTanegashima_desc"/>
+            <property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,gun,attPerception,perkDeadEye,canHaveCosmetic,rifleSkill,wafuuWeapon"/>
+            <property name="EconomicValue" value="1800"/>
+            <property name="UnlockedBy" value="perkWafuuSmithing"/>
+            <effect_group name="gunRifleWafuuTanegashima">
+                <passive_effect name="EntityDamage" operation="base_set" value="85" tags="perkDeadEye"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkDeadEye"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeadEye"/>
+                <passive_effect name="BlockDamage" operation="base_set" value="15" tags="perkDeadEye"/>
+                <passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeadEye"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="500,1000" tier="1,6" tags="perkDeadEye"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeadEye"/>
+                <passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,3" tier="1,2,3,4,5,6"/>
+                <passive_effect name="ModPowerBonus" operation="perc_add" value=".15" tags="EntityDamage,BlockDamage"/>
+                <passive_effect name="MaxRange" operation="base_set" value="40" tags="perkDeadEye"/>
+                <!-- リロードが非常に遅い -->
+                <passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="-.40" tags="perkDeadEye"/>
+            </effect_group>
+        </item>
+
+        <!-- ==================== 矢弾 ==================== -->
+
+        <!-- 竹矢 (TakeYa): 基本矢 -->
+        <item name="ammoArrowWafuuTake">
+            <property name="Extends" value="ammoArrowStone"
+                       param1="CustomIcon,DescriptionKey"/>
+            <property name="CustomIcon" value="ammoArrowWafuuTake"/>
+            <property name="DescriptionKey" value="ammoArrowWafuuTake_desc"/>
+            <property name="EconomicValue" value="8"/>
+        </item>
+
+        <!-- 火矢 (HiYa): 着火・継続ダメージ -->
+        <item name="ammoArrowWafuuHi">
+            <property name="Extends" value="ammoArrowFlaming"
+                       param1="CustomIcon,DescriptionKey"/>
+            <property name="CustomIcon" value="ammoArrowWafuuHi"/>
+            <property name="DescriptionKey" value="ammoArrowWafuuHi_desc"/>
+            <property name="EconomicValue" value="15"/>
+        </item>
+
+        <!-- 毒矢 (DokuYa): 毒・スロー -->
+        <item name="ammoArrowWafuuDoku">
+            <property name="Extends" value="ammoArrowIron"
+                       param1="CustomIcon,DescriptionKey"/>
+            <property name="CustomIcon" value="ammoArrowWafuuDoku"/>
+            <property name="DescriptionKey" value="ammoArrowWafuuDoku_desc"/>
+            <property name="EconomicValue" value="18"/>
+            <effect_group name="ammoArrowWafuuDoku">
+                <triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffIll01" chance=".5"/>
+            </effect_group>
+        </item>
+
+        <!-- 破甲矢 (HakouYa): 防御貫通 -->
+        <item name="ammoArrowWafuuHakou">
+            <property name="Extends" value="ammoArrowSteelAP"
+                       param1="CustomIcon,DescriptionKey"/>
+            <property name="CustomIcon" value="ammoArrowWafuuHakou"/>
+            <property name="DescriptionKey" value="ammoArrowWafuuHakou_desc"/>
+            <property name="EconomicValue" value="22"/>
+        </item>
+
+
+        <!-- ======================================================== -->
+        <!-- Phase 2: 防具セット                                        -->
+        <!-- ======================================================== -->
+
+        <!-- ==================== 足軽装備 (Ashigaru) — T1 軽装 ==================== -->
+
+        <item name="armorWafuuAshigaruHelmet">
+            <property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="armorWafuuAshigaruHelmet"/>
+            <property name="DescriptionKey" value="armorWafuuAshigaruHelmet_desc"/>
+            <property name="DisplayType" value="armorLumberjackHelmet"/>
+            <property name="ArmorGroup" value="groupWafuuAshigaru"/>
+            <property name="Tags" value="head,armor,armorHead,lightArmor,lightArmorDeg,armorLightSkill,biomeChallenge,wafuuArmor"/>
+            <property name="EquipSlot" value="Head"/>
+            <property name="SoundPickup" value="headwear_cloth_grab"/>
+            <property name="SoundPlace" value="headwear_cloth_place"/>
+            <property name="UnlockedBy" value="perkWafuuSmithing"/>
+            <property name="EconomicValue" value="300"/>
+            <effect_group name="WafuuAshigaruHelmet">
+                <passive_effect name="ModSlots" operation="base_set" value="1,2,2,3,3,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="6,10" tier="1,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="5,8" tier="1,6" tags="heat,electrical"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.03" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+            </effect_group>
+        </item>
+
+        <item name="armorWafuuAshigaruChest">
+            <property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="armorWafuuAshigaruChest"/>
+            <property name="DescriptionKey" value="armorWafuuAshigaruChest_desc"/>
+            <property name="DisplayType" value="armorLumberjackOutfit"/>
+            <property name="ArmorGroup" value="groupWafuuAshigaru"/>
+            <property name="Tags" value="chest,armor,armorChest,lightArmor,lightArmorDeg,armorLightSkill,biomeChallenge,wafuuArmor"/>
+            <property name="EquipSlot" value="Chest"/>
+            <property name="SoundPickup" value="cloth_grab"/>
+            <property name="SoundPlace" value="cloth_place"/>
+            <property name="UnlockedBy" value="perkWafuuSmithing"/>
+            <property name="EconomicValue" value="400"/>
+            <effect_group name="WafuuAshigaruChest">
+                <passive_effect name="ModSlots" operation="base_set" value="1,2,2,3,3,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="10,16" tier="1,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.3,.3"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="8,13" tier="1,6" tags="heat,electrical"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="300,600" tier="1,6"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+            </effect_group>
+        </item>
+
+        <item name="armorWafuuAshigaruGloves">
+            <property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="armorWafuuAshigaruGloves"/>
+            <property name="DescriptionKey" value="armorWafuuAshigaruGloves_desc"/>
+            <property name="DisplayType" value="armorLumberjackGloves"/>
+            <property name="ArmorGroup" value="groupWafuuAshigaru"/>
+            <property name="Tags" value="hands,armor,armorHands,lightArmor,lightArmorDeg,armorLightSkill,biomeChallenge,wafuuArmor"/>
+            <property name="EquipSlot" value="Hands"/>
+            <property name="SoundPickup" value="cloth_grab"/>
+            <property name="SoundPlace" value="cloth_place"/>
+            <property name="UnlockedBy" value="perkWafuuSmithing"/>
+            <property name="EconomicValue" value="200"/>
+            <effect_group name="WafuuAshigaruGloves">
+                <passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,3" tier="1,2,3,4,5,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="4,7" tier="1,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.1,.1"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="3,5" tier="1,6" tags="heat,electrical"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.02" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="150,300" tier="1,6"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+            </effect_group>
+        </item>
+
+        <item name="armorWafuuAshigaruLegs">
+            <property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="armorWafuuAshigaruLegs"/>
+            <property name="DescriptionKey" value="armorWafuuAshigaruLegs_desc"/>
+            <property name="DisplayType" value="armorLumberjackBoots"/>
+            <property name="ArmorGroup" value="groupWafuuAshigaru"/>
+            <property name="Tags" value="feet,armor,armorFeet,lightArmor,lightArmorDeg,armorLightSkill,biomeChallenge,wafuuArmor"/>
+            <property name="EquipSlot" value="Feet"/>
+            <property name="SoundPickup" value="cloth_grab"/>
+            <property name="SoundPlace" value="cloth_place"/>
+            <property name="UnlockedBy" value="perkWafuuSmithing"/>
+            <property name="EconomicValue" value="250"/>
+            <effect_group name="WafuuAshigaruLegs">
+                <passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,3" tier="1,2,3,4,5,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="5,8" tier="1,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.1,.1"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="4,6" tier="1,6" tags="heat,electrical"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.025" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="180,360" tier="1,6"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+                <!-- 足軽セットボーナス: 移動速度低下軽減 -->
+                <passive_effect name="RunSpeed" operation="perc_add" value=".03"/>
+            </effect_group>
+        </item>
+
+        <!-- ==================== 侍甲冑 (Samurai) — T2 中装 ==================== -->
+
+        <item name="armorWafuuSamuraiHelmet">
+            <property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="armorWafuuSamuraiHelmet"/>
+            <property name="DescriptionKey" value="armorWafuuSamuraiHelmet_desc"/>
+            <property name="DisplayType" value="armorFarmerHelmet"/>
+            <property name="ArmorGroup" value="groupWafuuSamurai"/>
+            <property name="Tags" value="head,armor,armorHead,mediumArmor,mediumArmorDeg,armorMediumSkill,biomeChallenge,wafuuArmor"/>
+            <property name="EquipSlot" value="Head"/>
+            <property name="SoundPickup" value="headwear_sunglasses_grab"/>
+            <property name="SoundPlace" value="headwear_sunglasses_place"/>
+            <property name="UnlockedBy" value="perkWafuuSmithing"/>
+            <property name="EconomicValue" value="600"/>
+            <effect_group name="WafuuSamuraiHelmet">
+                <passive_effect name="ModSlots" operation="base_set" value="2,2,3,3,4,5" tier="1,2,3,4,5,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="10,15" tier="1,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="8,12" tier="1,6" tags="heat,electrical"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="300,600" tier="1,6"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="mediumArmorDeg"/>
+            </effect_group>
+        </item>
+
+        <item name="armorWafuuSamuraiChest">
+            <property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="armorWafuuSamuraiChest"/>
+            <property name="DescriptionKey" value="armorWafuuSamuraiChest_desc"/>
+            <property name="DisplayType" value="armorFarmerOutfit"/>
+            <property name="ArmorGroup" value="groupWafuuSamurai"/>
+            <property name="Tags" value="chest,armor,armorChest,mediumArmor,mediumArmorDeg,armorMediumSkill,biomeChallenge,wafuuArmor"/>
+            <property name="EquipSlot" value="Chest"/>
+            <property name="SoundPickup" value="cloth_grab"/>
+            <property name="SoundPlace" value="cloth_place"/>
+            <property name="UnlockedBy" value="perkWafuuSmithing"/>
+            <property name="EconomicValue" value="800"/>
+            <effect_group name="WafuuSamuraiChest">
+                <passive_effect name="ModSlots" operation="base_set" value="2,2,3,3,4,5" tier="1,2,3,4,5,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="16,24" tier="1,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.3,.3"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="12,18" tier="1,6" tags="heat,electrical"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.055" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="400,800" tier="1,6"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="mediumArmorDeg"/>
+                <!-- 侍セットボーナス: 近接ダメージ軽減 + 出血耐性 -->
+                <passive_effect name="BuffResistance" operation="base_add" value="0.05" tags="buffCutBleeding,buffInjuryBleedingTwo"/>
+            </effect_group>
+        </item>
+
+        <item name="armorWafuuSamuraiGloves">
+            <property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="armorWafuuSamuraiGloves"/>
+            <property name="DescriptionKey" value="armorWafuuSamuraiGloves_desc"/>
+            <property name="DisplayType" value="armorFarmerGloves"/>
+            <property name="ArmorGroup" value="groupWafuuSamurai"/>
+            <property name="Tags" value="hands,armor,armorHands,mediumArmor,mediumArmorDeg,armorMediumSkill,biomeChallenge,wafuuArmor"/>
+            <property name="EquipSlot" value="Hands"/>
+            <property name="SoundPickup" value="cloth_grab"/>
+            <property name="SoundPlace" value="cloth_place"/>
+            <property name="UnlockedBy" value="perkWafuuSmithing"/>
+            <property name="EconomicValue" value="400"/>
+            <effect_group name="WafuuSamuraiGloves">
+                <passive_effect name="ModSlots" operation="base_set" value="1,2,2,3,3,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="6,10" tier="1,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.1,.1"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="5,8" tier="1,6" tags="heat,electrical"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.03" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="mediumArmorDeg"/>
+            </effect_group>
+        </item>
+
+        <item name="armorWafuuSamuraiLegs">
+            <property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="armorWafuuSamuraiLegs"/>
+            <property name="DescriptionKey" value="armorWafuuSamuraiLegs_desc"/>
+            <property name="DisplayType" value="armorFarmerBoots"/>
+            <property name="ArmorGroup" value="groupWafuuSamurai"/>
+            <property name="Tags" value="feet,armor,armorFeet,mediumArmor,mediumArmorDeg,armorMediumSkill,biomeChallenge,wafuuArmor"/>
+            <property name="EquipSlot" value="Feet"/>
+            <property name="SoundPickup" value="cloth_grab"/>
+            <property name="SoundPlace" value="cloth_place"/>
+            <property name="UnlockedBy" value="perkWafuuSmithing"/>
+            <property name="EconomicValue" value="500"/>
+            <effect_group name="WafuuSamuraiLegs">
+                <passive_effect name="ModSlots" operation="base_set" value="1,2,2,3,3,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="8,12" tier="1,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.1,.1"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="6,10" tier="1,6" tags="heat,electrical"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.035" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="280,560" tier="1,6"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="mediumArmorDeg"/>
+            </effect_group>
+        </item>
+
+        <!-- ==================== 忍装束 (Shinobi) — T2 ステルス軽装 ==================== -->
+
+        <item name="armorWafuuShinobiHelmet">
+            <property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="armorWafuuShinobiHelmet"/>
+            <property name="DescriptionKey" value="armorWafuuShinobiHelmet_desc"/>
+            <property name="DisplayType" value="armorRogueHelmet"/>
+            <property name="ArmorGroup" value="groupWafuuShinobi"/>
+            <property name="Tags" value="head,armor,armorHead,lightArmor,lightArmorDeg,armorLightSkill,biomeChallenge,wafuuArmor"/>
+            <property name="EquipSlot" value="Head"/>
+            <property name="SoundPickup" value="headwear_cloth_grab"/>
+            <property name="SoundPlace" value="headwear_cloth_place"/>
+            <property name="UnlockedBy" value="perkWafuuNinjutsu"/>
+            <property name="EconomicValue" value="500"/>
+            <effect_group name="WafuuShinobiHelmet">
+                <passive_effect name="ModSlots" operation="base_set" value="2,2,3,3,4,5" tier="1,2,3,4,5,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="5,8" tier="1,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.1,.1"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="4,7" tier="1,6" tags="heat,electrical"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.03" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+                <!-- 忍セットボーナス: ステルス + 移動速度↑ -->
+                <passive_effect name="RunSpeed" operation="perc_add" value=".02"/>
+            </effect_group>
+        </item>
+
+        <item name="armorWafuuShinobiChest">
+            <property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="armorWafuuShinobiChest"/>
+            <property name="DescriptionKey" value="armorWafuuShinobiChest_desc"/>
+            <property name="DisplayType" value="armorRogueOutfit"/>
+            <property name="ArmorGroup" value="groupWafuuShinobi"/>
+            <property name="Tags" value="chest,armor,armorChest,lightArmor,lightArmorDeg,armorLightSkill,biomeChallenge,wafuuArmor"/>
+            <property name="EquipSlot" value="Chest"/>
+            <property name="SoundPickup" value="cloth_grab"/>
+            <property name="SoundPlace" value="cloth_place"/>
+            <property name="UnlockedBy" value="perkWafuuNinjutsu"/>
+            <property name="EconomicValue" value="650"/>
+            <effect_group name="WafuuShinobiChest">
+                <passive_effect name="ModSlots" operation="base_set" value="2,2,3,3,4,5" tier="1,2,3,4,5,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="8,12" tier="1,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="6,10" tier="1,6" tags="heat,electrical"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.035" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+                <!-- 忍セットボーナス: ステルス強化 -->
+                <passive_effect name="NoiseMultiplier" operation="perc_add" value="-.10"/>
+            </effect_group>
+        </item>
+
+        <item name="armorWafuuShinobiGloves">
+            <property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="armorWafuuShinobiGloves"/>
+            <property name="DescriptionKey" value="armorWafuuShinobiGloves_desc"/>
+            <property name="DisplayType" value="armorRogueGloves"/>
+            <property name="ArmorGroup" value="groupWafuuShinobi"/>
+            <property name="Tags" value="hands,armor,armorHands,lightArmor,lightArmorDeg,armorLightSkill,biomeChallenge,wafuuArmor"/>
+            <property name="EquipSlot" value="Hands"/>
+            <property name="SoundPickup" value="cloth_grab"/>
+            <property name="SoundPlace" value="cloth_place"/>
+            <property name="UnlockedBy" value="perkWafuuNinjutsu"/>
+            <property name="EconomicValue" value="350"/>
+            <effect_group name="WafuuShinobiGloves">
+                <passive_effect name="ModSlots" operation="base_set" value="1,2,2,3,3,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="3,5" tier="1,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.1,.1"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="2,4" tier="1,6" tags="heat,electrical"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.02" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="150,300" tier="1,6"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+            </effect_group>
+        </item>
+
+        <item name="armorWafuuShinobiLegs">
+            <property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="armorWafuuShinobiLegs"/>
+            <property name="DescriptionKey" value="armorWafuuShinobiLegs_desc"/>
+            <property name="DisplayType" value="armorRogueBoots"/>
+            <property name="ArmorGroup" value="groupWafuuShinobi"/>
+            <property name="Tags" value="feet,armor,armorFeet,lightArmor,lightArmorDeg,armorLightSkill,biomeChallenge,wafuuArmor"/>
+            <property name="EquipSlot" value="Feet"/>
+            <property name="SoundPickup" value="cloth_grab"/>
+            <property name="SoundPlace" value="cloth_place"/>
+            <property name="UnlockedBy" value="perkWafuuNinjutsu"/>
+            <property name="EconomicValue" value="400"/>
+            <effect_group name="WafuuShinobiLegs">
+                <passive_effect name="ModSlots" operation="base_set" value="1,2,2,3,3,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="4,6" tier="1,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.1,.1"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="3,5" tier="1,6" tags="heat,electrical"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.025" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="180,360" tier="1,6"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+                <passive_effect name="RunSpeed" operation="perc_add" value=".03"/>
+            </effect_group>
+        </item>
+
+        <!-- ==================== 大将甲冑 (Taisho) — T3 重装 ==================== -->
+
+        <item name="armorWafuuTaishoHelmet">
+            <property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="armorWafuuTaishoHelmet"/>
+            <property name="DescriptionKey" value="armorWafuuTaishoHelmet_desc"/>
+            <property name="DisplayType" value="armorRaiderHelmet"/>
+            <property name="ArmorGroup" value="groupWafuuTaisho"/>
+            <property name="Tags" value="head,armor,armorHead,heavyArmor,heavyArmorDeg,armorHeavySkill,biomeChallenge,wafuuArmor"/>
+            <property name="EquipSlot" value="Head"/>
+            <property name="SoundPickup" value="headwear_sunglasses_grab"/>
+            <property name="SoundPlace" value="headwear_sunglasses_place"/>
+            <property name="UnlockedBy" value="perkWafuuSmithing"/>
+            <property name="EconomicValue" value="1000"/>
+            <effect_group name="WafuuTaishoHelmet">
+                <passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="14,22" tier="1,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.3,.3"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="12,18" tier="1,6" tags="heat,electrical"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.06" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="400,800" tier="1,6"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
+            </effect_group>
+        </item>
+
+        <item name="armorWafuuTaishoChest">
+            <property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="armorWafuuTaishoChest"/>
+            <property name="DescriptionKey" value="armorWafuuTaishoChest_desc"/>
+            <property name="DisplayType" value="armorRaiderOutfit"/>
+            <property name="ArmorGroup" value="groupWafuuTaisho"/>
+            <property name="Tags" value="chest,armor,armorChest,heavyArmor,heavyArmorDeg,armorHeavySkill,biomeChallenge,wafuuArmor"/>
+            <property name="EquipSlot" value="Chest"/>
+            <property name="SoundPickup" value="cloth_grab"/>
+            <property name="SoundPlace" value="cloth_place"/>
+            <property name="UnlockedBy" value="perkWafuuSmithing"/>
+            <property name="EconomicValue" value="1400"/>
+            <effect_group name="WafuuTaishoChest">
+                <passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="22,35" tier="1,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.4,.4"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="18,28" tier="1,6" tags="heat,electrical"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.08" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="500,1000" tier="1,6"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
+                <!-- 大将セットボーナス: 全ダメージ軽減 -->
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="5"/>
+            </effect_group>
+        </item>
+
+        <item name="armorWafuuTaishoGloves">
+            <property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="armorWafuuTaishoGloves"/>
+            <property name="DescriptionKey" value="armorWafuuTaishoGloves_desc"/>
+            <property name="DisplayType" value="armorRaiderGloves"/>
+            <property name="ArmorGroup" value="groupWafuuTaisho"/>
+            <property name="Tags" value="hands,armor,armorHands,heavyArmor,heavyArmorDeg,armorHeavySkill,biomeChallenge,wafuuArmor"/>
+            <property name="EquipSlot" value="Hands"/>
+            <property name="SoundPickup" value="cloth_grab"/>
+            <property name="SoundPlace" value="cloth_place"/>
+            <property name="UnlockedBy" value="perkWafuuSmithing"/>
+            <property name="EconomicValue" value="700"/>
+            <effect_group name="WafuuTaishoGloves">
+                <passive_effect name="ModSlots" operation="base_set" value="2,2,3,3,4,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="8,14" tier="1,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="7,11" tier="1,6" tags="heat,electrical"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="350,700" tier="1,6"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
+            </effect_group>
+        </item>
+
+        <item name="armorWafuuTaishoLegs">
+            <property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="armorWafuuTaishoLegs"/>
+            <property name="DescriptionKey" value="armorWafuuTaishoLegs_desc"/>
+            <property name="DisplayType" value="armorRaiderBoots"/>
+            <property name="ArmorGroup" value="groupWafuuTaisho"/>
+            <property name="Tags" value="feet,armor,armorFeet,heavyArmor,heavyArmorDeg,armorHeavySkill,biomeChallenge,wafuuArmor"/>
+            <property name="EquipSlot" value="Feet"/>
+            <property name="SoundPickup" value="cloth_grab"/>
+            <property name="SoundPlace" value="cloth_place"/>
+            <property name="UnlockedBy" value="perkWafuuSmithing"/>
+            <property name="EconomicValue" value="900"/>
+            <effect_group name="WafuuTaishoLegs">
+                <passive_effect name="ModSlots" operation="base_set" value="2,2,3,3,4,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="12,18" tier="1,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="10,15" tier="1,6" tags="heat,electrical"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.05" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="400,800" tier="1,6"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
+            </effect_group>
+        </item>
+
+
+
+        <!-- ======================================================== -->
+        <!-- Phase 6: 投擲武器（手裏剣・くない・煙玉）                   -->
+        <!-- ======================================================== -->
+
+        <!-- 手裏剣 (Shuriken): T1 投擲。高ヘッドショット倍率・消耗品 -->
+        <!-- Extends: thrownDynamite（投擲物ベース） -->
+        <item name="thrownWafuuShuriken">
+            <property name="Extends" value="thrownDynamite"
+                       param1="CustomIcon,DescriptionKey,Group"/>
+            <property name="CustomIcon" value="thrownWafuuShuriken"/>
+            <property name="DescriptionKey" value="thrownWafuuShuriken_desc"/>
+            <property name="Tags" value="weapon,ranged,thrown,attAgility,perkDeepCuts,wafuuWeapon,thrownWeapon"/>
+            <property name="Group" value="Ammo/Weapons,Ranged Weapons"/>
+            <property name="EconomicValue" value="30"/>
+            <property name="Stacknumber" value="20"/>
+            <property name="TraderStageTemplate" value="baseTier0"/>
+            <property name="UnlockedBy" value="perkWafuuNinjutsu"/>
+            <effect_group name="thrownWafuuShuriken">
+                <passive_effect name="EntityDamage" operation="base_set" value="12" tags="perkDeepCuts"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/>
+                <passive_effect name="BlockDamage" operation="base_set" value="3" tags="perkDeepCuts"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="1" tags="perkDeepCuts"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
+                <passive_effect name="ModSlots" operation="base_set" value="0"/>
+                <!-- 手裏剣は追加ダメージ上乗せで差別化 -->
+                <passive_effect name="EntityDamage" operation="perc_add" value=".25" tags="perkDeepCuts"/>
+            </effect_group>
+        </item>
+
+        <!-- くない (Kunai): T2 投擲。出血付与 -->
+        <!-- Extends: thrownDynamite（投擲物ベース） -->
+        <item name="thrownWafuuKunai">
+            <property name="Extends" value="thrownDynamite"
+                       param1="CustomIcon,DescriptionKey,Group"/>
+            <property name="CustomIcon" value="thrownWafuuKunai"/>
+            <property name="DescriptionKey" value="thrownWafuuKunai_desc"/>
+            <property name="Tags" value="weapon,ranged,thrown,attAgility,perkDeepCuts,wafuuWeapon,thrownWeapon"/>
+            <property name="Group" value="Ammo/Weapons,Ranged Weapons"/>
+            <property name="EconomicValue" value="55"/>
+            <property name="Stacknumber" value="15"/>
+            <property name="TraderStageTemplate" value="baseTier1"/>
+            <property name="UnlockedBy" value="perkWafuuNinjutsu"/>
+            <effect_group name="thrownWafuuKunai">
+                <passive_effect name="EntityDamage" operation="base_set" value="20" tags="perkDeepCuts"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/>
+                <passive_effect name="BlockDamage" operation="base_set" value="5" tags="perkDeepCuts"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="1" tags="perkDeepCuts"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
+                <passive_effect name="ModSlots" operation="base_set" value="0"/>
+                <!-- 出血付与: 30%の確率 -->
+                <triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffCutBleeding" chance=".30"/>
+            </effect_group>
+        </item>
+
+        <!-- 煙玉 (SmokeBomb): T2 投擲ユーティリティ。視界遮断（XML 範囲、敵アグロリセットは C# 実装要） -->
+        <!-- Extends: thrownDynamite（投擲物ベース） -->
+        <item name="thrownWafuuSmokeBomb">
+            <property name="Extends" value="thrownDynamite"
+                       param1="CustomIcon,DescriptionKey,Group"/>
+            <property name="CustomIcon" value="thrownWafuuSmokeBomb"/>
+            <property name="DescriptionKey" value="thrownWafuuSmokeBomb_desc"/>
+            <property name="Tags" value="weapon,ranged,thrown,attAgility,wafuuWeapon,thrownWeapon,utility"/>
+            <property name="Group" value="Ammo/Weapons,Ranged Weapons"/>
+            <property name="EconomicValue" value="80"/>
+            <property name="Stacknumber" value="10"/>
+            <property name="TraderStageTemplate" value="baseTier1"/>
+            <property name="UnlockedBy" value="perkWafuuNinjutsu"/>
+            <effect_group name="thrownWafuuSmokeBomb">
+                <passive_effect name="EntityDamage" operation="base_set" value="1" tags="primary"/>
+                <passive_effect name="BlockDamage" operation="base_set" value="1" tags="primary"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="1" tags="primary"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="primary"/>
+                <passive_effect name="ModSlots" operation="base_set" value="0"/>
+                <!-- 煙幕: 自身にも煙幕バフ付与（視覚的エフェクト用） -->
+                <triggered_effect trigger="onProjectileImpact" action="AddBuff" target="self" buff="buffWafuuSmoke10"/>
+            </effect_group>
+        </item>
+
+
+        <!-- ======================================================== -->
+        <!-- Phase 6: 鍛冶素材（玉鋼・刀身）                           -->
+        <!-- ======================================================== -->
+
+        <!-- 玉鋼 (Tamahagane): 上質な炉で製錬した高炭素鋼。和刀クラフトの要 -->
+        <item name="resourceTamahagane">
+            <property name="Tags" value="resource,forge"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="singleMesh"/>
+            <property name="Meshfile" value="@:Other/Items/Resources/nuggetIronPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Resources/nuggetIronPrefab.prefab"/>
+            <property name="Material" value="Miron"/>
+            <property name="Stacknumber" value="500"/>
+            <property name="EconomicValue" value="80"/>
+            <property name="CraftingIngredientTime" value="5"/>
+            <property name="SoundPickup" value="metal_grab"/>
+            <property name="SoundPlace" value="metal_place"/>
+            <property name="CustomIcon" value="resourceTamahagane"/>
+            <property name="DescriptionKey" value="resourceTamahagane_desc"/>
+            <property name="Group" value="Resources,Crafting"/>
+        </item>
+
+        <!-- 刀身 (KatanaBlade): 玉鋼から鍛えた刀剣素材。高品質武器の中間素材 -->
+        <item name="resourceKatanaBlade">
+            <property name="Tags" value="resource,smithing"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="singleMesh"/>
+            <property name="Meshfile" value="@:Other/Items/Resources/nuggetIronPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Resources/nuggetIronPrefab.prefab"/>
+            <property name="Material" value="Miron"/>
+            <property name="Stacknumber" value="50"/>
+            <property name="EconomicValue" value="300"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="metal_grab"/>
+            <property name="SoundPlace" value="metal_place"/>
+            <property name="CustomIcon" value="resourceKatanaBlade"/>
+            <property name="DescriptionKey" value="resourceKatanaBlade_desc"/>
+            <property name="Group" value="Resources,Crafting"/>
         </item>
 
     </append>

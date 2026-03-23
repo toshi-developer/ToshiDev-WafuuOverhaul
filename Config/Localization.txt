@@ -1,4 +1,6 @@
 Key,File,Type,UsedInMainMenu,NoTranslate,english,japanese
+foodRawFish,items,Item,,,Raw Fish,生魚
+foodRawFish_desc,items,Item,,,"Raw fish. Cook it for a nourishing meal. Don't eat it raw.","生の魚。調理すれば栄養ある食事に。生食は危険。"
 seasoningMaster,items,Item,,,Seasoning,調味料
 foodMirin,items,Item,,,Mirin,みりん
 foodMirin_desc,items,Item,,,"Sweet rice wine used for cooking. Essential for Japanese cuisine.","料理に使う甘い米酒。和食に欠かせない調味料。"
@@ -196,3 +198,167 @@ perkWafuuCookingLvl5_desc,progression,Perk,,,"A true master of wafuu cuisine. 30
 wafuuKamadoTip,journal,JournalTip,,,"Place a Kamado to cook rice, soups, stews, and prepare basic Japanese ingredients.","かまどを設置して、白飯・汁物・煮物・基本素材を調理しよう。"
 wafuuIroriTip,journal,JournalTip,,,"Place an Irori to grill fish, skewers, and make dried preserves over an open flame.","囲炉裏を設置して、焼き魚・串焼き・干物を作ろう。"
 wafuuKitchenTip,journal,JournalTip,,,"Place a Wafuu Kitchen to prepare advanced dishes: tempura, donburi, ramen, and more.","厨房セットを設置して、天ぷら・丼もの・ラーメンなどの上位料理を作ろう。"
+meleeWpnWafuuBokuto,items,Item,,,Bokuto (Wooden Sword),木刀
+meleeWpnWafuuBokuto_desc,items,Item,,,"A wooden training sword. Light and fast but lacks killing power. Good for beginners.","木製の練習刀。軽くて速いが殺傷力は低い。初心者向け。"
+meleeWpnWafuuTakeyari,items,Item,,,Takeyari (Bamboo Spear),竹槍
+meleeWpnWafuuTakeyari_desc,items,Item,,,"A sharpened bamboo spear. Long reach keeps enemies at bay.","先を削った竹の槍。長いリーチで敵を寄せ付けない。"
+meleeWpnWafuuKatana,items,Item,,,Katana (Uchigatana),打刀
+meleeWpnWafuuKatana_desc,items,Item,,,"A curved single-edged sword. Fast slashing attacks that can cause bleeding.","反りのある片刃の刀。素早い斬撃で出血を与える。"
+meleeWpnWafuuNaginata,items,Item,,,Naginata,薙刀
+meleeWpnWafuuNaginata_desc,items,Item,,,"A polearm with a curved blade. Wide sweeps knock back groups of enemies.","反った刃の長柄武器。広い薙ぎ払いで敵集団を押し返す。"
+meleeWpnWafuuTachi,items,Item,,,Tachi (Great Sword),太刀
+meleeWpnWafuuTachi_desc,items,Item,,,"A large battlefield sword worn edge-down. Devastating power with deep cuts.","刃を下にして佩く大型の刀。壊滅的な威力と深い斬り傷。"
+meleeWpnWafuuJumonjiYari,items,Item,,,Jumonji-yari (Cross Spear),十文字槍
+meleeWpnWafuuJumonjiYari_desc,items,Item,,,"A cross-bladed spear with maximum reach. Penetrates armor with ease.","十字の刃を持つ槍。最長のリーチで鎧を容易く貫く。"
+meleeWpnWafuuKanabo,items,Item,,,Kanabo (Iron Club),金棒
+meleeWpnWafuuKanabo_desc,items,Item,,,"A massive studded iron club. Shatters bones and walls alike. Slow but devastating.","鉄鋲の巨大棍棒。骨も壁も粉砕する。遅いが壊滅的。"
+meleeWpnWafuuKusarigama,items,Item,,,Kusarigama (Chain Sickle),鎖鎌
+meleeWpnWafuuKusarigama_desc,items,Item,,,"A sickle linked to a weighted chain. Fast attacks with bleeding and extended range.","分銅付き鎖と鎌。素早い攻撃と出血効果、広い間合い。"
+meleeWpnWafuuDemonBlade,items,Item,,,Youto (Demon Blade),妖刀
+meleeWpnWafuuDemonBlade_desc,items,Item,,,"A cursed blade that drinks the blood of its victims. The ultimate katana — drains life on hit.","犠牲者の血を啜る妖しい刀。最強の刀剣。ヒット時にHPを吸収。"
+gunBowWafuuWakyuu,items,Item,,,Wakyuu (Japanese Longbow),和弓
+gunBowWafuuWakyuu_desc,items,Item,,,"A tall asymmetric longbow. Powerful shots with long range but slow draw speed.","背丈ほどもある非対称の長弓。長射程で強力だが引きが遅い。"
+gunBowWafuuHankyuu,items,Item,,,Hankyuu (Short Bow),半弓
+gunBowWafuuHankyuu_desc,items,Item,,,"A compact short bow for rapid shooting. Less power but faster follow-up shots.","コンパクトな短弓。威力は控えめだが連射が速い。"
+gunRifleWafuuTanegashima,items,Item,,,Tanegashima (Matchlock),火縄銃
+gunRifleWafuuTanegashima_desc,items,Item,,,"An ancient matchlock firearm. Devastating single shot but painfully slow reload.","古式の火縄銃。壊滅的な一発だがリロードが極めて遅い。"
+ammoArrowWafuuTake,items,Item,,,Bamboo Arrow,竹矢
+ammoArrowWafuuTake_desc,items,Item,,,"A simple arrow with a bamboo shaft. Basic but reliable.","竹製の素朴な矢。基本だが確実。"
+ammoArrowWafuuHi,items,Item,,,Fire Arrow,火矢
+ammoArrowWafuuHi_desc,items,Item,,,"An arrow wrapped in oil-soaked cloth. Sets targets ablaze.","油を染み込ませた布を巻いた矢。標的を炎上させる。"
+ammoArrowWafuuDoku,items,Item,,,Poison Arrow,毒矢
+ammoArrowWafuuDoku_desc,items,Item,,,"An arrow tipped with poison. Sickens the target on hit.","毒を塗った矢。命中すると標的を病に冒す。"
+ammoArrowWafuuHakou,items,Item,,,Armor-Piercing Arrow,破甲矢
+ammoArrowWafuuHakou_desc,items,Item,,,"A steel-tipped arrow designed to penetrate armor.","鋼の鏃を持つ矢。鎧を貫通するよう設計されている。"
+armorWafuuAshigaruHelmet,items,Item,,,Ashigaru Jingasa (Helmet),足軽笠
+armorWafuuAshigaruHelmet_desc,items,Item,,,"A simple iron hat worn by foot soldiers. Light and practical.","足軽が被る簡素な鉄笠。軽量で実用的。"
+armorWafuuAshigaruChest,items,Item,,,Ashigaru Do (Chest Armor),足軽胴
+armorWafuuAshigaruChest_desc,items,Item,,,"Basic chest protection for foot soldiers. Allows free movement.","足軽用の基本的な胴鎧。自由な動きを妨げない。"
+armorWafuuAshigaruGloves,items,Item,,,Ashigaru Kote (Gauntlets),足軽篭手
+armorWafuuAshigaruGloves_desc,items,Item,,,"Simple arm guards for foot soldiers.","足軽用の簡素な腕当て。"
+armorWafuuAshigaruLegs,items,Item,,,Ashigaru Suneate (Greaves),足軽脛当
+armorWafuuAshigaruLegs_desc,items,Item,,,"Leg guards for foot soldiers. Designed for marching.","足軽用の脛当て。行軍向けに設計。"
+armorWafuuSamuraiHelmet,items,Item,,,Samurai Kabuto (Helmet),侍兜
+armorWafuuSamuraiHelmet_desc,items,Item,,,"An ornate samurai helmet with face guard. Symbol of the warrior class.","面頬付きの精巧な侍の兜。武士の象徴。"
+armorWafuuSamuraiChest,items,Item,,,Samurai Do (Chest Armor),侍胴
+armorWafuuSamuraiChest_desc,items,Item,,,"Lacquered samurai chest armor. Strong protection against blades.","漆塗りの侍の胴鎧。刃物に対する強力な防護。"
+armorWafuuSamuraiGloves,items,Item,,,Samurai Kote (Gauntlets),侍篭手
+armorWafuuSamuraiGloves_desc,items,Item,,,"Chain-mail lined gauntlets. Protects while allowing sword grip.","鎖帷子入りの篭手。刀を握りつつ防護する。"
+armorWafuuSamuraiLegs,items,Item,,,Samurai Suneate (Greaves),侍脛当
+armorWafuuSamuraiLegs_desc,items,Item,,,"Iron-plated shin guards for the warrior class.","鉄板入りの武士の脛当て。"
+armorWafuuShinobiHelmet,items,Item,,,Shinobi Zukin (Hood),忍頭巾
+armorWafuuShinobiHelmet_desc,items,Item,,,"A dark hood that conceals the face. Reduces noise.","顔を隠す暗色の頭巾。物音を軽減する。"
+armorWafuuShinobiChest,items,Item,,,Shinobi Shozoku (Outfit),忍装束
+armorWafuuShinobiChest_desc,items,Item,,,"Dark fitted clothing for stealth operations. Light but quiet.","隠密行動用の暗色の衣服。軽いが静か。"
+armorWafuuShinobiGloves,items,Item,,,Shinobi Tekko (Hand Guards),忍手甲
+armorWafuuShinobiGloves_desc,items,Item,,,"Thin padded gloves for silent movement.","音を立てない薄い手袋。"
+armorWafuuShinobiLegs,items,Item,,,Shinobi Kyahan (Leg Wraps),忍脚絆
+armorWafuuShinobiLegs_desc,items,Item,,,"Wrapped leg coverings for swift and silent movement.","素早く静かに動くための巻き脚絆。"
+armorWafuuTaishoHelmet,items,Item,,,Taisho Kabuto (Grand Helmet),大将兜
+armorWafuuTaishoHelmet_desc,items,Item,,,"A magnificent crested helmet fit for a general. Maximum protection.","大将にふさわしい壮麗な前立て付き兜。最大の防護力。"
+armorWafuuTaishoChest,items,Item,,,Taisho Do (Grand Armor),大将胴
+armorWafuuTaishoChest_desc,items,Item,,,"The finest chest armor, forged from steel. Inspires nearby allies.","鋼から鍛えた最高級の胴鎧。味方を鼓舞する。"
+armorWafuuTaishoGloves,items,Item,,,Taisho Kote (Grand Gauntlets),大将篭手
+armorWafuuTaishoGloves_desc,items,Item,,,"Heavy steel gauntlets. Unyielding protection.","重厚な鋼の篭手。揺るぎない防護。"
+armorWafuuTaishoLegs,items,Item,,,Taisho Suneate (Grand Greaves),大将脛当
+armorWafuuTaishoLegs_desc,items,Item,,,"Steel greaves fit for a warlord. Built to withstand anything.","武将にふさわしい鋼の脛当て。あらゆる攻撃に耐える。"
+perkWafuuSwordsmanship,progression,Perk,,,Wafuu Swordsmanship,剣術
+perkWafuuSwordsmanship_desc,progression,Perk,,,"Master the way of the blade. Increase sword damage and unlock katana recipes.","剣の道を極める。刀剣のダメージを上げ、刀のレシピを解放。"
+perkWafuuSpearmanship,progression,Perk,,,Wafuu Spearmanship,槍術
+perkWafuuSpearmanship_desc,progression,Perk,,,"Master the art of the spear. Increase reach and damage with polearms.","槍の技を極める。長柄武器のリーチとダメージを向上。"
+perkWafuuArchery,progression,Perk,,,Wafuu Archery,弓術
+perkWafuuArchery_desc,progression,Perk,,,"Master the way of the bow. Increase draw speed and damage with Japanese bows.","弓の道を極める。和弓の引き速度とダメージを向上。"
+perkWafuuNinjutsu,progression,Perk,,,Wafuu Ninjutsu,忍術
+perkWafuuNinjutsu_desc,progression,Perk,,,"Master the shadow arts. Move silently, strike from stealth, and unlock shinobi gear.","忍びの術を極める。静かに動き、隠密攻撃を強化し、忍装束を解放。"
+perkWafuuSmithing,progression,Perk,,,Wafuu Smithing,鍛冶
+perkWafuuSmithing_desc,progression,Perk,,,"Master the forge. Craft better quality weapons and armor, and unlock advanced recipes.","鍛冶の技を極める。より高品質な武器・防具を作り、上位レシピを解放。"
+wafuuTsuchikabe,blocks,Block,,,Tsuchikabe (Earth Wall),土壁
+wafuuTsuchikabe_desc,blocks,Block,,,"Traditional earth wall. Made from clay and wood. Moderate durability.","伝統的な土壁。粘土と木材で作る。中程度の耐久性。"
+wafuuShikkui,blocks,Block,,,Shikkui (Plaster Wall),漆喰壁
+wafuuShikkui_desc,blocks,Block,,,"White plastered wall. Smooth and strong. A hallmark of Japanese architecture.","白い塗り壁。滑らかで丈夫。和風建築の象徴。"
+wafuuItakabe,blocks,Block,,,Itakabe (Plank Wall),板壁
+wafuuItakabe_desc,blocks,Block,,,"Wooden plank wall. Easy to build and repair.","木の板壁。建設と修理が容易。"
+wafuuIshigaki,blocks,Block,,,Ishigaki (Stone Wall),石垣
+wafuuIshigaki_desc,blocks,Block,,,"Castle-style stone wall. Very durable. Stacks beautifully.","城壁風の石積み。非常に丈夫。美しく積み上がる。"
+wafuuNamakokabe,blocks,Block,,,Namako Wall,なまこ壁
+wafuuNamakokabe_desc,blocks,Block,,,"Tile-patterned wall with raised mortar joints. Distinctive and strong.","格子模様の目地が浮き出た壁。独特で丈夫。"
+wafuuTatami,blocks,Block,,,Tatami (Straw Mat Floor),畳
+wafuuTatami_desc,blocks,Block,,,"Traditional straw mat flooring. The soul of a Japanese room.","伝統的な畳の床。和室の心。"
+wafuuItabari,blocks,Block,,,Itabari (Wood Floor),板張り
+wafuuItabari_desc,blocks,Block,,,"Wooden plank flooring. Sturdy and warm.","木の板張りの床。頑丈で温かみがある。"
+wafuuIshidatami,blocks,Block,,,Ishidatami (Stone Pavement),石畳
+wafuuIshidatami_desc,blocks,Block,,,"Stone pavement. Durable outdoor flooring.","石畳の床。屋外向けの丈夫な床材。"
+wafuuKawaraBlack,blocks,Block,,,Kawara Black (Roof Tile),瓦屋根（黒）
+wafuuKawaraBlack_desc,blocks,Block,,,"Traditional black roof tiles. Classic Japanese roofing.","伝統的な黒い瓦。和風屋根の定番。"
+wafuuKawaraRed,blocks,Block,,,Kawara Red (Roof Tile),瓦屋根（赤）
+wafuuKawaraRed_desc,blocks,Block,,,"Red-glazed roof tiles. Seen on temples and shrines.","赤い釉薬の瓦。寺社に見られる。"
+wafuuShoji,blocks,Block,,,Shoji (Paper Screen Door),障子
+wafuuShoji_desc,blocks,Block,,,"Sliding paper screen. Lets in soft light.","紙の引き戸。柔らかい光を通す。"
+wafuuFusuma,blocks,Block,,,Fusuma (Sliding Door),襖
+wafuuFusuma_desc,blocks,Block,,,"Opaque sliding door for room partitions.","部屋の仕切り用の不透明な引き戸。"
+wafuuKoshido,blocks,Block,,,Koshido (Lattice Door),格子戸
+wafuuKoshido_desc,blocks,Block,,,"Wooden lattice door. Decorative and sturdy.","木製の格子戸。装飾的で頑丈。"
+wafuuHikido,blocks,Block,,,Hikido (Sliding Door),引き戸
+wafuuHikido_desc,blocks,Block,,,"Solid wooden sliding door.","頑丈な木製の引き戸。"
+wafuuMarubashira,blocks,Block,,,Marubashira (Round Pillar),丸柱
+wafuuMarubashira_desc,blocks,Block,,,"Round wooden pillar. Essential structural element.","丸い木柱。基本的な構造材。"
+wafuuKakubashira,blocks,Block,,,Kakubashira (Square Pillar),角柱
+wafuuKakubashira_desc,blocks,Block,,,"Square wooden pillar. Clean lines for modern builds.","四角い木柱。すっきりした見た目。"
+wafuuToriiPillar,blocks,Block,,,Torii Pillar,鳥居柱
+wafuuToriiPillar_desc,blocks,Block,,,"A sacred gateway pillar. Use two with a lintel to build a torii gate.","神聖な門柱。2本と横木で鳥居を組む。"
+wafuuChabudai,blocks,Block,,,Chabudai (Low Table),ちゃぶ台
+wafuuChabudai_desc,blocks,Block,,,"A traditional low table for floor seating.","床に座って使う伝統的な低いテーブル。"
+wafuuZabuton,blocks,Block,,,Zabuton (Floor Cushion),座布団
+wafuuZabuton_desc,blocks,Block,,,"A flat cushion for sitting on tatami floors.","畳の上に座るための平たい座布団。"
+wafuuFuton,blocks,Block,,,Futon (Bedding),布団
+wafuuFuton_desc,blocks,Block,,,"Traditional Japanese bedding laid on the floor.","床に敷く伝統的な寝具。"
+wafuuTansu,blocks,Block,,,Tansu (Cabinet),箪笥
+wafuuTansu_desc,blocks,Block,,,"Wooden storage cabinet with drawers. Can store items.","引き出し付きの木製収納。アイテムを保管できる。"
+wafuuByobu,blocks,Block,,,Byobu (Folding Screen),屏風
+wafuuByobu_desc,blocks,Block,,,"A decorative folding screen for room partitions.","部屋の仕切りに使う装飾的な屏風。"
+wafuuAndon,blocks,Block,,,Andon (Paper Lantern),行灯
+wafuuAndon_desc,blocks,Block,,,"A wooden-framed paper lantern for indoor lighting.","木枠の紙灯籠。室内照明に。"
+zombieWafuuKusamusha,entities,Entity,,,Kusamusha (Armored Zombie),腐武者
+zombieWafuuKusamusha_desc,entities,Entity,,,"A zombie clad in rotting samurai armor. High frontal defense makes it difficult to put down — use fire or attack from the sides.","朽ちた鎧を纏ったゾンビ武士。前面の防御が高く、正面からは倒しにくい。炎や側面攻撃が有効。"
+zombieWafuuOnryo,entities,Entity,,,Onryo (Vengeful Spirit),怨霊
+zombieWafuuOnryo_desc,entities,Entity,,,"A ghost-like entity driven by unending rage. Physical attacks barely affect it. Fire is its greatest weakness — keep a torch ready.","尽きぬ怨みに駆られた霊的存在。物理攻撃がほぼ通らない。炎が最大の弱点。松明を常備せよ。"
+zombieWafuuGaki,entities,Entity,,,Gaki (Hunger Wraith),餓鬼
+zombieWafuuGaki_desc,entities,Entity,,,"A small, swift zombie tormented by eternal hunger. Weak alone but they never travel alone.","永遠の飢えに苦しむ小さく素早いゾンビ。単体は弱いが、必ず群れでやってくる。"
+zombieWafuuOni,entities,Entity,,,Oni (Demon),鬼
+zombieWafuuOni_desc,entities,Entity,,,"A massive demon zombie. Enormous health and bone-crushing knockback. Prioritize distance and heavy weapons.","巨大な鬼のゾンビ。圧倒的なHPと骨砕きノックバック。距離を保ち重火器で対処せよ。"
+zombieWafuuKappa,entities,Entity,,,Kappa (River Imp),河童
+zombieWafuuKappa_desc,entities,Entity,,,"A water-dwelling imp that lurks near rivers and rice paddies. Slower on land, but its charge is still deadly.","川や水田の近くに潜む水棲の妖怪。陸上では遅いが突進は侮れない。"
+zombieWafuuBakeTanuki,entities,Entity,,,Bake-Tanuki (Trickster),化け狸
+zombieWafuuBakeTanuki_desc,entities,Entity,,,"A shapeshifting tanuki spirit. It dodges and dashes to confuse. Kill it for rare crafting ingredients.","姿を変える狸の妖怪。翻弄するように逃げ回る。倒すとレアな素材を落とすことがある。"
+zombieWafuuHannya,entities,Entity,,,Hannya (Demon Mask),般若
+zombieWafuuHannya_desc,entities,Entity,,,"A screaming female ghost whose wail empowers nearby undead. Kill it first — or the whole horde gets stronger.","叫び声で周囲のゾンビを強化する般若の霊。最優先で排除しなければ、群れ全体が凶悪になる。"
+wafuuChochin,blocks,Block,,,Chochin (Hanging Lantern),提灯
+wafuuChochin_desc,blocks,Block,,,"A hanging paper lantern. Toggleable light source.","吊り下げ式の提灯。明かりのON/OFF可能。"
+wafuuIshidoro,blocks,Block,,,Ishidoro (Stone Lantern),石灯籠
+wafuuIshidoro_desc,blocks,Block,,,"A stone garden lantern. Durable outdoor lighting.","石の庭灯籠。屋外向けの丈夫な照明。"
+wafuuKakejiku,blocks,Block,,,Kakejiku (Hanging Scroll),掛け軸
+wafuuKakejiku_desc,blocks,Block,,,"A decorative hanging scroll for wall display.","壁に飾る装飾的な掛け軸。"
+wafuuKamidana,blocks,Block,,,Kamidana (Spirit Shelf),神棚
+wafuuKamidana_desc,blocks,Block,,,"A household Shinto altar shelf. Brings blessings.","家庭用の神道の祭壇。福をもたらす。"
+wafuuBonsai,blocks,Block,,,Bonsai,盆栽
+wafuuBonsai_desc,blocks,Block,,,"A miniature tree in a pot. Living art.","鉢植えの小さな木。生きた芸術。"
+wafuuTakegaki,blocks,Block,,,Takegaki (Bamboo Fence),竹垣
+wafuuTakegaki_desc,blocks,Block,,,"A bamboo fence for gardens and boundaries.","庭や境界用の竹の垣根。"
+wafuuTakeyariBarricade,blocks,Block,,,Takeyari Barricade (Bamboo Spikes),竹槍バリケード
+wafuuTakeyariBarricade_desc,blocks,Block,,,"Sharpened bamboo spikes. Damages enemies on contact.","尖った竹の杭。接触した敵にダメージを与える。"
+wafuuCastleGate,blocks,Block,,,Castle Gate,城門
+wafuuCastleGate_desc,blocks,Block,,,"A massive reinforced gate fit for a castle. Extremely durable.","城にふさわしい巨大な強化門。極めて丈夫。"
+wafuuYazama,blocks,Block,,,Yazama (Arrow Slit Wall),矢狭間
+wafuuYazama_desc,blocks,Block,,,"A fortified wall with narrow slits for shooting through.","射撃用の細いスリットが付いた防壁。"
+thrownWafuuShuriken,items,Item,,,Shuriken,手裏剣
+thrownWafuuShuriken_desc,items,Item,,,"A forged iron throwing star. Light and lethal — aim for the head.","鍛鉄製の投げ星。軽量で即死級。頭部を狙え。"
+thrownWafuuKunai,items,Item,,,Kunai,くない
+thrownWafuuKunai_desc,items,Item,,,"A weighted throwing blade used by shinobi. Causes bleeding on impact.","忍が使う重心配分された投擲刃。命中時に出血を引き起こす。"
+thrownWafuuSmokeBomb,items,Item,,,Smoke Bomb,煙玉
+thrownWafuuSmokeBomb_desc,items,Item,,,"A black powder ball that erupts into thick smoke. Obscures vision and disrupts zombie senses. (Aggro reset requires advanced modification.)","黒色火薬製の煙幕弾。視界を遮断しゾンビの感知を乱す。（アグロリセットは上位改造が必要。）"
+resourceTamahagane,items,Item,,,Tamahagane (High-Carbon Steel),玉鋼
+resourceTamahagane_desc,items,Item,,,"High-carbon steel smelted in a traditional forge. The soul of a Japanese blade.","伝統的な炉で製錬した高炭素鋼。和刀の魂。"
+resourceKatanaBlade,items,Item,,,Katana Blade (Unfinished),刀身（未完成）
+resourceKatanaBlade_desc,items,Item,,,"An unfinished blade forged from tamahagane. Requires expert finishing to become a weapon.","玉鋼から鍛えた未完成の刀身。熟練の仕上げが必要。"
+buffWafuuSmoke10,buffs,Buff,,,Smoke Screen,煙幕
+buffWafuuSmoke10_desc,buffs,Buff,,,"Thick smoke reduces noise by 50% for 10 seconds.","濃い煙で10秒間ノイズ50%減少。"
