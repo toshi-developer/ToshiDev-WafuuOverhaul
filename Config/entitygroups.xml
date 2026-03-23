@@ -124,35 +124,37 @@
         Phase 5 の和風 POI でこのグループを spawnzone に指定する。
     -->
 
-    <!-- 序盤向け: 森や村落エリアのスポーン -->
-    <entitygroup name="ZombiesWafuuEarly">
-        <entity name="zombieWafuuGaki"       prob="0.40"/>
-        <entity name="zombieWafuuBakeTanuki" prob="0.25"/>
-        <entity name="zombieWafuuKappa"      prob="0.20"/>
-        <entity name="zombieWafuuKusamusha"  prob="0.15"/>
-    </entitygroup>
+    <append xpath="/entitygroups">
+        <!-- 序盤向け: 森や村落エリアのスポーン -->
+        <entitygroup name="ZombiesWafuuEarly">
+            <entity name="zombieWafuuGaki"       prob="0.40"/>
+            <entity name="zombieWafuuBakeTanuki" prob="0.25"/>
+            <entity name="zombieWafuuKappa"      prob="0.20"/>
+            <entity name="zombieWafuuKusamusha"  prob="0.15"/>
+        </entitygroup>
 
-    <!-- 中盤向け: 城跡・武家屋敷のスポーン -->
-    <entitygroup name="ZombiesWafuuMid">
-        <entity name="zombieWafuuKusamusha"  prob="0.35"/>
-        <entity name="zombieWafuuOnryo"      prob="0.25"/>
-        <entity name="zombieWafuuHannya"     prob="0.20"/>
-        <entity name="zombieWafuuGaki"       prob="0.20"/>
-    </entitygroup>
+        <!-- 中盤向け: 城跡・武家屋敷のスポーン -->
+        <entitygroup name="ZombiesWafuuMid">
+            <entity name="zombieWafuuKusamusha"  prob="0.35"/>
+            <entity name="zombieWafuuOnryo"      prob="0.25"/>
+            <entity name="zombieWafuuHannya"     prob="0.20"/>
+            <entity name="zombieWafuuGaki"       prob="0.20"/>
+        </entitygroup>
 
-    <!-- 終盤向け: 鬼の巣・廃社・血月イベント -->
-    <entitygroup name="ZombiesWafuuLate">
-        <entity name="zombieWafuuOni"        prob="0.30"/>
-        <entity name="zombieWafuuKusamusha"  prob="0.25"/>
-        <entity name="zombieWafuuHannya"     prob="0.25"/>
-        <entity name="zombieWafuuOnryo"      prob="0.20"/>
-    </entitygroup>
+        <!-- 終盤向け: 鬼の巣・廃社・血月イベント -->
+        <entitygroup name="ZombiesWafuuLate">
+            <entity name="zombieWafuuOni"        prob="0.30"/>
+            <entity name="zombieWafuuKusamusha"  prob="0.25"/>
+            <entity name="zombieWafuuHannya"     prob="0.25"/>
+            <entity name="zombieWafuuOnryo"      prob="0.20"/>
+        </entitygroup>
 
-    <!-- 水辺専用: 川・池・水田エリア -->
-    <entitygroup name="ZombiesWafuuWater">
-        <entity name="zombieWafuuKappa"      prob="0.60"/>
-        <entity name="zombieWafuuGaki"       prob="0.25"/>
-        <entity name="zombieWafuuOnryo"      prob="0.15"/>
-    </entitygroup>
+        <!-- 水辺専用: 川・池・水田エリア -->
+        <entitygroup name="ZombiesWafuuWater">
+            <entity name="zombieWafuuKappa"      prob="0.60"/>
+            <entity name="zombieWafuuGaki"       prob="0.25"/>
+            <entity name="zombieWafuuOnryo"      prob="0.15"/>
+        </entitygroup>
+    </append>
 
 </configs>

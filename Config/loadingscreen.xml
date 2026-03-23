@@ -1,0 +1,14 @@
+<configs>
+	<!-- ============================================================
+		 ToshiDev Wafuu Overhaul - Loading Screen Tips
+		 Adds wafuu-themed tips to the loading screen rotation.
+	     ============================================================ -->
+	<append xpath="/doc/tips">
+		<tip key="loadingTipWafuuKatana"/>
+		<tip key="loadingTipWafuuOnigiri"/>
+		<tip key="loadingTipWafuuOni"/>
+		<tip key="loadingTipWafuuSmithing"/>
+		<tip key="loadingTipWafuuKusamusha"/>
+		<tip key="loadingTipWafuuIrori"/>
+	</append>
+</configs>

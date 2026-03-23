@@ -362,3 +362,9 @@ resourceKatanaBlade,items,Item,,,Katana Blade (Unfinished),刀身（未完成）
 resourceKatanaBlade_desc,items,Item,,,"An unfinished blade forged from tamahagane. Requires expert finishing to become a weapon.","玉鋼から鍛えた未完成の刀身。熟練の仕上げが必要。"
 buffWafuuSmoke10,buffs,Buff,,,Smoke Screen,煙幕
 buffWafuuSmoke10_desc,buffs,Buff,,,"Thick smoke reduces noise by 50% for 10 seconds.","濃い煙で10秒間ノイズ50%減少。"
+loadingTipWafuuKatana,loadingscreen,Tip,,,"The katana's curved blade excels at fast slashing attacks. Invest in Swordsmanship to unlock its true potential.","刀の反った刃は素早い斬撃に優れる。剣術に投資してその真の力を引き出せ。"
+loadingTipWafuuOnigiri,loadingscreen,Tip,,,"Rice balls (onigiri) are easy to craft and restore both food and health. A staple of any survivor's diet.","おにぎりはクラフトが簡単で食料とHPの両方を回復する。サバイバーの主食。"
+loadingTipWafuuOni,loadingscreen,Tip,,,"The Oni is a massive demon zombie with 800 HP. Keep your distance and use heavy weapons. It drops rare kanabo.","鬼はHP800の巨大な鬼型ゾンビ。距離を保ち重火器で対処せよ。レアな金棒をドロップする。"
+loadingTipWafuuSmithing,loadingscreen,Tip,,,"Tamahagane is high-carbon steel smelted in a traditional forge. Master the Smithing perk to craft legendary blades.","玉鋼は伝統的な炉で製錬する高炭素鋼。鍛冶パークを極めて伝説の刀を鍛えよ。"
+loadingTipWafuuKusamusha,loadingscreen,Tip,,,"The Kusamusha wears rotting samurai armor. Frontal attacks are less effective — flank it or use fire.","腐武者は朽ちた鎧を纏う。正面攻撃は効きにくい。側面から攻めるか炎を使え。"
+loadingTipWafuuIrori,loadingscreen,Tip,,,"The Irori (sunken hearth) unlocks advanced grilling recipes and provides excellent warmth during cold nights.","囲炉裏は上級の焼き料理レシピを解放し、寒い夜に優れた暖を提供する。"

@@ -1,0 +1,47 @@
+<configs>
+	<!-- ============================================================
+		 ToshiDev Wafuu Overhaul - Color Palette
+		 Japanese-inspired color theme for UI elements.
+		 Colors reference traditional Japanese aesthetics:
+		   shikkoku (漆黒), kin (金), shu (朱), etc.
+	     ============================================================ -->
+	<append xpath="/styles/global">
+		<!-- Base / Background -->
+		<style_entry name="wafuuBlack"        value="26,26,30,255"/>      <!-- 漆黒 -->
+		<style_entry name="wafuuDarkBg"       value="20,20,24,240"/>      <!-- 暗い背景 -->
+		<style_entry name="wafuuPanelBg"      value="30,28,26,230"/>      <!-- パネル背景 -->
+
+		<!-- Gold (金) -->
+		<style_entry name="wafuuGold"         value="139,115,85,255"/>    <!-- 金 -->
+		<style_entry name="wafuuGoldBright"   value="184,160,112,255"/>   <!-- 明るい金 -->
+		<style_entry name="wafuuGoldDim"      value="74,63,48,255"/>      <!-- 暗い金 -->
+
+		<!-- Red / Vermillion (朱) -->
+		<style_entry name="wafuuRed"          value="139,53,53,255"/>     <!-- 朱 -->
+		<style_entry name="wafuuRedDark"      value="45,21,32,255"/>      <!-- 暗い朱 -->
+		<style_entry name="wafuuRedAccent"    value="180,60,60,255"/>     <!-- アクセント赤 -->
+
+		<!-- Text -->
+		<style_entry name="wafuuWhite"        value="230,220,200,255"/>   <!-- 温白 -->
+		<style_entry name="wafuuTextMain"     value="220,210,190,255"/>   <!-- メインテキスト -->
+		<style_entry name="wafuuTextSub"      value="160,150,130,255"/>   <!-- サブテキスト -->
+
+		<!-- Stat Bars -->
+		<style_entry name="wafuuHealthBar"    value="180,50,50,200"/>     <!-- 体力バー -->
+		<style_entry name="wafuuStaminaBar"   value="200,160,50,200"/>    <!-- スタミナバー -->
+		<style_entry name="wafuuFoodBar"      value="180,120,50,200"/>    <!-- 食料バー -->
+		<style_entry name="wafuuWaterBar"     value="80,140,180,200"/>    <!-- 水分バー -->
+		<style_entry name="wafuuXpBar"        value="139,115,85,200"/>    <!-- 経験値バー -->
+
+		<!-- UI Elements -->
+		<style_entry name="wafuuHeaderBg"     value="45,21,32,220"/>      <!-- ヘッダー背景 -->
+		<style_entry name="wafuuBorderColor"  value="74,63,48,200"/>      <!-- ボーダー -->
+		<style_entry name="wafuuSelectedBg"   value="60,40,35,200"/>      <!-- 選択時背景 -->
+		<style_entry name="wafuuHoverBg"      value="50,35,30,180"/>      <!-- ホバー時背景 -->
+	</append>
+
+	<!-- Override default label color to warm white -->
+	<set xpath="/styles/global/style_entry[@name='labelColor']/@value">220,210,190,255</set>
+	<set xpath="/styles/global/style_entry[@name='selectedColor']/@value">184,160,112,255</set>
+	<set xpath="/styles/global/style_entry[@name='hoverColor']/@value">200,170,120,255</set>
+</configs>

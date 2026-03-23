@@ -1,0 +1,46 @@
+<configs>
+	<!-- ============================================================
+		 ToshiDev Wafuu Overhaul - Menu Window Color Patches
+		 Recolors menu panels, headers, and backgrounds.
+	     ============================================================ -->
+
+	<!-- ===== TOOLTIP ===== -->
+	<!-- Tooltip border: dark gold instead of black -->
+	<set xpath="/windows/window[@name='toolTip']/panel/sprite[@name='sprBackgroundBorder']/@color">[wafuuGoldDim]</set>
+	<!-- Tooltip background: warm dark panel -->
+	<set xpath="/windows/window[@name='toolTip']/panel/sprite[@name='sprBackground']/@color">[wafuuPanelBg]</set>
+
+	<!-- ===== MESSAGE BOX ===== -->
+	<!-- Message box overlay -->
+	<set xpath="/windows/window[@name='messageBox']/rect/sprite[@name='backgroundMain']/@color">20,20,24,220</set>
+	<!-- Message box header: wafuu dark red -->
+	<set xpath="/windows/window[@name='messageBox']/panel[@name='header']/@bordercolor">[wafuuGoldDim]</set>
+	<!-- Message box content panel -->
+	<set xpath="/windows/window[@name='messageBox']/panel[@name='content']/@backgroundcolor">[wafuuPanelBg]</set>
+	<set xpath="/windows/window[@name='messageBox']/panel[@name='content']/@bordercolor">[wafuuGoldDim]</set>
+
+	<!-- ===== CHARACTER PREVIEW ===== -->
+	<set xpath="/windows/window[@name='windowCharacterPreview']/panel[@name='header']/@bordercolor">[wafuuGoldDim]</set>
+	<set xpath="/windows/window[@name='windowCharacterPreview']/panel[@name='content']/@backgroundcolor">[wafuuPanelBg]</set>
+	<set xpath="/windows/window[@name='windowCharacterPreview']/panel[@name='content']/@bordercolor">[wafuuGoldDim]</set>
+
+	<!-- ===== WORLD GENERATION ===== -->
+	<set xpath="/windows/window[@name='worldGeneration']/panel[@name='header']/@bordercolor">[wafuuGoldDim]</set>
+
+	<!-- ===== CREATE WORLD ===== -->
+	<set xpath="/windows/window[@name='createWorld']/panel[@name='createHeader']/@bordercolor">[wafuuGoldDim]</set>
+	<set xpath="/windows/window[@name='createWorld']/panel[@name='saveHeader']/@bordercolor">[wafuuGoldDim]</set>
+	<set xpath="/windows/window[@name='createWorld']/panel[@name='content']/@backgroundcolor">[wafuuPanelBg]</set>
+	<set xpath="/windows/window[@name='createWorld']/panel[@name='content']/@bordercolor">[wafuuGoldDim]</set>
+	<set xpath="/windows/window[@name='createWorld']/panel[@name='saveDetails']/@backgroundcolor">[wafuuPanelBg]</set>
+	<set xpath="/windows/window[@name='createWorld']/panel[@name='saveDetails']/@bordercolor">[wafuuGoldDim]</set>
+
+	<!-- ===== DATA MANAGEMENT ===== -->
+	<set xpath="/windows/window[@name='dataManagement']/panel[@name='header']/@bordercolor">[wafuuGoldDim]</set>
+	<set xpath="/windows/window[@name='dataManagement']/panel[@name='worldDetails']/@backgroundcolor">[wafuuPanelBg]</set>
+	<set xpath="/windows/window[@name='dataManagement']/panel[@name='worldDetails']/@bordercolor">[wafuuGoldDim]</set>
+	<set xpath="/windows/window[@name='dataManagement']/panel[@name='saveDetails']/@backgroundcolor">[wafuuPanelBg]</set>
+	<set xpath="/windows/window[@name='dataManagement']/panel[@name='saveDetails']/@bordercolor">[wafuuGoldDim]</set>
+	<set xpath="/windows/window[@name='dataManagement']/panel[@name='playerDetails']/@backgroundcolor">[wafuuPanelBg]</set>
+	<set xpath="/windows/window[@name='dataManagement']/panel[@name='playerDetails']/@bordercolor">[wafuuGoldDim]</set>
+</configs>

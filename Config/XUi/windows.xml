@@ -1,0 +1,44 @@
+<configs>
+	<!-- ============================================================
+		 ToshiDev Wafuu Overhaul - HUD Color Patches
+		 Recolors the HUD stat bars to match the wafuu theme.
+	     ============================================================ -->
+
+	<!-- ===== LEFT STAT BARS (HUDLeftStatBars) ===== -->
+
+	<!-- Stamina bar: vanilla blue (0,54,255,160) → wafuu gold -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Stamina']/filledsprite[@name='BarContent'][@depth='5']/@color">200,160,50,200</set>
+
+	<!-- Health bar: vanilla red (255,0,0,160) → wafuu deep red -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Health']/filledsprite[@name='BarContent'][@depth='5']/@color">180,50,50,200</set>
+
+	<!-- Food bar: vanilla green (0,255,54,160) → wafuu warm amber -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Food']/filledsprite[@name='BarContent'][@depth='5']/@color">180,120,50,200</set>
+
+	<!-- Water bar: vanilla cyan (51,204,255,160) → wafuu muted blue -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Water']/filledsprite[@name='BarContent'][@depth='5']/@color">80,140,180,200</set>
+
+	<!-- Stat bar backgrounds: slightly warmer dark tone -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Stamina']/filledsprite[@name='background'][@depth='3'][not(@fillcenter)]/@color">60,55,45,160</set>
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Health']/filledsprite[@name='background'][@depth='3'][not(@fillcenter)]/@color">60,55,45,160</set>
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Food']/filledsprite[@name='background'][@depth='3'][not(@fillcenter)]/@color">60,55,45,160</set>
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Water']/filledsprite[@name='background'][@depth='3'][not(@fillcenter)]/@color">60,55,45,160</set>
+
+	<!-- Stat bar text: warm white -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Stamina']/label[@name='TextContent']/@color">[wafuuWhite]</set>
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Health']/label[@name='TextContent']/@color">[wafuuWhite]</set>
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Food']/label[@name='TextContent']/@color">[wafuuWhite]</set>
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Water']/label[@name='TextContent']/@color">[wafuuWhite]</set>
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Stealth']/label[@name='TextContent']/@color">[wafuuWhite]</set>
+
+	<!-- ===== XP BAR (windowToolbelt) ===== -->
+	<!-- XP bar: vanilla color → wafuu gold -->
+	<set xpath="/windows/window[@name='windowToolbelt']/rect/sprite[@depth='4'][@fill='{xp}']/@color">139,115,85,200</set>
+
+	<!-- ===== TARGET BAR ===== -->
+	<!-- Target bar (non-boss): deeper red -->
+	<set xpath="/windows/window[@name='windowTargetBar']/rect[@visible='{isnotboss}']/filledsprite[@name='BarContent']/@color">180,50,50,200</set>
+
+	<!-- ===== VEHICLE BARS ===== -->
+	<!-- NOTE: ビークルバーの XPath が v2.5 の構造と合わないため、Unity アセットバンドル統合時に対応予定 -->
+</configs>
