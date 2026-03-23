@@ -1,0 +1,30 @@
+<configs>
+	<!-- ============================================================
+		 ToshiDev Wafuu Overhaul - 商人 24 時間営業
+		 全ての商人の営業時間を終日に変更（閉店なし）
+	     ============================================================ -->
+
+	<!-- trader_info id=1: TraderJoel -->
+	<set xpath="/traders/trader_info[@id='1']/@open_time">0:00</set>
+	<set xpath="/traders/trader_info[@id='1']/@close_time">24:00</set>
+
+	<!-- trader_info id=6: TraderRekt -->
+	<set xpath="/traders/trader_info[@id='6']/@open_time">0:00</set>
+	<set xpath="/traders/trader_info[@id='6']/@close_time">24:00</set>
+
+	<!-- trader_info id=2: TraderBob -->
+	<set xpath="/traders/trader_info[@id='2']/@open_time">0:00</set>
+	<set xpath="/traders/trader_info[@id='2']/@close_time">24:00</set>
+
+	<!-- trader_info id=7: TraderHugh -->
+	<set xpath="/traders/trader_info[@id='7']/@open_time">0:00</set>
+	<set xpath="/traders/trader_info[@id='7']/@close_time">24:00</set>
+
+	<!-- trader_info id=8: TraderJen -->
+	<set xpath="/traders/trader_info[@id='8']/@open_time">0:00</set>
+	<set xpath="/traders/trader_info[@id='8']/@close_time">24:00</set>
+
+	<!-- trader_info id=9: TraderTest -->
+	<set xpath="/traders/trader_info[@id='9']/@open_time">0:00</set>
+	<set xpath="/traders/trader_info[@id='9']/@close_time">24:00</set>
+</configs>
