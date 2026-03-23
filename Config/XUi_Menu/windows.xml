@@ -4,13 +4,9 @@
 		 Recolors menu panels, headers, and backgrounds.
 	     ============================================================ -->
 
-	<!-- ===== MAIN MENU BACKGROUND ===== -->
-	<!-- メインメニュー背景を和風テクスチャに差し替え -->
-	<set xpath="/windows/window[@name='menuBackground']/texture[@name='bgTexture']/@texture">#@modfolder:Resources/wafuuMenuBg.png</set>
-
-	<!-- ===== MAIN MENU LOGO ===== -->
-	<!-- ロゴも和風に差し替え -->
-	<set xpath="/windows/window[@name='mainMenuLogo']/texture[@name='gameLogo']/@texture">#@modfolder:Resources/wafuuLogo.png</set>
+	<!-- ===== MAIN MENU BACKGROUND / LOGO ===== -->
+	<!-- NOTE: メニュー背景・ロゴの差し替えには Unity アセットバンドルが必要。
+	     #@modfolder: パスは XUiV_Texture では Invalid URI になるため削除。 -->
 
 	<!-- ===== TOOLTIP ===== -->
 	<!-- Tooltip border: dark gold instead of black -->
