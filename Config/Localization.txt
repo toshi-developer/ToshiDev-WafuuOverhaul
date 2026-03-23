@@ -368,3 +368,9 @@ loadingTipWafuuOni,loadingscreen,Tip,,,"The Oni is a massive demon zombie with 8
 loadingTipWafuuSmithing,loadingscreen,Tip,,,"Tamahagane is high-carbon steel smelted in a traditional forge. Master the Smithing perk to craft legendary blades.","玉鋼は伝統的な炉で製錬する高炭素鋼。鍛冶の技を極めて伝説の刀を鍛えよ。"
 loadingTipWafuuKusamusha,loadingscreen,Tip,,,"The Kusamusha wears rotting samurai armor. Frontal attacks are less effective — flank it or use fire.","腐武者は朽ちた鎧を纏う。正面攻撃は効きにくい。側面から攻めるか炎を使え。"
 loadingTipWafuuIrori,loadingscreen,Tip,,,"The Irori (sunken hearth) unlocks advanced grilling recipes and provides excellent warmth during cold nights.","囲炉裏は上級の焼き料理の調理法を解放し、寒い夜に優れた暖を提供する。"
+npcTraderJoel,entityclasses,Entity,,,Josuke the Merchant,商人 丈助
+npcTraderRekt,entityclasses,Entity,,,Rokubei the Merchant,商人 六兵衛
+npcTraderBob,entityclasses,Entity,,,Bunzaemon the Merchant,商人 文左衛門
+npcTraderHugh,entityclasses,Entity,,,Hyogo the Merchant,商人 兵庫
+npcTraderJen,entityclasses,Entity,,,Chiyo the Merchant,商人 千代
+ttTraderClosedTeleport,UI,Tooltip,,,"The merchant has closed shop. You have been removed from the area.","商人が店を閉めました。敷地の外に出されました。"
