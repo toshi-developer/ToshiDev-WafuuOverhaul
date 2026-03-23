@@ -1,0 +1,53 @@
+<configs>
+	<!-- ============================================================
+		 ToshiDev Wafuu Overhaul - ワークステーション XUi ウィンドウグループ
+		 各和風ワークステーションに対応する UI ウィンドウを定義
+	     ============================================================ -->
+
+	<append xpath="/xui/ruleset[@name='default']">
+
+		<!-- かまど (Kamado): campfire 型 — 燃料+ツール+出力 -->
+		<window_group name="workstation_wafuuKamado"
+		              controller="XUiC_WorkstationWindowGroup"
+		              open_backpack_on_open="true"
+		              close_compass_on_open="true"
+		              defaultSelected="bp.content">
+			<window name="windowCraftingList"/>
+			<window name="craftingInfoPanel"/>
+			<window name="windowCraftingQueue"/>
+			<window name="windowToolsCampfire"/>
+			<window name="windowFuel"/>
+			<window name="windowOutput"/>
+			<window name="windowNonPagingHeader"/>
+		</window_group>
+
+		<!-- 囲炉裏 (Irori): campfire 型 — 燃料+ツール+出力 -->
+		<window_group name="workstation_wafuuIrori"
+		              controller="XUiC_WorkstationWindowGroup"
+		              open_backpack_on_open="true"
+		              close_compass_on_open="true"
+		              defaultSelected="bp.content">
+			<window name="windowCraftingList"/>
+			<window name="craftingInfoPanel"/>
+			<window name="windowCraftingQueue"/>
+			<window name="windowToolsCampfire"/>
+			<window name="windowFuel"/>
+			<window name="windowOutput"/>
+			<window name="windowNonPagingHeader"/>
+		</window_group>
+
+		<!-- 厨房セット (Wafuu Kitchen): workbench 型 — 燃料不要 -->
+		<window_group name="workstation_wafuuKitchen"
+		              controller="XUiC_WorkstationWindowGroup"
+		              open_backpack_on_open="true"
+		              close_compass_on_open="true"
+		              defaultSelected="bp.content">
+			<window name="windowCraftingList"/>
+			<window name="craftingInfoPanel"/>
+			<window name="windowCraftingQueue"/>
+			<window name="windowOutput"/>
+			<window name="windowNonPagingHeader"/>
+		</window_group>
+
+	</append>
+</configs>
