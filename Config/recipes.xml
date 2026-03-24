@@ -1001,5 +1001,61 @@
             <ingredient name="foodSalt" count="5"/>
         </recipe>
 
+
+
+        <!-- ======================================================== -->
+        <!-- 妖怪素材クラフトレシピ                                      -->
+        <!-- ======================================================== -->
+
+        <!-- 鬼金棒: 鬼の角+金棒+鍛鉄+玉鋼 — 厨房 -->
+        <recipe name="meleeWpnWafuuOniKanabo" count="1" craft_area="wafuuKitchen" craft_time="60">
+            <ingredient name="resourceOniHorn" count="3"/>
+            <ingredient name="meleeWpnWafuuKanabo" count="1"/>
+            <ingredient name="resourceForgedIron" count="10"/>
+            <ingredient name="resourceTamahagane" count="5"/>
+        </recipe>
+
+        <!-- 破魔矢: 怨霊玉+木材+羽根 — 囲炉裏 -->
+        <recipe name="ammoArrowWafuuHamaya" count="10" craft_area="wafuuIrori" craft_time="15">
+            <ingredient name="resourceOnryoOrb" count="1"/>
+            <ingredient name="resourceWood" count="5"/>
+            <ingredient name="resourceFeather" count="5"/>
+        </recipe>
+
+        <!-- 破魔矢: 怨霊玉+木材+羽根 — 厨房 -->
+        <recipe name="ammoArrowWafuuHamaya" count="10" craft_area="wafuuKitchen" craft_time="15">
+            <ingredient name="resourceOnryoOrb" count="1"/>
+            <ingredient name="resourceWood" count="5"/>
+            <ingredient name="resourceFeather" count="5"/>
+        </recipe>
+
+        <!-- 般若の面装備: 般若の面+革+布 — 厨房 -->
+        <recipe name="armorWafuuHannyaMask" count="1" craft_area="wafuuKitchen" craft_time="45">
+            <ingredient name="resourceHannyaMask" count="2"/>
+            <ingredient name="resourceLeather" count="5"/>
+            <ingredient name="resourceCloth" count="3"/>
+        </recipe>
+
+        <!-- 水遁の巻物: 河童の皿+茶葉+紙 — 囲炉裏 -->
+        <recipe name="medWafuuKappaScroll" count="3" craft_area="wafuuIrori" craft_time="20">
+            <ingredient name="resourceKappaDish" count="1"/>
+            <ingredient name="foodTeaLeaf" count="3"/>
+            <ingredient name="resourcePaper" count="5"/>
+        </recipe>
+
+        <!-- 水遁の巻物: 河童の皿+茶葉+紙 — 厨房 -->
+        <recipe name="medWafuuKappaScroll" count="3" craft_area="wafuuKitchen" craft_time="20">
+            <ingredient name="resourceKappaDish" count="1"/>
+            <ingredient name="foodTeaLeaf" count="3"/>
+            <ingredient name="resourcePaper" count="5"/>
+        </recipe>
+
+        <!-- 化かし衣: 狸の毛皮+布+革 — 厨房 -->
+        <recipe name="armorWafuuTanukiCloak" count="1" craft_area="wafuuKitchen" craft_time="45">
+            <ingredient name="resourceTanukiFur" count="3"/>
+            <ingredient name="resourceCloth" count="10"/>
+            <ingredient name="resourceLeather" count="5"/>
+        </recipe>
+
     </append>
 </configs>

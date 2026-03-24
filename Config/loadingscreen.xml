@@ -4,11 +4,57 @@
 		 Adds wafuu-themed tips to the loading screen rotation.
 	     ============================================================ -->
 	<append xpath="/doc/tips">
+		<!-- === 既存 Tips（Phase 1〜4） === -->
 		<tip key="loadingTipWafuuKatana"/>
 		<tip key="loadingTipWafuuOnigiri"/>
 		<tip key="loadingTipWafuuOni"/>
 		<tip key="loadingTipWafuuSmithing"/>
 		<tip key="loadingTipWafuuKusamusha"/>
 		<tip key="loadingTipWafuuIrori"/>
+
+		<!-- === 武器・戦闘 === -->
+		<tip key="loadingTipWafuuNaginata"/>
+		<tip key="loadingTipWafuuKusarigama"/>
+		<tip key="loadingTipWafuuTanegashima"/>
+		<tip key="loadingTipWafuuShuriken"/>
+		<tip key="loadingTipWafuuBokuto"/>
+		<tip key="loadingTipWafuuWakyuu"/>
+		<tip key="loadingTipWafuuDokuYa"/>
+
+		<!-- === 防具・装備 === -->
+		<tip key="loadingTipWafuuShinobiArmor"/>
+		<tip key="loadingTipWafuuSamuraiArmor"/>
+		<tip key="loadingTipWafuuAshigaruArmor"/>
+		<tip key="loadingTipWafuuTaishoArmor"/>
+
+		<!-- === 和食・料理 === -->
+		<tip key="loadingTipWafuuKatsudon"/>
+		<tip key="loadingTipWafuuMisoSoup"/>
+		<tip key="loadingTipWafuuTsukemono"/>
+		<tip key="loadingTipWafuuDashi"/>
+		<tip key="loadingTipWafuuTempura"/>
+		<tip key="loadingTipWafuuMochi"/>
+
+		<!-- === 飲み物 === -->
+		<tip key="loadingTipWafuuGreenTea"/>
+		<tip key="loadingTipWafuuAmazake"/>
+
+		<!-- === 妖怪・敵 === -->
+		<tip key="loadingTipWafuuOnryo"/>
+		<tip key="loadingTipWafuuGaki"/>
+		<tip key="loadingTipWafuuKappa"/>
+		<tip key="loadingTipWafuuBakeTanuki"/>
+		<tip key="loadingTipWafuuHannya"/>
+
+		<!-- === 建築 === -->
+		<tip key="loadingTipWafuuShoji"/>
+		<tip key="loadingTipWafuuIshigaki"/>
+
+		<!-- === 生存の知恵・文化 === -->
+		<tip key="loadingTipWafuuKoji"/>
+		<tip key="loadingTipWafuuUmeboshi"/>
+		<tip key="loadingTipWafuuTamahagane"/>
+		<tip key="loadingTipWafuuBushido"/>
+		<tip key="loadingTipWafuuNinjutsu"/>
 	</append>
 </configs>

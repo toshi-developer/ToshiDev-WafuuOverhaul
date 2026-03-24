@@ -246,5 +246,30 @@
             </effect_group>
         </buff>
 
+
+
+        <!-- ==================== 妖怪素材バフ ==================== -->
+
+        <!-- 水遁の術: 水中呼吸 180秒（溺れタイマーを常にリセット） -->
+        <buff name="buffWafuuSuiTon" duration="180" stack="replace"
+              name_key="buffWafuuSuiTon" description_key="buffWafuuSuiTon_desc"
+              icon="ui_game_symbol_oxygen" icon_color="68,136,255">
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$DrowningTimer" operation="set" value="@$DrowningTimerMax"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDrowning01"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDrowning02"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDrowning03"/>
+            </effect_group>
+        </buff>
+
+        <!-- 般若の威圧: 装備中パッシブ。近接+15% -->
+        <buff name="buffWafuuHannyaAura" duration="0" stack="replace"
+              name_key="buffWafuuHannyaAura" description_key="buffWafuuHannyaAura_desc"
+              icon="ui_game_symbol_skull" icon_color="200,50,50">
+            <effect_group>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".15" tags="melee"/>
+            </effect_group>
+        </buff>
+
     </append>
 </configs>

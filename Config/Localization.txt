@@ -368,6 +368,37 @@ loadingTipWafuuOni,loadingscreen,Tip,,,"The Oni is a massive demon zombie with 8
 loadingTipWafuuSmithing,loadingscreen,Tip,,,"Tamahagane is high-carbon steel smelted in a traditional forge. Master the Smithing perk to craft legendary blades.","玉鋼は伝統的な炉で製錬する高炭素鋼。鍛冶の技を極めて伝説の刀を鍛えよ。"
 loadingTipWafuuKusamusha,loadingscreen,Tip,,,"The Kusamusha wears rotting samurai armor. Frontal attacks are less effective — flank it or use fire.","腐武者は朽ちた鎧を纏う。正面攻撃は効きにくい。側面から攻めるか炎を使え。"
 loadingTipWafuuIrori,loadingscreen,Tip,,,"The Irori (sunken hearth) unlocks advanced grilling recipes and provides excellent warmth during cold nights.","囲炉裏は上級の焼き料理の調理法を解放し、寒い夜に優れた暖を提供する。"
+loadingTipWafuuNaginata,loadingscreen,Tip,,,"The naginata has the longest melee reach. Use it to strike enemies before they can close the distance.","薙刀は近接武器で最長のリーチを持つ。敵が間合いを詰める前に叩け。"
+loadingTipWafuuKusarigama,loadingscreen,Tip,,,"The kusarigama combines a sickle and chain. Its attacks can stun enemies, opening them up for a killing blow.","鎖鎌は鎌と鎖を組み合わせた武器。攻撃で敵を怯ませ、止めの一撃を叩き込め。"
+loadingTipWafuuTanegashima,loadingscreen,Tip,,,"The tanegashima musket packs devastating single-shot damage but reloads slowly. Make every shot count.","種子島銃は一撃の威力が凄まじいが装填が遅い。一発一発を大切にせよ。"
+loadingTipWafuuShuriken,loadingscreen,Tip,,,"Shuriken and kunai are silent throwing weapons. Use them to thin out enemies before they detect you.","手裏剣とクナイは音の出ない投擲武器。敵に気づかれる前に数を減らせ。"
+loadingTipWafuuBokuto,loadingscreen,Tip,,,"The bokuto (wooden sword) is a humble training weapon, but it requires no rare materials. A reliable choice in the early days.","木刀は素朴な稽古用の武器だが、貴重な素材を必要としない。序盤の頼れる相棒。"
+loadingTipWafuuWakyuu,loadingscreen,Tip,,,"The wakyuu (Japanese longbow) is slow to draw but delivers powerful shots. Craft bamboo arrows for a steady supply.","和弓は引き絞るのに時間がかかるが、強力な一射を放つ。竹矢を量産して矢切れに備えよ。"
+loadingTipWafuuDokuYa,loadingscreen,Tip,,,"Poison arrows inflict damage over time. Effective against high-HP enemies like the Oni.","毒矢は継続的に体力を削る。鬼のような体力の高い敵に効果的。"
+loadingTipWafuuShinobiArmor,loadingscreen,Tip,,,"Shinobi armor sacrifices defense for stealth and speed. Perfect for night raids and silent looting.","忍装束は防御を犠牲に隠密と機動力を得る。夜襲や静かな探索に最適。"
+loadingTipWafuuSamuraiArmor,loadingscreen,Tip,,,"Samurai armor offers the best balance of defense and mobility. A worthy investment for any warrior.","侍甲冑は防御と機動力の均衡に優れる。武人を目指すなら作る価値がある。"
+loadingTipWafuuAshigaruArmor,loadingscreen,Tip,,,"Ashigaru armor is cheap to craft from basic materials. It provides decent protection for new survivors.","足軽装備は基本的な素材で安く作れる。駆け出しの生存者に十分な防御を与える。"
+loadingTipWafuuTaishoArmor,loadingscreen,Tip,,,"Taisho armor is the pinnacle of Japanese craftsmanship. It requires tamahagane and master-level smithing.","大将甲冑は和の鍛冶技術の頂点。玉鋼と熟練の鍛冶技が求められる。"
+loadingTipWafuuKatsudon,loadingscreen,Tip,,,"Katsudon is a top-tier meal that restores massive food, health, and grants a stamina buff. Worth the complex recipe.","かつ丼は最上位の食事で、大量の食料・HP回復と体力増強を得られる。手間に見合う逸品。"
+loadingTipWafuuMisoSoup,loadingscreen,Tip,,,"Miso soup is easy to make and warms you from within. It cures minor ailments and restores hydration.","味噌汁は簡単に作れて身体を内から温める。軽い不調を治し水分を回復する。"
+loadingTipWafuuTsukemono,loadingscreen,Tip,,,"Pickled vegetables last a long time without spoiling. Stock up on takuan and hakusai tsukemono for long expeditions.","漬物は長期間腐らない。たくあんや白菜漬けを備蓄して長い遠征に備えよ。"
+loadingTipWafuuDashi,loadingscreen,Tip,,,"Dashi is the foundation of Japanese cuisine. Craft it early to unlock soups, stews, and noodle dishes.","出汁は和食の基本。早めに作れるようにして汁物・煮物・麺料理を解放せよ。"
+loadingTipWafuuTempura,loadingscreen,Tip,,,"Tempura requires oil and flour but provides excellent food and stamina recovery. A mid-tier feast.","天ぷらは油と小麦粉が要るが、食料と体力の回復に優れる。中盤の贅沢な一品。"
+loadingTipWafuuMochi,loadingscreen,Tip,,,"Mochi is made from pounded rice. It's compact, calorie-dense, and perfect for carrying on raids.","餅は搗いた米から作る。嵩張らず高カロリーで、襲撃に携行するのに最適。"
+loadingTipWafuuGreenTea,loadingscreen,Tip,,,"Green tea slightly boosts stamina recovery and clears minor debuffs. Keep tea leaves on hand.","緑茶は体力回復を少し高め、軽い状態異常を解除する。茶葉を常備しておけ。"
+loadingTipWafuuAmazake,loadingscreen,Tip,,,"Amazake is a sweet fermented rice drink. It restores food, water, and provides a mild healing effect.","甘酒は甘い発酵飲料。食料・水分を回復し穏やかな治癒効果がある。"
+loadingTipWafuuOnryo,loadingscreen,Tip,,,"The Onryo is a ghostly zombie with extreme physical resistance. Fire and explosives are your best options.","怨霊は物理耐性が極めて高い亡霊型の亡者。炎や爆発物で対処するのが最善。"
+loadingTipWafuuGaki,loadingscreen,Tip,,,"Gaki are emaciated hunger-demons that attack in swarms. They're weak individually but deadly in numbers.","餓鬼は痩せ細った飢えの鬼で群れで襲ってくる。一体は弱いが数が揃うと致命的。"
+loadingTipWafuuKappa,loadingscreen,Tip,,,"The Kappa lurks near water. It has high resistance to most damage but is vulnerable to fire.","河童は水辺に潜む。ほとんどの攻撃に強いが、炎には弱い。"
+loadingTipWafuuBakeTanuki,loadingscreen,Tip,,,"The Bake-Tanuki is a shapeshifting trickster. It may look harmless at first — stay vigilant.","化け狸は変化の術を使う妖怪。最初は無害に見えても油断するな。"
+loadingTipWafuuHannya,loadingscreen,Tip,,,"The Hannya screams to summon reinforcements, much like the Screamer zombie. Silence her quickly.","般若は叫び声で増援を呼ぶ。叫兵と同様、速やかに黙らせよ。"
+loadingTipWafuuShoji,loadingscreen,Tip,,,"Shoji screens and fusuma doors are lightweight and easy to craft, but they offer little structural defense. Use them for interior walls.","障子や襖は軽くて作りやすいが防御力は低い。内壁として使え。"
+loadingTipWafuuIshigaki,loadingscreen,Tip,,,"Stone walls built in the ishigaki (castle stone) style are extremely durable. Ideal for your base's outer defenses.","石垣は城郭式の石積みで極めて頑丈。拠点の外壁に最適。"
+loadingTipWafuuKoji,loadingscreen,Tip,,,"Koji mold is essential for brewing sake, making miso, and crafting amazake. Cultivate it from rice.","麹は日本酒・味噌・甘酒の醸造に欠かせない。米から培養せよ。"
+loadingTipWafuuUmeboshi,loadingscreen,Tip,,,"Umeboshi (pickled plums) prevent infection and restore a small amount of stamina. A humble but vital survival food.","梅干しは感染を防ぎ、少量の体力を回復する。質素だが生存に欠かせない食料。"
+loadingTipWafuuTamahagane,loadingscreen,Tip,,,"Tamahagane is smelted from iron sand in a traditional forge. It's required for all high-tier Japanese weapons and armor.","玉鋼は砂鉄を伝統的な炉で製錬して得る。全ての上位和式武具に必要。"
+loadingTipWafuuBushido,loadingscreen,Tip,,,"The way of the warrior values courage in the face of death. In the apocalypse, every dawn is a battle — face it with resolve.","武士道は死に臨む勇気を尊ぶ。終末の世では毎朝が戦い——覚悟を持って迎えよ。"
+loadingTipWafuuNinjutsu,loadingscreen,Tip,,,"A shinobi strikes from shadow and vanishes without a trace. Smoke bombs break line of sight, letting you escape or reposition.","忍は影から襲い、跡を残さず消える。煙玉で視線を断ち、逃走や位置取りに活かせ。"
 npcTraderJoel,entityclasses,Entity,,,Josuke the Merchant,商人 丈助
 npcTraderRekt,entityclasses,Entity,,,Rokubei the Merchant,商人 六兵衛
 npcTraderBob,entityclasses,Entity,,,Bunzaemon the Merchant,商人 文左衛門
@@ -435,3 +466,53 @@ questTypeBuried,quests,Quest,,,Buried Supplies,埋蔵品探索
 questTypeChallenge,quests,Quest,,,Challenge,試練
 Tier,UI,UI,,,Tier,段
 xuiQuestTier,UI,UI,,,Tier,段
+weatherSandstorm,Localization,,,,,砂嵐
+weatherSnow,Localization,,,,,雪
+weatherRain,Localization,,,,,雨
+weatherFog,Localization,,,,,霧
+weatherThunderstorm,Localization,,,,,雷雨
+weatherHeatWave,Localization,,,,Heat Wave,猛暑
+weatherClear,Localization,,,,,晴天
+meleeClub,items,Item,,,Club,棍棒
+meleeClub_desc,items,Item,,,"A crude, make-shift weapon.","粗末な棒切れ。殴るには十分。"
+meleeBaseballBat,items,Item,,,Baseball Bat,木槌
+meleeKnife,items,Item,,,Knife,小刀
+meleeMachete,items,Item,,,Machete,山刀
+meleeSpear,items,Item,,,Spear,槍
+gunPistol,items,Item,,,Pistol,短筒
+gunShotgun,items,Item,,,Shotgun,散弾筒
+gunRifle,items,Item,,,Rifle,長筒
+gunAK47,items,Item,,,AK-47,自動長筒
+meleeToolAxe,items,Item,,,Axe,斧
+meleeToolPickaxe,items,Item,,,Pickaxe,鶴嘴
+meleeToolShovel,items,Item,,,Shovel,鋤
+meleeToolWrench,items,Item,,,Wrench,万力鋏
+resourceWood,items,Item,,,Wood,木材
+resourceRockSmall,items,Item,,,Small Stone,小石
+resourceIron,items,Item,,,Iron,鉄
+resourceLeather,items,Item,,,Leather,革
+resourceCloth,items,Item,,,Cloth,布
+resourcePaper,items,Item,,,Paper,紙
+resourceBone,items,Item,,,Bone,骨
+drinkJarBoiledWater,items,Item,,,Boiled Water,湯冷まし
+foodCanChili,items,Item,,,Can of Chili,辛煮缶
+foodCornBread,items,Item,,,Cornbread,玉蜀黍餅
+foodGrilledMeat,items,Item,,,Grilled Meat,焼肉
+foodVegetableStew,items,Item,,,Vegetable Stew,野菜煮込み
+foodBaconAndEggs,items,Item,,,Bacon and Eggs,燻肉と卵焼き
+xuiTraderClosed,Localization,,,,"Trader is closed",商人は店仕舞い中
+xuiTraderGreeting,Localization,,,,"Welcome!",いらっしゃいませ！
+meleeWpnWafuuOniKanabo,items,Item,,,Oni Kanabo,鬼金棒
+meleeWpnWafuuOniKanabo_desc,items,Item,,,"A fearsome kanabo forged with Oni horns. Devastating blunt force.","鬼の角で鍛えた恐ろしい金棒。凄まじい打撃力を誇る。"
+ammoArrowWafuuHamaya,items,Item,,,Hamaya Arrow,破魔矢
+ammoArrowWafuuHamaya_desc,items,Item,,,"Sacred arrows imbued with spiritual energy. Extra effective against yokai.","霊力を込めた神聖な矢。妖怪に特に効果がある。"
+armorWafuuHannyaMask,items,Item,,,Hannya Mask Helm,般若の面装備
+armorWafuuHannyaMask_desc,items,Item,,,"A wearable Hannya mask radiating an aura of dread. Boosts melee damage.","装着可能な般若の面。恐怖の気を纏い、近接攻撃力が上昇する。"
+medWafuuKappaScroll,items,Item,,,Kappa Scroll,水遁の巻物
+medWafuuKappaScroll_desc,items,Item,,,"A mystical scroll infused with Kappa essence. Grants water breathing.","河童の力を込めた巻物。水中で呼吸できるようになる。"
+armorWafuuTanukiCloak,items,Item,,,Tanuki Cloak,化かし衣
+armorWafuuTanukiCloak_desc,items,Item,,,"A cloak woven from Bake-Tanuki fur. Muffles sound and enhances stealth.","化け狸の毛皮で織った外套。音を消し、隠密性を高める。"
+buffWafuuSuiTon,buffs,Buff,,,Water Breathing,水遁の術
+buffWafuuSuiTon_desc,buffs,Buff,,,"Breathe freely underwater for 180 seconds.","180秒間、水中で自由に呼吸できる。"
+buffWafuuHannyaAura,buffs,Buff,,,Hannya Aura,般若の威圧
+buffWafuuHannyaAura_desc,buffs,Buff,,,"The Hannya mask radiates dread. +15% melee damage.","般若の面が恐怖の気を放つ。近接攻撃力+15%。"

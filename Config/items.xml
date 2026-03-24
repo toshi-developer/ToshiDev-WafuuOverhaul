@@ -1978,5 +1978,170 @@
             <property name="Group" value="Resources,Crafting"/>
         </item>
 
+
+        <!-- ======================================================== -->
+        <!-- 妖怪素材クラフト装備・消耗品                                -->
+        <!-- ======================================================== -->
+
+        <!-- 鬼金棒: T4 上位金棒。鬼の角を使ったクラフト専用 -->
+        <item name="meleeWpnWafuuOniKanabo">
+            <property name="Tags" value="blunt,club,melee,grunting,light,longShaft,perkFlurryOfStrength,weapon,meleeWeapon,attStrength,perkPummelPete,canHaveCosmetic,clubSkill,wafuuWeapon"/>
+            <property name="HoldType" value="41"/>
+            <property name="DisplayType" value="meleeClub"/>
+            <property name="Meshfile" value="@:Other/Items/Melee/SteelClubPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Melee/steel_club_droppedPrefab.prefab"/>
+            <property name="Material" value="Mwood"/>
+            <property name="Stacknumber" value="1"/>
+            <property name="EconomicValue" value="3000"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="weapon_grab"/>
+            <property name="SoundPlace" value="weapon_place"/>
+            <property name="CustomIcon" value="meleeWpnWafuuOniKanabo"/>
+            <property name="DescriptionKey" value="meleeWpnWafuuOniKanabo_desc"/>
+            <property name="Group" value="Weapons"/>
+            <property name="TraderStageTemplate" value="baseTier3"/>
+            <property name="UnlockedBy" value="perkWafuuSmithing,craftingClubs"/>
+            <property class="Action0">
+                <property name="Class" value="Melee"/>
+                <property name="Delay" value="0.6"/>
+                <property name="Range" value="2.5"/>
+                <property name="Sound_start" value="Entities/Player/Sounds/player_swingmelee"/>
+            </property>
+            <effect_group name="meleeWpnWafuuOniKanabo">
+                <passive_effect name="EntityDamage" operation="base_set" value="55" tags="perkPummelPete"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkPummelPete"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkPummelPete"/>
+                <passive_effect name="BlockDamage" operation="base_set" value="40" tags="perkPummelPete"/>
+                <passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkPummelPete"/>
+                <passive_effect name="AttacksPerMinute" operation="base_set" value="40" tags="perkPummelPete,perkFlurryOfStrength"/>
+                <passive_effect name="StaminaLoss" operation="base_set" value="28" tags="primary"/>
+                <passive_effect name="MaxRange" operation="base_set" value="2.5" tags="perkPummelPete"/>
+                <passive_effect name="BlockRange" operation="base_set" value="3.8" tags="perkPummelPete"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="2000,4000" tier="1,6" tags="perkPummelPete"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
+                <passive_effect name="ModSlots" operation="base_set" value="3,4,4,4,5,5" tier="1,2,3,4,5,6"/>
+                <passive_effect name="ModPowerBonus" operation="perc_add" value=".20" tags="EntityDamage,BlockDamage"/>
+                <!-- 鬼金棒ボーナス: ブロックダメージ＋40%、25%ノックダウン -->
+                <passive_effect name="BlockDamage" operation="perc_add" value=".40"/>
+                <triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryStunned01" chance=".25"/>
+            </effect_group>
+        </item>
+
+        <!-- 破魔矢: 妖怪特効矢 -->
+        <item name="ammoArrowWafuuHamaya">
+            <property name="Tags" value="ammo"/>
+            <property name="HoldType" value="73"/>
+            <property name="DisplayType" value="ammoArrow"/>
+            <property name="Meshfile" value="@:Other/Items/Ammo/arrowIronPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Ammo/arrowIron_droppedPrefab.prefab"/>
+            <property name="Material" value="Mwood"/>
+            <property name="Stacknumber" value="250"/>
+            <property name="EconomicValue" value="25"/>
+            <property name="CraftingIngredientTime" value="5"/>
+            <property name="SoundPickup" value="ammo_grab"/>
+            <property name="SoundPlace" value="ammo_place"/>
+            <property name="CustomIcon" value="ammoArrowWafuuHamaya"/>
+            <property name="DescriptionKey" value="ammoArrowWafuuHamaya_desc"/>
+            <property name="Group" value="Ammo"/>
+            <effect_group name="ammoArrowWafuuHamaya">
+                <passive_effect name="EntityDamage" operation="base_add" value="30"/>
+                <passive_effect name="BlockDamage" operation="base_add" value="10"/>
+                <!-- 和風ゾンビへのボーナスダメージ +50% -->
+                <passive_effect name="EntityDamage" operation="perc_add" value=".50" tags="wafuuZombie"/>
+            </effect_group>
+        </item>
+
+        <!-- 般若の面装備: 頭部防具。近接攻撃+15%、威嚇効果 -->
+        <item name="armorWafuuHannyaMask">
+            <property name="Tags" value="head,armor,armorHead,lightArmor,lightArmorDeg,armorLightSkill,wafuuArmor"/>
+            <property name="HoldType" value="70"/>
+            <property name="DisplayType" value="armorRogueHelmet"/>
+            <property name="Meshfile" value="@:Other/Items/Armor/Helmets/helmetLightPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Armor/Helmets/helmetLight_droppedPrefab.prefab"/>
+            <property name="Material" value="Mwood"/>
+            <property name="Stacknumber" value="1"/>
+            <property name="EconomicValue" value="1500"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="headwear_cloth_grab"/>
+            <property name="SoundPlace" value="headwear_cloth_place"/>
+            <property name="CustomIcon" value="armorWafuuHannyaMask"/>
+            <property name="DescriptionKey" value="armorWafuuHannyaMask_desc"/>
+            <property name="Group" value="Armor"/>
+            <property name="EquipSlot" value="Face"/>
+            <property name="UnlockedBy" value="perkWafuuSmithing"/>
+            <effect_group name="WafuuHannyaMask">
+                <passive_effect name="ModSlots" operation="base_set" value="2,2,3,3,4,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="15,20" tier="1,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="8,12" tier="1,6" tags="heat,electrical"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="300,600" tier="1,6"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+                <!-- 般若の面: 近接ダメージ+15%、装着中バフ付与 -->
+                <passive_effect name="EntityDamage" operation="perc_add" value=".15" tags="melee"/>
+                <triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffWafuuHannyaAura"/>
+                <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffWafuuHannyaAura"/>
+            </effect_group>
+        </item>
+
+        <!-- 水遁の巻物: 消費アイテム。水中呼吸 180 秒 -->
+        <item name="medWafuuKappaScroll">
+            <property name="Tags" value="medical"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodWaterRaw"/>
+            <property name="Meshfile" value="@:Other/Items/Food/parcelGenericPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Mwood"/>
+            <property name="Stacknumber" value="10"/>
+            <property name="EconomicValue" value="200"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="food_grab"/>
+            <property name="SoundPlace" value="food_place"/>
+            <property name="CustomIcon" value="medWafuuKappaScroll"/>
+            <property name="DescriptionKey" value="medWafuuKappaScroll_desc"/>
+            <property name="Group" value="Medicine"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="1.0"/>
+                <property name="Use_time" value="2.0"/>
+                <property name="Sound_start" value="player_drinking"/>
+            </property>
+            <effect_group name="Food Effects">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuSuiTon"/>
+            </effect_group>
+        </item>
+
+        <!-- 化かし衣: 胸部軽装鎧。騒音-30%、ステルスボーナス -->
+        <item name="armorWafuuTanukiCloak">
+            <property name="Tags" value="chest,armor,armorChest,lightArmor,lightArmorDeg,armorLightSkill,wafuuArmor"/>
+            <property name="HoldType" value="70"/>
+            <property name="DisplayType" value="armorRogueOutfit"/>
+            <property name="Meshfile" value="@:Other/Items/Armor/Chest/chestLightPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Armor/Chest/chestLight_droppedPrefab.prefab"/>
+            <property name="Material" value="Mwood"/>
+            <property name="Stacknumber" value="1"/>
+            <property name="EconomicValue" value="800"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="cloth_grab"/>
+            <property name="SoundPlace" value="cloth_place"/>
+            <property name="CustomIcon" value="armorWafuuTanukiCloak"/>
+            <property name="DescriptionKey" value="armorWafuuTanukiCloak_desc"/>
+            <property name="Group" value="Armor"/>
+            <property name="EquipSlot" value="Chest"/>
+            <property name="UnlockedBy" value="perkWafuuNinjutsu"/>
+            <effect_group name="WafuuTanukiCloak">
+                <passive_effect name="ModSlots" operation="base_set" value="2,2,3,3,4,4" tier="1,2,3,4,5,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="8,12" tier="1,6"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="5,8" tier="1,6" tags="heat,electrical"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.03" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+                <!-- 化かし衣: 騒音-30%、ステルスボーナス -->
+                <passive_effect name="NoiseMultiplier" operation="perc_add" value="-.30"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".15" tags="perkNightStalker"/>
+            </effect_group>
+        </item>
+
     </append>
 </configs>

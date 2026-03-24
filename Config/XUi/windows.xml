@@ -1,44 +1,194 @@
 <configs>
 	<!-- ============================================================
-		 ToshiDev Wafuu Overhaul - HUD Color Patches
-		 Recolors the HUD stat bars to match the wafuu theme.
+		 ToshiDev Wafuu Overhaul — HUD 和風リデザイン
+		 漆黒・金・朱・温白の和風配色で HUD 全体を統一。
+		 バニラの蛍光色を抑え、落ち着きと品格のある和の雰囲気に。
 	     ============================================================ -->
 
-	<!-- ===== LEFT STAT BARS (HUDLeftStatBars) ===== -->
 
-	<!-- Stamina bar: vanilla blue (0,54,255,160) → wafuu gold -->
-	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Stamina']/filledsprite[@name='BarContent'][@depth='5']/@color">200,160,50,200</set>
+	<!-- ################################################################
+		 1. 左側ステータスバー (HUDLeftStatBars)
+		    ステルス / 気力 / 体力 / 食料 / 水分
+	     ################################################################ -->
 
-	<!-- Health bar: vanilla red (255,0,0,160) → wafuu deep red -->
-	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Health']/filledsprite[@name='BarContent'][@depth='5']/@color">180,50,50,200</set>
-
-	<!-- Food bar: vanilla green (0,255,54,160) → wafuu warm amber -->
-	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Food']/filledsprite[@name='BarContent'][@depth='5']/@color">180,120,50,200</set>
-
-	<!-- Water bar: vanilla cyan (51,204,255,160) → wafuu muted blue -->
-	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Water']/filledsprite[@name='BarContent'][@depth='5']/@color">80,140,180,200</set>
-
-	<!-- Stat bar backgrounds: slightly warmer dark tone -->
-	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Stamina']/filledsprite[@name='background'][@depth='3'][not(@fillcenter)]/@color">60,55,45,160</set>
-	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Health']/filledsprite[@name='background'][@depth='3'][not(@fillcenter)]/@color">60,55,45,160</set>
-	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Food']/filledsprite[@name='background'][@depth='3'][not(@fillcenter)]/@color">60,55,45,160</set>
-	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Water']/filledsprite[@name='background'][@depth='3'][not(@fillcenter)]/@color">60,55,45,160</set>
-
-	<!-- Stat bar text: warm white -->
-	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Stamina']/label[@name='TextContent']/@color">[wafuuWhite]</set>
-	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Health']/label[@name='TextContent']/@color">[wafuuWhite]</set>
-	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Food']/label[@name='TextContent']/@color">[wafuuWhite]</set>
-	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Water']/label[@name='TextContent']/@color">[wafuuWhite]</set>
+	<!-- === ステルスバー === -->
+	<!-- 枠線: 暗金 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Stealth']/sprite[@name='border'][@depth='1']/@color">74,63,48,180</set>
+	<!-- 背景: 漆黒 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Stealth']/sprite[@name='background'][@depth='2']/@color">26,26,30,200</set>
+	<!-- バー背景: 暗い和色 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Stealth']/filledsprite[@name='background'][@depth='3'][not(@fillcenter)]/@color">45,40,35,180</set>
+	<!-- 外枠: 暗金 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Stealth']/sprite[@name='border'][@depth='8']/@color">74,63,48,255</set>
+	<!-- テキスト: 温白 -->
 	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Stealth']/label[@name='TextContent']/@color">[wafuuWhite]</set>
 
-	<!-- ===== XP BAR (windowToolbelt) ===== -->
-	<!-- XP bar: vanilla color → wafuu gold -->
-	<set xpath="/windows/window[@name='windowToolbelt']/rect/sprite[@depth='4'][@fill='{xp}']/@color">139,115,85,200</set>
+	<!-- === 気力（Stamina）バー === -->
+	<!-- バー色: 金 (黄金色) -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Stamina']/filledsprite[@name='BarContent'][@depth='5']/@color">200,165,55,220</set>
+	<!-- 枠線: 暗金 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Stamina']/sprite[@name='border'][@depth='1']/@color">74,63,48,180</set>
+	<!-- 背景: 漆黒 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Stamina']/sprite[@name='background'][@depth='2']/@color">26,26,30,200</set>
+	<!-- バー背景 (灰) -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Stamina']/filledsprite[@name='background'][@depth='3'][not(@fillcenter)]/@color">50,44,36,180</set>
+	<!-- 外枠: 暗金 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Stamina']/sprite[@name='border'][@depth='8']/@color">74,63,48,255</set>
+	<!-- テキスト: 温白 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Stamina']/label[@name='TextContent']/@color">[wafuuWhite]</set>
 
-	<!-- ===== TARGET BAR ===== -->
-	<!-- Target bar (non-boss): deeper red -->
-	<set xpath="/windows/window[@name='windowTargetBar']/rect[@visible='{isnotboss}']/filledsprite[@name='BarContent']/@color">180,50,50,200</set>
+	<!-- === 体力（Health）バー === -->
+	<!-- バー色: 深朱 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Health']/filledsprite[@name='BarContent'][@depth='5']/@color">170,48,48,220</set>
+	<!-- 枠線: 暗金 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Health']/sprite[@name='border'][@depth='1']/@color">74,63,48,180</set>
+	<!-- 背景: 漆黒 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Health']/sprite[@name='background'][@depth='2']/@color">26,26,30,200</set>
+	<!-- バー背景 (灰) -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Health']/filledsprite[@name='background'][@depth='3'][not(@fillcenter)]/@color">50,44,36,180</set>
+	<!-- 外枠: 暗金 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Health']/sprite[@name='border'][@depth='8']/@color">74,63,48,255</set>
+	<!-- テキスト: 温白 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Health']/label[@name='TextContent']/@color">[wafuuWhite]</set>
 
-	<!-- ===== VEHICLE BARS ===== -->
-	<!-- NOTE: ビークルバーの XPath が v2.5 の構造と合わないため、Unity アセットバンドル統合時に対応予定 -->
+	<!-- === 食料（Food）バー === -->
+	<!-- バー色: 琥珀色 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Food']/filledsprite[@name='BarContent'][@depth='5']/@color">185,125,50,220</set>
+	<!-- 枠線: 暗金 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Food']/sprite[@name='border'][@depth='1']/@color">74,63,48,180</set>
+	<!-- 背景: 漆黒 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Food']/sprite[@name='background'][@depth='2']/@color">26,26,30,200</set>
+	<!-- バー背景 (灰) -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Food']/filledsprite[@name='background'][@depth='3'][not(@fillcenter)]/@color">50,44,36,180</set>
+	<!-- 外枠: 暗金 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Food']/sprite[@name='border'][@depth='8']/@color">74,63,48,255</set>
+	<!-- テキスト: 温白 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Food']/label[@name='TextContent']/@color">[wafuuWhite]</set>
+
+	<!-- === 水分（Water）バー === -->
+	<!-- バー色: 渋藍 (落ち着いた藍色) -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Water']/filledsprite[@name='BarContent'][@depth='5']/@color">75,135,175,220</set>
+	<!-- 枠線: 暗金 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Water']/sprite[@name='border'][@depth='1']/@color">74,63,48,180</set>
+	<!-- 背景: 漆黒 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Water']/sprite[@name='background'][@depth='2']/@color">26,26,30,200</set>
+	<!-- バー背景 (灰) -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Water']/filledsprite[@name='background'][@depth='3'][not(@fillcenter)]/@color">50,44,36,180</set>
+	<!-- 外枠: 暗金 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Water']/sprite[@name='border'][@depth='8']/@color">74,63,48,255</set>
+	<!-- テキスト: 温白 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar'][@stat_type='Water']/label[@name='TextContent']/@color">[wafuuWhite]</set>
+
+	<!-- バフポップアウト背景色 -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud'][@controller='BuffPopoutList']/panel[@name='item']/sprite[@name='Background']/@color">26,26,30,200</set>
+
+
+	<!-- ################################################################
+		 2. ターゲットバー (windowTargetBar)
+		    敵HP表示を和風化
+	     ################################################################ -->
+
+	<!-- 非ボス: 枠を暗金、バー色を深朱 -->
+	<set xpath="/windows/window[@name='windowTargetBar']/rect[@visible='{isnotboss}']/sprite[@name='border']/@color">74,63,48,160</set>
+	<set xpath="/windows/window[@name='windowTargetBar']/rect[@visible='{isnotboss}']/filledsprite[@name='BarContent']/@color">170,48,48,200</set>
+	<set xpath="/windows/window[@name='windowTargetBar']/rect[@visible='{isnotboss}']/label[@name='TextContent']/@color">[wafuuWhite]</set>
+
+
+	<!-- ################################################################
+		 3. エリア名表示 (windowEntering)
+		    地域名テキストを温白に
+	     ################################################################ -->
+
+	<set xpath="/windows/window[@name='windowEntering']/rect/label[@name='TextContent']/@color">[wafuuWhite]</set>
+	<set xpath="/windows/window[@name='windowEntering']/rect/label[@name='MessageContent']/@color">[wafuuTextSub]</set>
+	<!-- 難易度ドクロアイコン: 金色ベースから朱へ変化 -->
+	<set xpath="/windows/window[@name='windowEntering']/@difficulty_color">[wafuuRedAccent]</set>
+	<set xpath="/windows/window[@name='windowEntering']/@biome_color">[wafuuGold]</set>
+	<set xpath="/windows/window[@name='windowEntering']/@inactive_color">[wafuuTextSub]</set>
+
+
+	<!-- ################################################################
+		 4. コンパス (windowCompass)
+		    枠・背景を和風に
+	     ################################################################ -->
+
+	<!-- 外枠: 暗金 -->
+	<set xpath="/windows/window[@name='windowCompass']/sprite[@depth='0']/@color">74,63,48,180</set>
+	<!-- 背景: 漆黒 -->
+	<set xpath="/windows/window[@name='windowCompass']/sprite[@depth='1']/@color">26,26,30,220</set>
+	<!-- コンパステクスチャ: 温白 -->
+	<set xpath="/windows/window[@name='windowCompass']/texture[@name='compassTexture3']/@color">[wafuuWhite]</set>
+	<!-- NOTE: コンパス日時テキストは color 属性未定義のためパッチ不可 -->
+
+
+	<!-- ################################################################
+		 5. ツールベルト (windowToolbelt)
+		    枠線・XPバー・背景を和風化
+	     ################################################################ -->
+
+	<!-- 背景色: 漆黒 -->
+	<set xpath="/windows/window[@name='windowToolbelt']/@backgroundcolor">[wafuuBlack]</set>
+	<!-- 外枠スプライト: 暗金 -->
+	<set xpath="/windows/window[@name='windowToolbelt']/rect/sprite[@name='backgroundMain']/@color">74,63,48,255</set>
+	<!-- XP バー背景ライン: 暗金 -->
+	<set xpath="/windows/window[@name='windowToolbelt']/rect/sprite[@depth='1'][@height='10']/@color">50,44,36,200</set>
+	<!-- XP バー外枠: 漆黒 -->
+	<set xpath="/windows/window[@name='windowToolbelt']/rect/sprite[@depth='9'][@height='10']/@color">26,26,30,255</set>
+	<!-- XP バー: 金色 -->
+	<set xpath="/windows/window[@name='windowToolbelt']/rect/sprite[@depth='4'][@fill='{xp}']/@color">184,160,112,220</set>
+
+
+	<!-- ################################################################
+		 6. 右側 HUD (HUDRightStatBars)
+		    アイテム収集ポップアップ・車両バーを和風化
+	     ################################################################ -->
+
+	<!-- 収集テキスト: 温白 -->
+	<set xpath="/windows/window[@name='HUDRightStatBars']/rect[@controller='CollectedItemList']/panel[@name='item']/label[@name='TextContent']/@color">[wafuuWhite]</set>
+
+	<!-- 車両燃料バー: 渋藍 -->
+	<set xpath="/windows/window[@name='HUDRightStatBars']/rect[@name='hud'][2]/rect[@controller='HUDStatBar'][@stat_type='VehicleFuel']/filledsprite[@name='BarContent']/@color">75,135,175,180</set>
+	<!-- 車両燃料 枠: 暗金 -->
+	<set xpath="/windows/window[@name='HUDRightStatBars']/rect[@name='hud'][2]/rect[@controller='HUDStatBar'][@stat_type='VehicleFuel']/sprite[@name='border'][@depth='1']/@color">74,63,48,180</set>
+	<set xpath="/windows/window[@name='HUDRightStatBars']/rect[@name='hud'][2]/rect[@controller='HUDStatBar'][@stat_type='VehicleFuel']/sprite[@name='border'][@depth='8']/@color">74,63,48,255</set>
+	<!-- 車両燃料 背景: 漆黒 -->
+	<set xpath="/windows/window[@name='HUDRightStatBars']/rect[@name='hud'][2]/rect[@controller='HUDStatBar'][@stat_type='VehicleFuel']/sprite[@name='background'][@depth='2']/@color">26,26,30,200</set>
+	<!-- 車両燃料 テキスト: 温白 -->
+	<set xpath="/windows/window[@name='HUDRightStatBars']/rect[@name='hud'][2]/rect[@controller='HUDStatBar'][@stat_type='VehicleFuel']/label[@name='TextContent']/@color">[wafuuWhite]</set>
+
+	<!-- 車両HP バー: 深朱 -->
+	<set xpath="/windows/window[@name='HUDRightStatBars']/rect[@name='hud'][2]/rect[@controller='HUDStatBar'][@stat_type='VehicleHealth']/filledsprite[@name='BarContent']/@color">170,48,48,180</set>
+	<!-- 車両HP 枠: 暗金 -->
+	<set xpath="/windows/window[@name='HUDRightStatBars']/rect[@name='hud'][2]/rect[@controller='HUDStatBar'][@stat_type='VehicleHealth']/sprite[@name='border'][@depth='1']/@color">74,63,48,180</set>
+	<set xpath="/windows/window[@name='HUDRightStatBars']/rect[@name='hud'][2]/rect[@controller='HUDStatBar'][@stat_type='VehicleHealth']/sprite[@name='border'][@depth='8']/@color">74,63,48,255</set>
+	<!-- 車両HP 背景: 漆黒 -->
+	<set xpath="/windows/window[@name='HUDRightStatBars']/rect[@name='hud'][2]/rect[@controller='HUDStatBar'][@stat_type='VehicleHealth']/sprite[@name='background'][@depth='2']/@color">26,26,30,200</set>
+	<!-- 車両HP テキスト: 温白 -->
+	<set xpath="/windows/window[@name='HUDRightStatBars']/rect[@name='hud'][2]/rect[@controller='HUDStatBar'][@stat_type='VehicleHealth']/label[@name='TextContent']/@color">[wafuuWhite]</set>
+
+
+	<!-- ################################################################
+		 7. 死亡バー (windowDeathBar)
+		    テキスト色を温白に
+	     ################################################################ -->
+
+	<set xpath="/windows/window[@name='windowDeathBar']/rect/label[@name='TextContent']/@color">[wafuuWhite]</set>
+
+
+	<!-- ################################################################
+		 8. 位置情報 (windowLocation — 右上)
+	     ################################################################ -->
+
+	<!-- 位置名背景: 漆黒 -->
+	<set xpath="/windows/window[@name='windowLocation']/sprite[@name='Background']/@color">26,26,30,200</set>
+	<!-- 位置名枠: 暗金 -->
+	<set xpath="/windows/window[@name='windowLocation']/sprite[@name='backgroundMain']/@color">74,63,48,255</set>
+
+
+	<!-- ################################################################
+		 10. インベントリ拡張: 5行→8行 (45→72 スロット)
+	     ################################################################ -->
+
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/grid[@name='inventory'][@controller='Backpack']/@rows">8</set>
+	<set xpath="/windows/window[@name='windowBackpack']/@height">550</set>
 </configs>
