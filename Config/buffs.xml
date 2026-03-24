@@ -213,5 +213,38 @@
             </effect_group>
         </buff>
 
+
+        <!-- ==================== 和漢薬バフ ==================== -->
+
+        <!-- 薬草湯: 緩やかなHP回復 60秒 -->
+        <buff name="buffWafuuHerbHeal" duration="60" stack="replace"
+              name_key="buffWafuuHerbHeal" description_key="buffWafuuHerbHeal_desc"
+              icon="ui_game_symbol_medical" icon_color="100,180,100">
+            <effect_group>
+                <passive_effect name="HealthChangeOT" operation="base_add" value="1.5" tags=""/>
+            </effect_group>
+        </buff>
+
+        <!-- お守り: 全耐性強化 120秒 -->
+        <buff name="buffWafuuOmamori" duration="120" stack="replace"
+              name_key="buffWafuuOmamori" description_key="buffWafuuOmamori_desc"
+              icon="ui_game_symbol_quest" icon_color="220,180,50">
+            <effect_group>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.3" tags="buffInfectionCatch,buffAbrasionCatch"/>
+                <passive_effect name="PhysicalDamageResist" operation="perc_add" value="0.1"/>
+                <passive_effect name="HypothermalResist" operation="base_add" value="10"/>
+                <passive_effect name="HyperthermalResist" operation="base_add" value="10"/>
+            </effect_group>
+        </buff>
+
+        <!-- 清め塩: 感染予防 300秒 -->
+        <buff name="buffWafuuKiyome" duration="300" stack="replace"
+              name_key="buffWafuuKiyome" description_key="buffWafuuKiyome_desc"
+              icon="ui_game_symbol_natural_healing" icon_color="200,200,220">
+            <effect_group>
+                <passive_effect name="BuffResistance" operation="base_add" value="0.5" tags="buffInfectionCatch"/>
+            </effect_group>
+        </buff>
+
     </append>
 </configs>

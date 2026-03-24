@@ -144,6 +144,42 @@
     </append>
 
 
+    <!-- ==================== 薬草・和漢薬ルート ==================== -->
+
+    <!-- 野草・植物系コンテナに薬草を追加 -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupFoodCommon']">
+        <item name="resourceWafuuHerb" count="1,3" prob="0.04"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupFoodUncommon']">
+        <item name="resourceWafuuHerb" count="2,5" prob="0.03"/>
+    </append>
+
+    <!-- 医療品コンテナに和漢薬を追加 -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupMedicalCommon']">
+        <item name="medWafuuHerbTea"     count="1,2" prob="0.03"/>
+        <item name="medWafuuKiyomeSalt"  count="1,2" prob="0.03"/>
+        <item name="resourceWafuuHerb"   count="2,4" prob="0.04"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupMedicalUncommon']">
+        <item name="medWafuuWoundSalve"  count="1" prob="0.03"/>
+        <item name="medWafuuAntidote"    count="1" prob="0.02"/>
+        <item name="medWafuuHerbTea"     count="1,2" prob="0.03"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupMedicalRare']">
+        <item name="medWafuuOmamori"     count="1" prob="0.02"/>
+        <item name="medWafuuAntidote"    count="1" prob="0.02"/>
+    </append>
+
+    <!-- Shamway 棚にも薬草を少量追加 -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupShamwayShelves01']">
+        <item name="resourceWafuuHerb"   count="1,2" prob="0.03"/>
+        <item name="medWafuuHerbTea"     count="1"   prob="0.02"/>
+    </append>
+
+
     <!-- ==================== 防具ルート ==================== -->
 
     <append xpath="/lootcontainers/lootgroup[@name='groupAllArmor']">

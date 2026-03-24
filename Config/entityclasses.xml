@@ -46,6 +46,7 @@
             </effect_group>
 
             <drop event="Destroy" name="resourceCloth" count="1,3" prob="0.6"/>
+            <drop event="Destroy" name="resourceOnryoOrb" count="1" prob="0.25"/>
         </entity_class>
 
 
@@ -105,6 +106,7 @@
 
             <drop event="Destroy" name="resourceScrapIron" count="5,15" prob="0.9"/>
             <drop event="Destroy" name="meleeWpnWafuuKanabo" count="1" prob="0.05"/>
+            <drop event="Destroy" name="resourceOniHorn" count="1,2" prob="0.3"/>
         </entity_class>
 
 
@@ -126,6 +128,7 @@
 
             <drop event="Destroy" name="foodRawFish" count="1,3" prob="0.6"/>
             <drop event="Destroy" name="drinkCanEmpty" count="1,2" prob="0.3"/>
+            <drop event="Destroy" name="resourceKappaDish" count="1" prob="0.2"/>
         </entity_class>
 
 
@@ -148,6 +151,7 @@
             <drop event="Destroy" name="foodSenbei" count="1,3" prob="0.3"/>
             <drop event="Destroy" name="drinkNihonshu" count="1" prob="0.1"/>
             <drop event="Destroy" name="meleeWpnWafuuDemonBlade" count="1" prob="0.01"/>
+            <drop event="Destroy" name="resourceTanukiFur" count="1,2" prob="0.35"/>
         </entity_class>
 
 
@@ -168,6 +172,7 @@
 
             <drop event="Destroy" name="resourceCloth" count="2,5" prob="0.5"/>
             <drop event="Destroy" name="resourceBone" count="3,8" prob="0.4"/>
+            <drop event="Destroy" name="resourceHannyaMask" count="1" prob="0.15"/>
         </entity_class>
 
     </append>

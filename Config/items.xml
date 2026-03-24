@@ -1722,5 +1722,261 @@
             <property name="Group" value="Resources,Crafting"/>
         </item>
 
+        <!-- ======================================================== -->
+        <!-- Phase 7: 和漢薬・医療品                                   -->
+        <!-- ======================================================== -->
+
+        <!-- 薬草（素材） -->
+        <item name="resourceWafuuHerb">
+            <property name="Tags" value="resource"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodWaterRaw"/>
+            <property name="Meshfile" value="@:Other/Items/Food/parcelGenericPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="50"/>
+            <property name="EconomicValue" value="20"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="cornmeal_grab"/>
+            <property name="SoundPlace" value="cornmeal_place"/>
+            <property name="CustomIcon" value="resourceWafuuHerb"/>
+            <property name="DescriptionKey" value="resourceWafuuHerb_desc"/>
+            <property name="Group" value="Resources,Medicine"/>
+        </item>
+
+        <!-- 薬草湯: HP 回復 -->
+        <item name="medWafuuHerbTea">
+            <property name="Tags" value="medical"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodWaterRaw"/>
+            <property name="Meshfile" value="@:Other/Items/Food/parcelGenericPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="10"/>
+            <property name="EconomicValue" value="100"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="food_grab"/>
+            <property name="SoundPlace" value="food_place"/>
+            <property name="CustomIcon" value="medWafuuHerbTea"/>
+            <property name="DescriptionKey" value="medWafuuHerbTea_desc"/>
+            <property name="Group" value="Medicine"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="1.0"/>
+                <property name="Use_time" value="2.0"/>
+                <property name="Sound_start" value="player_drinking"/>
+            </property>
+            <effect_group name="Food Effects">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuHerbHeal"/>
+            </effect_group>
+        </item>
+
+        <!-- 傷薬: 止血 -->
+        <item name="medWafuuWoundSalve">
+            <property name="Tags" value="medical"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodWaterRaw"/>
+            <property name="Meshfile" value="@:Other/Items/Food/parcelGenericPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="10"/>
+            <property name="EconomicValue" value="120"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="food_grab"/>
+            <property name="SoundPlace" value="food_place"/>
+            <property name="CustomIcon" value="medWafuuWoundSalve"/>
+            <property name="DescriptionKey" value="medWafuuWoundSalve_desc"/>
+            <property name="Group" value="Medicine"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="1.0"/>
+                <property name="Use_time" value="2.0"/>
+                <property name="Sound_start" value="player_drinking"/>
+            </property>
+            <effect_group name="Food Effects">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffInjuryBleedingOne"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffInjuryBleedingTwo"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffInjuryBleeding"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuHoT45"/>
+            </effect_group>
+        </item>
+
+        <!-- 解毒散: 感染治療 -->
+        <item name="medWafuuAntidote">
+            <property name="Tags" value="medical"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodWaterRaw"/>
+            <property name="Meshfile" value="@:Other/Items/Food/parcelGenericPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="10"/>
+            <property name="EconomicValue" value="150"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="food_grab"/>
+            <property name="SoundPlace" value="food_place"/>
+            <property name="CustomIcon" value="medWafuuAntidote"/>
+            <property name="DescriptionKey" value="medWafuuAntidote_desc"/>
+            <property name="Group" value="Medicine"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="1.0"/>
+                <property name="Use_time" value="2.0"/>
+                <property name="Sound_start" value="player_drinking"/>
+            </property>
+            <effect_group name="Food Effects">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffInfectionCatch"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuDiseaseResist180"/>
+            </effect_group>
+        </item>
+
+        <!-- お守り: 一時的な耐性強化 -->
+        <item name="medWafuuOmamori">
+            <property name="Tags" value="medical"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodWaterRaw"/>
+            <property name="Meshfile" value="@:Other/Items/Food/parcelGenericPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="5"/>
+            <property name="EconomicValue" value="200"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="food_grab"/>
+            <property name="SoundPlace" value="food_place"/>
+            <property name="CustomIcon" value="medWafuuOmamori"/>
+            <property name="DescriptionKey" value="medWafuuOmamori_desc"/>
+            <property name="Group" value="Medicine"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="1.0"/>
+                <property name="Use_time" value="2.0"/>
+                <property name="Sound_start" value="player_drinking"/>
+            </property>
+            <effect_group name="Food Effects">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuOmamori"/>
+            </effect_group>
+        </item>
+
+        <!-- 清め塩: 感染予防 -->
+        <item name="medWafuuKiyomeSalt">
+            <property name="Tags" value="medical"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodWaterRaw"/>
+            <property name="Meshfile" value="@:Other/Items/Food/parcelGenericPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="15"/>
+            <property name="EconomicValue" value="80"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="food_grab"/>
+            <property name="SoundPlace" value="food_place"/>
+            <property name="CustomIcon" value="medWafuuKiyomeSalt"/>
+            <property name="DescriptionKey" value="medWafuuKiyomeSalt_desc"/>
+            <property name="Group" value="Medicine"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="1.0"/>
+                <property name="Use_time" value="2.0"/>
+                <property name="Sound_start" value="player_drinking"/>
+            </property>
+            <effect_group name="Food Effects">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWafuuKiyome"/>
+            </effect_group>
+        </item>
+
+        <!-- ======================================================== -->
+        <!-- Phase 7: 妖怪素材ドロップ                                  -->
+        <!-- ======================================================== -->
+
+        <!-- 鬼の角 -->
+        <item name="resourceOniHorn">
+            <property name="Tags" value="resource"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodWaterRaw"/>
+            <property name="Meshfile" value="@:Other/Items/Food/parcelGenericPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="25"/>
+            <property name="EconomicValue" value="300"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="cornmeal_grab"/>
+            <property name="SoundPlace" value="cornmeal_place"/>
+            <property name="CustomIcon" value="resourceOniHorn"/>
+            <property name="DescriptionKey" value="resourceOniHorn_desc"/>
+            <property name="Group" value="Resources,Crafting"/>
+        </item>
+
+        <!-- 怨霊の霊珠 -->
+        <item name="resourceOnryoOrb">
+            <property name="Tags" value="resource"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodWaterRaw"/>
+            <property name="Meshfile" value="@:Other/Items/Food/parcelGenericPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="25"/>
+            <property name="EconomicValue" value="250"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="cornmeal_grab"/>
+            <property name="SoundPlace" value="cornmeal_place"/>
+            <property name="CustomIcon" value="resourceOnryoOrb"/>
+            <property name="DescriptionKey" value="resourceOnryoOrb_desc"/>
+            <property name="Group" value="Resources,Crafting"/>
+        </item>
+
+        <!-- 河童の皿 -->
+        <item name="resourceKappaDish">
+            <property name="Tags" value="resource"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodWaterRaw"/>
+            <property name="Meshfile" value="@:Other/Items/Food/parcelGenericPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="25"/>
+            <property name="EconomicValue" value="200"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="cornmeal_grab"/>
+            <property name="SoundPlace" value="cornmeal_place"/>
+            <property name="CustomIcon" value="resourceKappaDish"/>
+            <property name="DescriptionKey" value="resourceKappaDish_desc"/>
+            <property name="Group" value="Resources,Crafting"/>
+        </item>
+
+        <!-- 化け狸の毛皮 -->
+        <item name="resourceTanukiFur">
+            <property name="Tags" value="resource"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodWaterRaw"/>
+            <property name="Meshfile" value="@:Other/Items/Food/parcelGenericPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="25"/>
+            <property name="EconomicValue" value="150"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="cornmeal_grab"/>
+            <property name="SoundPlace" value="cornmeal_place"/>
+            <property name="CustomIcon" value="resourceTanukiFur"/>
+            <property name="DescriptionKey" value="resourceTanukiFur_desc"/>
+            <property name="Group" value="Resources,Crafting"/>
+        </item>
+
+        <!-- 般若の面 -->
+        <item name="resourceHannyaMask">
+            <property name="Tags" value="resource"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodWaterRaw"/>
+            <property name="Meshfile" value="@:Other/Items/Food/parcelGenericPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="10"/>
+            <property name="EconomicValue" value="500"/>
+            <property name="CraftingIngredientTime" value="10"/>
+            <property name="SoundPickup" value="cornmeal_grab"/>
+            <property name="SoundPlace" value="cornmeal_place"/>
+            <property name="CustomIcon" value="resourceHannyaMask"/>
+            <property name="DescriptionKey" value="resourceHannyaMask_desc"/>
+            <property name="Group" value="Resources,Crafting"/>
+        </item>
+
     </append>
 </configs>

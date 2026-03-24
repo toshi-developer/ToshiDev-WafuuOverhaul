@@ -935,5 +935,71 @@
             <ingredient name="resourceTamahagane" count="3"/>
         </recipe>
 
+
+        <!-- ======================================================== -->
+        <!-- Phase 7: 和漢薬レシピ                                     -->
+        <!-- ======================================================== -->
+
+        <!-- 薬草湯: 薬草 + 水 — かまど -->
+        <recipe name="medWafuuHerbTea" count="1" craft_area="wafuuKamado" craft_time="20">
+            <ingredient name="resourceWafuuHerb" count="3"/>
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+        </recipe>
+        <recipe name="medWafuuHerbTea" count="1" craft_area="wafuuIrori" craft_time="20">
+            <ingredient name="resourceWafuuHerb" count="3"/>
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+        </recipe>
+        <recipe name="medWafuuHerbTea" count="1" craft_area="wafuuKitchen" craft_time="20">
+            <ingredient name="resourceWafuuHerb" count="3"/>
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+        </recipe>
+
+        <!-- 傷薬: 薬草 + 油 + 布 — かまど -->
+        <recipe name="medWafuuWoundSalve" count="1" craft_area="wafuuKamado" craft_time="30">
+            <ingredient name="resourceWafuuHerb" count="5"/>
+            <ingredient name="foodOil" count="1"/>
+            <ingredient name="resourceCloth" count="3"/>
+        </recipe>
+        <recipe name="medWafuuWoundSalve" count="1" craft_area="wafuuIrori" craft_time="30">
+            <ingredient name="resourceWafuuHerb" count="5"/>
+            <ingredient name="foodOil" count="1"/>
+            <ingredient name="resourceCloth" count="3"/>
+        </recipe>
+        <recipe name="medWafuuWoundSalve" count="1" craft_area="wafuuKitchen" craft_time="30">
+            <ingredient name="resourceWafuuHerb" count="5"/>
+            <ingredient name="foodOil" count="1"/>
+            <ingredient name="resourceCloth" count="3"/>
+        </recipe>
+
+        <!-- 解毒散: 薬草 + わさび + 酢 — 囲炉裏 -->
+        <recipe name="medWafuuAntidote" count="1" craft_area="wafuuIrori" craft_time="40">
+            <ingredient name="resourceWafuuHerb" count="5"/>
+            <ingredient name="cropWasabi" count="2"/>
+            <ingredient name="foodVinegar" count="1"/>
+        </recipe>
+        <recipe name="medWafuuAntidote" count="1" craft_area="wafuuKitchen" craft_time="40">
+            <ingredient name="resourceWafuuHerb" count="5"/>
+            <ingredient name="cropWasabi" count="2"/>
+            <ingredient name="foodVinegar" count="1"/>
+        </recipe>
+
+        <!-- お守り: 布 + 清め塩 + 紙 — 厨房のみ -->
+        <recipe name="medWafuuOmamori" count="1" craft_area="wafuuKitchen" craft_time="60">
+            <ingredient name="resourceCloth" count="5"/>
+            <ingredient name="medWafuuKiyomeSalt" count="2"/>
+            <ingredient name="resourcePaper" count="3"/>
+        </recipe>
+
+        <!-- 清め塩: 塩を清める — かまど -->
+        <recipe name="medWafuuKiyomeSalt" count="3" craft_area="wafuuKamado" craft_time="15">
+            <ingredient name="foodSalt" count="5"/>
+        </recipe>
+        <recipe name="medWafuuKiyomeSalt" count="3" craft_area="wafuuIrori" craft_time="15">
+            <ingredient name="foodSalt" count="5"/>
+        </recipe>
+        <recipe name="medWafuuKiyomeSalt" count="3" craft_area="wafuuKitchen" craft_time="15">
+            <ingredient name="foodSalt" count="5"/>
+        </recipe>
+
     </append>
 </configs>

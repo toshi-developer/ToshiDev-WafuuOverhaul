@@ -374,3 +374,64 @@ npcTraderBob,entityclasses,Entity,,,Bunzaemon the Merchant,商人 文左衛門
 npcTraderHugh,entityclasses,Entity,,,Hyogo the Merchant,商人 兵庫
 npcTraderJen,entityclasses,Entity,,,Chiyo the Merchant,商人 千代
 ttTraderClosedTeleport,UI,Tooltip,,,"The merchant has closed shop. You have been removed from the area.","商人が店を閉めました。敷地の外に出されました。"
+resourceWafuuHerb,items,Item,,,Medicinal Herb,薬草
+resourceWafuuHerb_desc,items,Item,,,"A wild herb with healing properties. Used to brew medicines.","薬効のある野草。薬の調合に使う。"
+medWafuuHerbTea,items,Item,,,Herbal Tea,薬草湯
+medWafuuHerbTea_desc,items,Item,,,"A warm herbal decoction that slowly restores health over time.","温かい薬草の煎じ薬。ゆっくりとHPを回復する。"
+medWafuuWoundSalve,items,Item,,,Wound Salve,傷薬
+medWafuuWoundSalve_desc,items,Item,,,"A poultice of herbs and oil. Stops bleeding immediately.","薬草と油の湿布薬。出血を即座に止める。"
+medWafuuAntidote,items,Item,,,Antidote Powder,解毒散
+medWafuuAntidote_desc,items,Item,,,"A bitter herbal powder that purges infection and boosts immunity.","苦い薬草の粉末。感染を除去し免疫を強化する。"
+medWafuuOmamori,items,Item,,,Omamori (Charm),お守り
+medWafuuOmamori_desc,items,Item,,,"A blessed protective charm. Grants resistance to all ailments and environmental hazards.","祈祷を込めたお守り。あらゆる病と環境障害への耐性を得る。"
+medWafuuKiyomeSalt,items,Item,,,Purification Salt,清め塩
+medWafuuKiyomeSalt_desc,items,Item,,,"Salt purified through ritual. Powerfully prevents infection.","儀式で清められた塩。感染を強力に防ぐ。"
+resourceOniHorn,items,Item,,,Oni Horn,鬼の角
+resourceOniHorn_desc,items,Item,,,"A twisted horn broken from an Oni. Radiates malevolent energy. Used in advanced crafting.","鬼から折れた捻れた角。邪気を放つ。上位の製作に使用。"
+resourceOnryoOrb,items,Item,,,Spirit Orb,怨霊玉
+resourceOnryoOrb_desc,items,Item,,,"A glowing orb left behind by a vanquished Onryo. Cold to the touch.","怨霊を倒した後に残る光る玉。触れると冷たい。"
+resourceKappaDish,items,Item,,,Kappa Dish,河童の皿
+resourceKappaDish_desc,items,Item,,,"The mystical plate from a Kappa's head. Said to hold water spirits.","河童の頭の不思議な皿。水の精霊が宿るという。"
+resourceTanukiFur,items,Item,,,Tanuki Fur,狸の毛皮
+resourceTanukiFur_desc,items,Item,,,"Soft fur from a Bake-Tanuki. Shimmers with residual magic.","化け狸の柔らかい毛皮。残留する妖力で揺らめく。"
+resourceHannyaMask,items,Item,,,Hannya Mask,般若の面
+resourceHannyaMask_desc,items,Item,,,"A fearsome mask dropped by a Hannya. Exudes an aura of dread.","般若が落とした恐ろしい面。恐怖の気を纏う。"
+buffWafuuHerbHeal,buffs,Buff,,,Herbal Healing,薬草の癒し
+buffWafuuHerbHeal_desc,buffs,Buff,,,"Warm herbal tea gradually restores health for 60 seconds. +1.5 HP/s.","温かい薬草湯がゆっくりHPを回復（60秒）。毎秒+1.5 HP"
+buffWafuuOmamori,buffs,Buff,,,Divine Protection,加護
+buffWafuuOmamori_desc,buffs,Buff,,,"The omamori's blessing protects against infection, damage, and weather for 120 seconds.","お守りの祝福が感染・傷・天候から守る（120秒）"
+buffWafuuKiyome,buffs,Buff,,,Purification,清め
+buffWafuuKiyome_desc,buffs,Buff,,,"Purification salt wards off infection for 300 seconds.","清め塩が感染を退ける（300秒）"
+vehicleBicycle,items,Item,,,Bicycle,足踏み車
+vehicleMinibike,items,Item,,,Minibike,鉄馬（小）
+vehicleMotorcycle,items,Item,,,Motorcycle,鉄馬
+vehicleGyrocopter,items,Item,,,Gyrocopter,飛行凧
+vehicle4x4Truck,items,Item,,,4x4 Truck,荷車
+vehicleBicyclePlaceable,items,Item,,,Bicycle,足踏み車
+vehicleMinibikePlaceable,items,Item,,,Minibike,鉄馬（小）
+vehicleMotorcyclePlaceable,items,Item,,,Motorcycle,鉄馬
+vehicleGyrocopterPlaceable,items,Item,,,Gyrocopter,飛行凧
+vehicle4x4TruckPlaceable,items,Item,,,4x4 Truck,荷車
+biome_burnt_forest,biomes,Biome,,,Burnt Forest,焼け野原
+biome_desert,biomes,Biome,,,Desert,荒野
+biome_pine_forest,biomes,Biome,,,Pine Forest,里山
+biome_snow,biomes,Biome,,,Snow,雪国
+biome_wasteland,biomes,Biome,,,Wasteland,荒廃地
+biomeBurntForest,biomes,Biome,,,Burnt Forest,焼け野原
+biomeDesert,biomes,Biome,,,Desert,荒野
+biomePineForest,biomes,Biome,,,Pine Forest,里山
+biomeSnow,biomes,Biome,,,Snow,雪国
+biomeWasteland,biomes,Biome,,,Wasteland,荒廃地
+quest_keyword_clear,quests,Quest,,,Clear,討伐
+quest_keyword_fetch,quests,Quest,,,Fetch,回収
+quest_keyword_buried_supplies,quests,Quest,,,Buried Supplies,埋蔵品探索
+quest_keyword_restore_power,quests,Quest,,,Restore Power,修復
+quest_keyword_infested,quests,Quest,,,Infested,掃討
+questTypeClear,quests,Quest,,,Clear,討伐
+questTypeFetch,quests,Quest,,,Fetch,回収
+questTypeRestorePower,quests,Quest,,,Restore Power,修復
+questTypeInfested,quests,Quest,,,Infested,掃討
+questTypeBuried,quests,Quest,,,Buried Supplies,埋蔵品探索
+questTypeChallenge,quests,Quest,,,Challenge,試練
+Tier,UI,UI,,,Tier,段
+xuiQuestTier,UI,UI,,,Tier,段
