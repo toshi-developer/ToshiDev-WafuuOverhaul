@@ -1,0 +1,44 @@
+name: XML Validation
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  validate-xml:
+    name: Validate XML Files
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install xmllint
+        run: sudo apt-get install -y libxml2-utils
+
+      - name: Validate XML files
+        run: |
+          ERRORS=0
+          while IFS= read -r -d '' file; do
+            output=$(xmllint --noout "$file" 2>&1)
+            if [ $? -ne 0 ]; then
+              echo "$output"
+              echo "::error file=$file::XML validation failed"
+              ERRORS=$((ERRORS + 1))
+            else
+              echo "OK: $file"
+            fi
+          done < <(find . -name "*.xml" -not -path "./.git/*" -print0)
+          if [ "$ERRORS" -gt 0 ]; then
+            echo "::error::$ERRORS XML file(s) failed validation."
+            exit 1
+          fi
+          echo "All XML files are valid."
